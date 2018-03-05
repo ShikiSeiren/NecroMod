@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="main/java/|main/ressources/" kind="src" path="src"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/ressources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Steam/SteamApps/common/SlayTheSpire/desktop-1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Steam/SteamApps/common/SlayTheSpire/ModTheSpire.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Steam/SteamApps/common/SlayTheSpire/mods/BaseMod.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
