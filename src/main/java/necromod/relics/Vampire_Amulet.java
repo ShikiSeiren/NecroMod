@@ -12,7 +12,7 @@ public class Vampire_Amulet extends CustomRelic{
 	
 	private static final String ID = "Vampire_Amulet";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"On (non minion) Kill : Heal 2 HP. "
+			"Whenever you kill an enemy : Heal 2 HP. "
 	}; 
 	//private static final int HP_TO_HEAL;
 	

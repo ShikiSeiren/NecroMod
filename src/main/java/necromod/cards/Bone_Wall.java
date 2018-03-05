@@ -22,7 +22,7 @@ public class Bone_Wall extends CustomCard {
 	private static final int COST = 1;
 	private static final int BLOCK_AMT = 8;
 	private static final int UPGRADE_PLUS_BLOCK = 3;
-	private static final int POOL = 0;	
+	private static final int POOL = 1;	
 	
 	public Bone_Wall() {
 		super(ID, NAME, NecroMod.makePath(NecroMod.BONE_WALL), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
@@ -32,16 +32,13 @@ public class Bone_Wall extends CustomCard {
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
-		if (com.megacrit.cardcrawl.core.Settings.isDebug) {
-			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, 50));
-		} else {
+
 			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BonesPower(p, 1), 1));
-		}
 	}
 	
 	public AbstractCard makeCopy() {
-		return new Defend_White();
+		return new Bone_Wall();
 	}
 	
 	public void upgrade() {

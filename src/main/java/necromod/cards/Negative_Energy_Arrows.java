@@ -20,14 +20,14 @@ public class Negative_Energy_Arrows extends CustomCard{
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 3;
 	private static final int TIMES = 3;
-	public static final String DESCRIPTION = "Deal !D! damage "+ TIMES + " times.";
+	public static final String DESCRIPTION = "Deal !D! damage times.";
 	private static final int UPGRADE_PLUS_DMG = 2;
 	private static final int POOL = 0;
 	
 	public Negative_Energy_Arrows() {
 		super (ID, NAME, NecroMod.makePath(NecroMod.NEGATIVE_ENERGY_ARROWS), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.WHITE,
-				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.ENEMY, POOL);
 		this.baseDamage = ATTACK_DMG;
 		this.magicNumber = TIMES;
 	}
