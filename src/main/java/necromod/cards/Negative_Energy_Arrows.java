@@ -29,7 +29,8 @@ public class Negative_Energy_Arrows extends CustomCard{
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.WHITE,
 				AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.ENEMY, POOL);
 		this.baseDamage = ATTACK_DMG;
-		this.magicNumber = TIMES;
+		this.baseMagicNumber = TIMES;
+		this.magicNumber = this.baseMagicNumber;
 	}
 	
 	@Override
@@ -48,7 +49,7 @@ public class Negative_Energy_Arrows extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            this.upgradeDamage(UPGRADE_PLUS_DMG);
         }
 	
     }
