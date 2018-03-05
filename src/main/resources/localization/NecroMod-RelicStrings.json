@@ -1,0 +1,9 @@
+{
+  "Vampire_Amulet": {
+    "NAME": "Vampire Amulet",
+    "FLAVOR": "ShikiSeiren",
+    "DESCRIPTIONS": [
+      "On (non minion) Kill : Heal 2 HP."
+    ]
+  }
+}
