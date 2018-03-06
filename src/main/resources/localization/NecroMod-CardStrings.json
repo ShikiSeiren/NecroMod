@@ -31,7 +31,7 @@
 	
 	"Shade_Step": {
 		"NAME" : "Shade Step",
-		"DESCRIPTION" : "Draw !M! cards. NL If that card is a Skill : NL Gain !M! Energy."
+		"DESCRIPTION" : "Draw !M! cards. NL If that card(s) is a Skill : NL Gain 1 Energy."
 		},
 		
 	"Bone_Armor": {

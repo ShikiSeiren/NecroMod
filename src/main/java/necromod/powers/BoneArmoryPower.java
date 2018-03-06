@@ -11,8 +11,8 @@ import necromod.powers.*;
 
 public class BoneArmoryPower extends AbstractPower {
 	
-	public static final String POWER_ID = "Bones";
-	public static final String NAME = "Bones";
+	public static final String POWER_ID = "BoneArmoryPower";
+	public static final String NAME = "Bone Armory";
 	
 	public static final String[] DESCRIPTIONS = new String[] {
 			"Gain !M! Bones at the start of your turn."
@@ -24,8 +24,6 @@ public class BoneArmoryPower extends AbstractPower {
         this.owner = owner;
         this.amount = amount;
         this.updateDescription();
-        this.type = PowerType.BUFF;
-        this.isTurnBased = false;
         this.img = NecroMod.getBoneArmoryPowerTexture();
     }
     

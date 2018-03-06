@@ -29,7 +29,7 @@ public class Bone_Armory extends CustomCard {
 	public static final	String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;
 	private static final int POOL = 1;
-	private static final int AMOUNT = 1;
+	private final int AMOUNT = 1;
 	private static final int UPGRADE_AMOUNT = 1;
 	
 	public Bone_Armory() {
@@ -43,7 +43,7 @@ public class Bone_Armory extends CustomCard {
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BoneArmoryPower(p, 1), 1));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BoneArmoryPower(p, this.AMOUNT), this.AMOUNT));
 	}
 	
 	public AbstractCard makeCopy() {
