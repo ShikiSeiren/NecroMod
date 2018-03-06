@@ -2,21 +2,16 @@ package necromod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.FrailPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
-import necromod.actions.unique.NegativeLevelAction;
+import necromod.actions.common.NegativeLevelAction;
 import necromod.patches.AbstractCardEnum;
-import necromod.powers.BonesPower;
 import necromod.powers.NegativeLevelsPower;
 
 public class Negative_Energy_Arrows extends CustomCard{
@@ -48,12 +43,14 @@ public class Negative_Energy_Arrows extends CustomCard{
         for (int i = 0; i < 3; i++) {
 			AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
 					new DamageInfo(p, this.damage, this.damageTypeForTurn),
-					AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+					AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         }
+        /**
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -this.AMOUNT), -this.AMOUNT));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new FrailPower(m, (this.AMOUNT*2), false),
 				(this.AMOUNT*2), true, AbstractGameAction.AttackEffect.NONE));
-        //AbstractDungeon.actionManager.addToBottom(new NegativeLevelAction(this.owner, this.source, this.amount));
+		**/		
+       AbstractDungeon.actionManager.addToBottom(new NegativeLevelAction(m, p, this.AMOUNT));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new NegativeLevelsPower(m, p, AMOUNT), AMOUNT));
     }
 	

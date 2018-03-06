@@ -2,7 +2,7 @@ package necromod;
 
 import java.nio.charset.StandardCharsets;
 
-import com.megacrit.cardcrawl.helpers.GameDictionary;
+//import com.megacrit.cardcrawl.helpers.GameDictionary;
 import necromod.cards.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,31 +10,31 @@ import org.apache.logging.log4j.Logger;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;/**
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;**/
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+//import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
+//import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;
 import basemod.ModPanel;
-import basemod.abstracts.CustomUnlockBundle;
+//import basemod.abstracts.CustomUnlockBundle;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
-import basemod.interfaces.OnCardUseSubscriber;
+//import basemod.interfaces.OnCardUseSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
-import basemod.interfaces.SetUnlocksSubscriber;
+//import basemod.interfaces.SetUnlocksSubscriber;
 
 import necromod.characters.TheNecromancer;
 import necromod.patches.AbstractCardEnum;
@@ -68,29 +68,36 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     //card images
     
     public static final String BONE_WALL = "cards/bone_wall.png";
-    public static final String BONE_ARMOR = "cards/bone_armor.png";
     public static final String DEFEND_WHITE = "cards/defend_white.png";
     public static final String NEGATIVE_ENERGY_ARROWS = "cards/negative_energy_arrows.png";
     public static final String STRIKE_WHITE = "cards/strike_white.png";
     
+    public static final String BONE_ARMOR = "cards/bone_armor.png";
     public static final String NEGATIVE_ENERGY_JAVELIN = "cards/negative_energy_javelin.png";
     public static final String THOUSAND_BONE_KNIVES = "cards/thousand_bone_knives.png";
     public static final String SHADE_STEP = "cards/shade_step.png";
     public static final String BONE_ARMORY = "cards/bone_armory.png";
-    
-    
+    public static final String BONE_SPIKES = "cards/bone_spikes.png";
+    public static final String NEGATIVE_ENERGY_BOMB = "cards/negative_energy_bomb.png";
+    public static final String BLOOD_FOR_BLOOD = "cards/blood_for_blood.png";
+    public static final String SUMMON_DEATH_KNIGHT = "cards/summon_death_knight.png";
+    public static final String BLOOD_WAKE = "cards/blood_wake.png";
+    public static final String LIFE_TAP = "cards/life_tap.png";
+        
     
     //power images
     
     public static final String BONES_POWER = "powers/bones.png"; 
     public static final String ARMORY_POWER = "powers/armory.png";
     public static final String NEGATIVE_LEVEL = "powers/negative_level.png";
+    public static final String BLOOD_POWER = "powers/blood.png";
+    public static final String BLOOD_FOR_BLOOD_POWER = "powers/blood_for_blood.png";
+    public static final String DEATH_KNIGHT_POWER = "powers/death_knight.png";
     
     
     //relic images
     
     public static final String VAMPIRE_AMULET_RELIC = "relics/vampire_amulet.png";
-    //debuff images
     
     //necromancer assets
     
@@ -125,6 +132,17 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     	return new Texture(makePath(NEGATIVE_LEVEL));
     }
     
+    public static Texture getBloodPowerTexture() {
+    	return new Texture(makePath(BLOOD_POWER));
+    }
+    
+    public static Texture getBloodForBloodPowerTexture() {
+    	return new Texture(makePath(BLOOD_FOR_BLOOD_POWER));
+    }
+    
+    public static Texture getDeathKnightPowerTexture() {
+    	return new Texture(makePath(DEATH_KNIGHT_POWER));
+    }
     
     /**
      * Makes a full path for a resource path
@@ -234,19 +252,16 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Thousand_Bone_Knives());
 		BaseMod.addCard(new Bone_Armor());
 		BaseMod.addCard(new Bone_Armory());
-		
-		logger.info("added block 4");
-		
-		BaseMod.addCard(new Bone_Armor());
-		
-		logger.info("added block 3");
-		
 		BaseMod.addCard(new Shade_Step());
 		
+		logger.info("added tested cards");
 		
-		
-
-		
+		BaseMod.addCard(new Bone_Spikes());		
+		BaseMod.addCard(new Negative_Energy_Bomb());
+		BaseMod.addCard(new Blood_For_Blood());
+		BaseMod.addCard(new Summon_Death_Knight());
+		BaseMod.addCard(new Blood_Wake());
+		BaseMod.addCard(new Life_Tap());
 		
 		logger.info("done editting cards");
 		

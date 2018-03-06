@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.core.*;
 
 public class ShadeStepAction extends AbstractGameAction {
 	

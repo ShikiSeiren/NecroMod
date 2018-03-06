@@ -2,15 +2,11 @@ package necromod.characters;
 
 import java.util.ArrayList;
 
-import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.core.*;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.badlogic.gdx.math.*;
 import com.esotericsoftware.spine.*;
-import java.util.*;
 
 import basemod.abstracts.CustomPlayer;
 import necromod.NecroMod;

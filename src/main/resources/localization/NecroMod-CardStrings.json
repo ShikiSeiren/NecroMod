@@ -16,7 +16,7 @@
 	
 	"Bone_Wall": {
 		"NAME" : "Bone Wall",
-		"DESCRIPTION" : "Gain !B! Block. NL Gain !M! Bones."
+		"DESCRIPTION" : "Gain !B! Block. NL Gain 1 Bones."
 	},
 	
 	"Negative_Energy_Javelin": {
@@ -36,12 +36,42 @@
 		
 	"Bone_Armor": {
 		"NAME" : "Bone Armor",
-		"DESCRIPTION" : "Gain !B! Block. NL Gain !M! Bones. NL Gain !M! Artifact."
+		"DESCRIPTION" : "Gain !B! Block. NL Gain 1 Bones. NL Gain 1 Artifact."
 		},
 		
 	"Bone_Armory": {
 		"NAME" : "Bone Armory",
 		"DESCRIPTION" : "At the start of your turn : Gain !M! Bones."
+		},
+		
+	"Bone_Spikes": {
+		"NAME" : "Bone Spikes",
+		"DESCRIPTION" : "Deal !D! Damage. NL If you have Bones : Deal 4 additional Damage."
+		},
+		
+	"Negative_Energy_Bomb": {
+		"NAME" : "Negative Energy Bomb",
+		"DESCRIPTION" : "Deal !D! damage times 10 for each stack of Negative Level"
+		},
+		
+	"Summon_Death_Knight": {
+		"NAME" : "Summon Death Knight",
+		"DESCRIPTION" : "Summon a Death Knight (Add 1 Death Knight)."
+		},
+		
+	"Life_Tap": {
+		"NAME" : "Life Tap",
+		"DESCRIPTION" : "Lose !M! HP. Gain 2 Energy."
+		},
+		
+	"Blood_Wake": {
+		"NAME" : "Blood Wake",
+		"DESCRIPTION" : "Lose 3 HP. Deal !D! damage."
+		},
+		
+	"Blood_For_Blood": {
+		"NAME" : "Blood for Blood",
+		"DESCRIPTION" : "Whenever you lose HP : Gain 1 Blood."
 		}
 	
 }	

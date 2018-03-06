@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
-import necromod.powers.BonesPower;
 
 public class Thousand_Bone_Knives extends CustomCard{
 	
@@ -31,7 +30,7 @@ public class Thousand_Bone_Knives extends CustomCard{
 	public Thousand_Bone_Knives() {
 		super (ID, NAME, NecroMod.makePath(NecroMod.THOUSAND_BONE_KNIVES), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.WHITE,
-				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
 		
 		this.baseDamage = ATTACK_DMG;
 		this.baseMagicNumber = UPGRADE_TIMES_AMT;

@@ -5,8 +5,6 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.characters.*;
 import com.megacrit.cardcrawl.monsters.*;
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.actions.*;
-import com.megacrit.cardcrawl.actions.unique.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.*;
 
@@ -28,7 +26,7 @@ public class Shade_Step extends CustomCard{
 		
 		public Shade_Step() {
 			super(ID, NAME, NecroMod.makePath(NecroMod.SHADE_STEP), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
-					AbstractCardEnum.WHITE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
+					AbstractCardEnum.WHITE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
 			this.energyGain = ENERGY_AMT;
 			this.baseMagicNumber = this.magicNumber = 1;
 		}
@@ -37,8 +35,11 @@ public class Shade_Step extends CustomCard{
 			if (AbstractDungeon.player.drawPile.isEmpty()) {
 	            AbstractDungeon.actionManager.addToBottom(new EmptyDeckShuffleAction());
 	        }
-			AbstractDungeon.actionManager.addToBottom(new ShadeStepAction(this.energyGain));
-			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, magicNumber));
+			for(int i = 0; i < this.magicNumber; i++) {
+				AbstractDungeon.actionManager.addToBottom(new ShadeStepAction(this.energyGain));
+				AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
+			}
+			
 			
 		}
 		

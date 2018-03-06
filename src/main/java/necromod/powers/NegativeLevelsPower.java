@@ -1,18 +1,11 @@
 package necromod.powers;
 
-import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.dungeons.*;
-import com.megacrit.cardcrawl.characters.*;
-import com.megacrit.cardcrawl.unlock.*;
-import com.megacrit.cardcrawl.rooms.*;
-import com.megacrit.cardcrawl.actions.*;
-import com.megacrit.cardcrawl.actions.unique.*;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.actions.common.*;
 
 import necromod.NecroMod;
-import necromod.actions.unique.NegativeLevelAction;
 
 public class NegativeLevelsPower extends AbstractPower {
 	public static final String POWER_ID = "Negative_Level";
@@ -21,15 +14,12 @@ public class NegativeLevelsPower extends AbstractPower {
 			"Adds -!M! Strength. NL Adds -!M! Dexterity."
 	};
 	
-	private int nLevelAmt;
-	private AbstractCreature source;
 	
     
     public NegativeLevelsPower(final AbstractCreature owner, final AbstractCreature source, final int nLevelAmt) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
-        this.source = source;
         this.amount = nLevelAmt;
         this.updateDescription();
         this.type = PowerType.DEBUFF;
