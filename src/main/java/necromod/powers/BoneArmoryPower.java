@@ -1,0 +1,42 @@
+package necromod.powers;
+
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.AbstractPower.PowerType;
+
+import necromod.NecroMod;
+import necromod.powers.*;
+
+public class BoneArmoryPower extends AbstractPower {
+	
+	public static final String POWER_ID = "Bones";
+	public static final String NAME = "Bones";
+	
+	public static final String[] DESCRIPTIONS = new String[] {
+			"Gain !M! Bones at the start of your turn."
+	};
+	
+    public BoneArmoryPower(final AbstractCreature owner, int amount) {
+        this.name = NAME;
+        this.ID = POWER_ID;
+        this.owner = owner;
+        this.amount = amount;
+        this.updateDescription();
+        this.type = PowerType.BUFF;
+        this.isTurnBased = false;
+        this.img = NecroMod.getBoneArmoryPowerTexture();
+    }
+    
+    @Override
+    public void updateDescription() {
+    	this.description = DESCRIPTIONS[0] + this.amount;
+    }
+    
+    @Override
+    public void atStartOfTurn() {
+    	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new BonesPower(this.owner, this.amount), this.amount));
+    }
+
+}

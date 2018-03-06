@@ -58,8 +58,6 @@ public class TheNecromancer extends CustomPlayer{
 		retVal.add("Strike_W");
 		retVal.add("Strike_W");
 		retVal.add("Strike_W");
-		retVal.add("Strike_W");
-		retVal.add("Defend_W");
 		retVal.add("Defend_W");
 		retVal.add("Defend_W");
 		retVal.add("Defend_W");

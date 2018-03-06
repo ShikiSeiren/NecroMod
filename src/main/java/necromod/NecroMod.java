@@ -68,13 +68,24 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     //card images
     
     public static final String BONE_WALL = "cards/bone_wall.png";
+    public static final String BONE_ARMOR = "cards/bone_armor.png";
     public static final String DEFEND_WHITE = "cards/defend_white.png";
     public static final String NEGATIVE_ENERGY_ARROWS = "cards/negative_energy_arrows.png";
     public static final String STRIKE_WHITE = "cards/strike_white.png";
     
+    public static final String NEGATIVE_ENERGY_JAVELIN = "cards/negative_energy_javelin.png";
+    public static final String THOUSAND_BONE_KNIVES = "cards/thousand_bone_knives.png";
+    public static final String SHADE_STEP = "cards/shade_step.png";
+    public static final String BONE_ARMORY = "cards/bone_armory.png";
+    
+    
+    
     //power images
     
     public static final String BONES_POWER = "powers/bones.png"; 
+    public static final String ARMORY_POWER = "powers/armory.png";
+    public static final String NEGATIVE_LEVEL = "powers/negative_level.png";
+    
     
     //relic images
     
@@ -104,6 +115,14 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     
     public static Texture getVampireAmuletTexture() {
     	return new Texture(makePath(VAMPIRE_AMULET_RELIC));
+    }
+    
+    public static Texture getBoneArmoryPowerTexture() {
+    	return new Texture(makePath(ARMORY_POWER));
+    }
+    
+    public static Texture getNegativeLevelTexture() {
+    	return new Texture(makePath(NEGATIVE_LEVEL));
     }
     
     
@@ -210,6 +229,24 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		
 		BaseMod.addCard(new Bone_Wall());
 		BaseMod.addCard(new Negative_Energy_Arrows());
+		
+		BaseMod.addCard(new Negative_Energy_Javelin());
+		BaseMod.addCard(new Thousand_Bone_Knives());
+		BaseMod.addCard(new Bone_Armor());
+		BaseMod.addCard(new Bone_Armory());
+		
+		logger.info("added block 4");
+		
+		BaseMod.addCard(new Bone_Armor());
+		
+		logger.info("added block 3");
+		
+		BaseMod.addCard(new Shade_Step());
+		
+		
+		
+
+		
 		
 		logger.info("done editting cards");
 		
