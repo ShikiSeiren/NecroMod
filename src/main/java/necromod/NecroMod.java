@@ -253,15 +253,16 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Bone_Armor());
 		BaseMod.addCard(new Bone_Armory());
 		BaseMod.addCard(new Shade_Step());
-		
-		logger.info("added tested cards");
-		
 		BaseMod.addCard(new Bone_Spikes());		
 		BaseMod.addCard(new Negative_Energy_Bomb());
 		BaseMod.addCard(new Blood_For_Blood());
 		BaseMod.addCard(new Summon_Death_Knight());
 		BaseMod.addCard(new Blood_Wake());
 		BaseMod.addCard(new Life_Tap());
+		
+		logger.info("added tested cards");
+		
+		BaseMod.addCard(new Wall_Of_Bones_Proof_Of_Concept());
 		
 		logger.info("done editting cards");
 		
