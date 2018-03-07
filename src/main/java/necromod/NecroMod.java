@@ -34,6 +34,7 @@ import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 //import basemod.interfaces.OnCardUseSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
+import basemod.interfaces.EditKeywordsSubscriber;
 //import basemod.interfaces.SetUnlocksSubscriber;
 
 import necromod.characters.TheNecromancer;
@@ -43,7 +44,7 @@ import necromod.relics.Vampire_Amulet;
 
 @SpireInitializer
 public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber,
-	EditStringsSubscriber{             // , OnCardUseSubscriber, SetUnlocksSubscriber, 
+	EditStringsSubscriber, EditKeywordsSubscriber {             // , OnCardUseSubscriber, SetUnlocksSubscriber, 
 	
 	public static final Logger logger = LogManager.getLogger(NecroMod.class.getName());
 	
@@ -74,6 +75,8 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     
     public static final String BONE_ARMOR = "cards/bone_armor.png";
     public static final String NEGATIVE_ENERGY_JAVELIN = "cards/negative_energy_javelin.png";
+    public static final String NEGATIVE_ENERGY_BURST = "cards/negative_energy_burst.png";
+    public static final String NEGATIVE_ENERGY_SPHERE = "cards/negative_energy_sphere.png";
     public static final String THOUSAND_BONE_KNIVES = "cards/thousand_bone_knives.png";
     public static final String SHADE_STEP = "cards/shade_step.png";
     public static final String BONE_ARMORY = "cards/bone_armory.png";
@@ -83,6 +86,14 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     public static final String SUMMON_DEATH_KNIGHT = "cards/summon_death_knight.png";
     public static final String BLOOD_WAKE = "cards/blood_wake.png";
     public static final String LIFE_TAP = "cards/life_tap.png";
+    public static final String LIFE_DRAIN = "cards/life_drain.png"; 
+    public static final String HELL_FLAME = "cards/hell_flame.png";
+    public static final String BONE_SHIFT = "cards/bone_shift.png";
+    public static final String SPECTRAL_WALK = "cards/spectral_walk.png";
+    public static final String BLOOD_SHIELD = "cards/blood_shield.png";
+    public static final String FEAR = "cards/scare.png";
+    public static final String SHACKLES_OF_PAIN = "cards/shackles_of_pain.png";
+    public static final String VAMPIRIC_STRIKE = "cards/vampiric_strike.png";
         
     
     //power images
@@ -93,7 +104,9 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     public static final String BLOOD_POWER = "powers/blood.png";
     public static final String BLOOD_FOR_BLOOD_POWER = "powers/blood_for_blood.png";
     public static final String DEATH_KNIGHT_POWER = "powers/death_knight.png";
-    
+    public static final String HELL_FLAME_POWER = "powers/hell_flame.png";
+    public static final String SPECTRAL_POWER = "powers/spectral.png";
+    public static final String SHACKLES_POWER = "powers/shackles.png";
     
     //relic images
     
@@ -144,6 +157,17 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     	return new Texture(makePath(DEATH_KNIGHT_POWER));
     }
     
+    public static Texture getHellFlamePowerTexture() {
+    	return new Texture(makePath(HELL_FLAME_POWER));
+    }
+    
+    public static Texture getSpectralPowerTexture() {
+    	return new Texture(makePath(SPECTRAL_POWER));
+    }
+    
+    public static Texture getShacklesPowerTexture() {
+    	return new Texture(makePath(SHACKLES_POWER));
+    }
     /**
      * Makes a full path for a resource path
      * @param resource the resource, must *NOT* have a leading "/"
@@ -168,6 +192,9 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 
         logger.info("subscribing to editStrings event");
         BaseMod.subscribeToEditStrings(this);
+        
+        logger.info("subscribing to editKeywords event");
+        BaseMod.subscribeToEditKeywords(this);
         
         /* Disable this during playtesting for being counterproductive */
 //        logger.info("subscribing to setUnlocks event");
@@ -259,10 +286,23 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Summon_Death_Knight());
 		BaseMod.addCard(new Blood_Wake());
 		BaseMod.addCard(new Life_Tap());
+		BaseMod.addCard(new Wall_Of_Bones_Proof_Of_Concept());
 		
 		logger.info("added tested cards");
+				
+		BaseMod.addCard(new Life_Drain());
+		BaseMod.addCard(new Negative_Energy_Burst());
+		BaseMod.addCard(new Negative_Energy_Sphere());
+		BaseMod.addCard(new Vampiric_Strike());
+		BaseMod.addCard(new Hell_Flame());
+		BaseMod.addCard(new Bone_Shift());
+		BaseMod.addCard(new Spectral_Walk());
+		BaseMod.addCard(new Blood_Shield());
+		BaseMod.addCard(new Fear());
 		
-		BaseMod.addCard(new Wall_Of_Bones_Proof_Of_Concept());
+		logger.info("added working Test Cases");
+		BaseMod.addCard(new Shackles_Of_Pain());
+		//BaseMod.addCard(new ());
 		
 		logger.info("done editting cards");
 		
@@ -282,6 +322,38 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
         BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
 		
 		logger.info("done editting strings");
+	}
+	
+	public void receiveEditKeywords() {
+		String[] NegativeLevel = {"negative level", "negative levels", "Negative Level", "Negative Levels"};
+        
+		BaseMod.addKeyword(NegativeLevel, "Apply -Strength per level. Apply Frail per level.");
+		
+		String[] Bones = {"bone", "bones", "Bones"};
+        
+		BaseMod.addKeyword(Bones, "Upgrades the next Bone-type Attack.");
+		
+		String[] Blood = {"blood", "bloods", "Blood"};
+        
+		BaseMod.addKeyword(Blood, "Prevents the next card HP cost. Max of 3 Stacks.");
+		
+		String[] Hellfire = {"hellfire", "hellfires", "Hellfire"};
+        
+		BaseMod.addKeyword(Hellfire, "Deal damage per turn. Removed when the afflicted enemy a buff.");
+		
+		String[] ShacklesOfPain = {"shackles", "shackle", "shackles of pain", "shackle of pain", "Shackles of Pain"};
+        
+		BaseMod.addKeyword(ShacklesOfPain, "Apply Shackles of Pain. All Damage you take is also applied to the afflicted enemy.");
+		
+		String[] DeathKnight = {"deathknight", "deathknights", "death knight", "death knights", "Death Knight"};
+        
+		BaseMod.addKeyword(DeathKnight, "Summon. Deals damage to a random enemy each turn. Buffs the summoner with block");
+		
+		String[] Spectral = {"spectral", "spectrals", "Spectral"};
+        
+		BaseMod.addKeyword(Spectral, "Take 50% less damage this turn.");
+		
+		
 	}
 	/**
 	@Override

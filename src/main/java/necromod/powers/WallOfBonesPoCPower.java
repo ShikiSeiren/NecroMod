@@ -18,7 +18,6 @@ public class WallOfBonesPoCPower extends AbstractPower{
 	
 	public int DAMAGE_AMT;
 	public int TOTAL_DAMAGE = 0;
-	private Boolean justApplied;
 	
 	public WallOfBonesPoCPower(AbstractCreature owner, int amount) {
 		this.name = NAME;
@@ -30,7 +29,6 @@ public class WallOfBonesPoCPower extends AbstractPower{
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
 		this.img = NecroMod.getBoneArmoryPowerTexture();
-		this.justApplied = true;
 
 	}
 	/**
@@ -47,7 +45,7 @@ public class WallOfBonesPoCPower extends AbstractPower{
 	@Override
 	public int onAttacked(final DamageInfo info, int damageAmount) {
 		//TOTAL_DAMAGE +=damageAmount;
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new WallOfBonesPoCPower2(this.owner, damageAmount), TOTAL_DAMAGE));
+		AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.owner, this.owner, new WallOfBonesPoCPower2(this.owner, damageAmount), damageAmount));
 		damageAmount = 0;
 		return damageAmount;
 	}

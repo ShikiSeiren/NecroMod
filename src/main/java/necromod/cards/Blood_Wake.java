@@ -21,7 +21,7 @@ public class Blood_Wake extends CustomCard {
 	public static final String ID = "Blood_Wake";
 	public static final String NAME = "Blood Wake";
 	private static final int COST = 2;
-	private static final int ATTACK_DMG = 10;
+	private static final int ATTACK_DMG = 13;
 	public static final String DESCRIPTION = "Lose 3 HP. Deal !D! damage to ALL enemies.";
 	private static final int UPGRADE_PLUS_DMG = 5;
 	private static final int POOL = 1;

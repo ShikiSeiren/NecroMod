@@ -36,14 +36,17 @@ public class WallOfBonesPoCPower2 extends AbstractPower{
 	 public int onAttacked(final DamageInfo info, int damageAmount) {
         if (damageAmount > 0) {
         	this.flash();
-            if (this.amount <= damageAmount) {
-            	DAMAGE_TO_TAKE = damageAmount - this.amount;
+            if (this.amount < damageAmount) {
+            	DAMAGE_TO_TAKE = damageAmount - this.owner.getPower("WallOfBonesPoCPower2").amount;
             	damageAmount = 0;
-                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "WallOfBonesPoCPower2"));
+                AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "WallOfBonesPoCPower2"));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(this.owner, new DamageInfo(this.owner, this.DAMAGE_TO_TAKE, DamageInfo.DamageType.THORNS), 0));
+                
+                //Try :	 	AbstractDungeon.actionManager.addToBottom(new DamageAction(this.owner, new DamageInfo(this.owner, this.DAMAGE_TO_TAKE, DamageInfo.DamageType.THORNS), 0));
+                //			AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "WallOfBonesPoCPower2"));
             }
             else {
-                AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, "WallOfBonesPoCPower2", damageAmount));
+                AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, "WallOfBonesPoCPower2", damageAmount));
                 damageAmount = 0;
             }
         }

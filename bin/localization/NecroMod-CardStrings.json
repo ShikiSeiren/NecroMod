@@ -56,7 +56,7 @@
 		
 	"Summon_Death_Knight": {
 		"NAME" : "Summon Death Knight",
-		"DESCRIPTION" : "Summon a Death Knight (Add 1 Death Knight)."
+		"DESCRIPTION" : "Summon a Death Knight."
 		},
 		
 	"Life_Tap": {
@@ -69,9 +69,44 @@
 		"DESCRIPTION" : "Lose 3 HP. Deal !D! damage."
 		},
 		
+	"Bone_Shift": {
+		"NAME" : "Bone Shift",
+		"DESCRIPTION" : "Draw !M! cards. Gain 3 Bones."
+		},
+	
 	"Blood_For_Blood": {
 		"NAME" : "Blood for Blood",
 		"DESCRIPTION" : "Whenever you lose HP : Gain 1 Blood."
+		},
+		
+	"Spectral_Walk": {
+		"NAME" : "Spectral Walk",
+		"DESCRIPTION" : "Draw !M! Cards. Gain spectral."
+		},
+		
+	"Blood_Shield": {
+		"NAME" : "Blood Shield",
+		"DESCRIPTION" : "Lose !M! HP. Gain !B! Block. NL Gain 1 blood"
+		},
+		
+	"Scare": {
+		"NAME" : "Fear",
+		"DESCRIPTION" : "Apply !M! Vulnerable. Apply !M! Weak."
+		},
+				
+	"Hell_Flame": {
+		"NAME" : "Hell Flame",
+		"DESCRIPTION" : "Deal !D! damage. Apply 1 Hell Fire"
+		},
+		
+	"Shackles_Of_Pain": {
+		"NAME" : "Shackles of Pain",
+		"DESCRIPTION" : "Apply !M! Shackles of Pain."
+		},
+		
+	"Vampiric_Strike": {
+		"NAME" : "Vampiric Strike",
+		"DESCRIPTION" : "Deal !D! damage. If target was above 50% HP : Heal for 25% damage dealt."
 		}
-	
+		
 }	

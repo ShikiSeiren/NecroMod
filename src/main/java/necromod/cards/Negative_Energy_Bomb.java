@@ -50,7 +50,9 @@ public class Negative_Energy_Bomb extends CustomCard{
         }
 		else {
 		this.baseMagicNumber = m.getPower("Negative_Level").amount;
-		this.damage *= baseMagicNumber;
+		
+		this.baseDamage = this.damage *= baseMagicNumber;
+		
 		this.calculateCardDamage(m);
 		
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, m, new StrengthPower(m, this.baseMagicNumber), this.baseMagicNumber));
