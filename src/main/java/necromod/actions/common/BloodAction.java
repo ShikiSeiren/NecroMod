@@ -22,7 +22,7 @@ public class BloodAction extends AbstractGameAction {
 		if(this.target.hasPower("Blood")){
 			AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.target, this.source, "Blood", 1));
 		} else {
-			AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.target, this.source, this.amount));
+			AbstractDungeon.actionManager.addToTop(new LoseHPAction(this.target, this.source, this.amount));
 		}
 		
 		this.isDone = true;

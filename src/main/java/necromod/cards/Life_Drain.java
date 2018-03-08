@@ -39,7 +39,7 @@ public class Life_Drain extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 			
         AbstractDungeon.actionManager.addToBottom(new VampireDamageAction((AbstractCreature)m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-        AbstractDungeon.actionManager.addToBottom(new ModifyDamageAction(this, -2));
+        AbstractDungeon.actionManager.addToBottom(new ModifyDamageAction(this, -this.magicNumber));
         	
     }
 	

@@ -19,9 +19,9 @@ public class Vampiric_Strike extends CustomCard {
 	public static final String ID = "Vampiric_Strike";
 	public static final String NAME = "Vampiric Strike";
 	private static final int COST = 1;
-	private static final int ATTACK_DMG = 6;
+	private static final int ATTACK_DMG = 8;
 	public static final String DESCRIPTION = "Deal !D! damage. If target was above 50% HP : Heal for 25% damage dealt.";
-	private static final int UPGRADE_PLUS_DMG = 3;
+	private static final int UPGRADE_PLUS_DMG = 4;
 	private static final int POOL = 1;
 	public final int AMOUNT = 1;
 	public int HealAmount = 0;

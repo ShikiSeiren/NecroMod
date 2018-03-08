@@ -22,7 +22,7 @@ public class Hell_Flame extends CustomCard {
 	public static final String NAME = "Hell Flame";
 	private static final int COST = 2;
 	private static final int ATTACK_DMG = 15;
-	public static final String DESCRIPTION = "Deal !D! damage. Apply 1 Hell Flame. Exhaust.";
+	public static final String DESCRIPTION = "Deal !D! damage. Apply 1 Hellfire . Exhaust.";
 	private static final int UPGRADE_PLUS_DMG = 3;
 	private static final int POOL = 1;
 	public final int AMOUNT = 1;
@@ -43,7 +43,7 @@ public class Hell_Flame extends CustomCard {
 
 		AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
 		
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new HellFlamePower(m, AMOUNT), AMOUNT));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new HellFlamePower(m, p, AMOUNT), AMOUNT));
         
         	
     }

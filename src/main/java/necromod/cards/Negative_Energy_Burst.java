@@ -22,7 +22,7 @@ public class Negative_Energy_Burst extends CustomCard{
 	public static final String NAME = "Negative Energy Burst";
 	private static final int COST = 2;
 	private static final int ATTACK_DMG = 15;
-	public static final String DESCRIPTION = "Deal !D! damage to ALL enemies. Apply !M! Negative Level(s). NL Apply -2 Strength. NL Apply 2 Frail. NL Exhaust.";
+	public static final String DESCRIPTION = "Deal !D! damage to ALL enemies. Apply 2 NegativeLevels. NL Apply -2 Strength. NL Apply 2 Frail. NL Exhaust.";
 	private static final int UPGRADE_PLUS_DMG = 3;
 	private static final int POOL = 1;
 	public final int AMOUNT = 2;

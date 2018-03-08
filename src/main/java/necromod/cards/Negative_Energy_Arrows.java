@@ -17,11 +17,11 @@ import necromod.powers.NegativeLevelsPower;
 public class Negative_Energy_Arrows extends CustomCard{
 	
 	public static final String ID = "Negative_Energy_Arrows";
-	public static final String NAME = "Negative_Energy_Arrows";
+	public static final String NAME = "Negative Energy Arrows";
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 3;
 	private static final int TIMES = 3;
-	public static final String DESCRIPTION = "Deal !D! damage " + TIMES + " times.";
+	public static final String DESCRIPTION = "Deal !D! damage " + TIMES + " times. Add 1 negativelevel.";
 	private static final int UPGRADE_PLUS_DMG = 2;
 	private static final int POOL = 0;
 	

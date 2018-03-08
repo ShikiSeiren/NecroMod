@@ -41,7 +41,7 @@
 		
 	"Bone_Armory": {
 		"NAME" : "Bone Armory",
-		"DESCRIPTION" : "At the start of your turn : Gain !M! Bones."
+		"DESCRIPTION" : "At the start of your turn : Gain 1 Bones."
 		},
 		
 	"Bone_Spikes": {
@@ -51,7 +51,7 @@
 		
 	"Negative_Energy_Bomb": {
 		"NAME" : "Negative Energy Bomb",
-		"DESCRIPTION" : "Deal !D! damage times 10 for each stack of Negative Level"
+		"DESCRIPTION" : "Deal !D! damage times 10 for each stack of NegativeLevel"
 		},
 		
 	"Summon_Death_Knight": {
@@ -96,7 +96,7 @@
 				
 	"Hell_Flame": {
 		"NAME" : "Hell Flame",
-		"DESCRIPTION" : "Deal !D! damage. Apply 1 Hell Fire"
+		"DESCRIPTION" : "Deal !D! damage. Apply 1 Hellfire"
 		},
 		
 	"Shackles_Of_Pain": {
@@ -107,6 +107,36 @@
 	"Vampiric_Strike": {
 		"NAME" : "Vampiric Strike",
 		"DESCRIPTION" : "Deal !D! damage. If target was above 50% HP : Heal for 25% damage dealt."
+		},
+	
+	"Blood_Is_Power": {
+		"NAME" : "Blood is Power",
+		"DESCRIPTION" : "Lose 2 HP. Gain 2 Strength. Exhaust."
+		},
+		
+	"Summon_Undead_Army": {
+		"NAME" : "Summon Undead Army",
+		"DESCRIPTION" : "Summon !M! Zombies"
+		},
+		
+	"Summon_Undead": {
+		"NAME" : "Summon Undead",
+		"DESCRIPTION" : "Summon a random Undead."
+		},
+		
+	"Summon_Lich": {
+		"NAME" : "Summon Lich",
+		"DESCRIPTION" : "Summon a powerful undead Mage that deals !D! damage to ALL enemies.."
+		},		
+		
+	"Summon_Vampire_Lady": {
+		"NAME" : "Summon Lich",
+		"DESCRIPTION" : "Summon a powerful Vampire that deals !D! damage to a random enemy and heals for unblocked damage dealt."
+		},			
+		
+	"Bone_Prison": {
+		"NAME" : "Bone Prison",
+		"DESCRIPTION" : "If the target intends to attack : Stun it. Add 1 Bones."
 		}
 		
 }	

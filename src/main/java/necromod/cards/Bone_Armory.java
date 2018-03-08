@@ -20,10 +20,10 @@ public class Bone_Armory extends CustomCard {
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final	String NAME = cardStrings.NAME;
 	public static final	String DESCRIPTION = cardStrings.DESCRIPTION;
+	public static final String UPGRADE_DESCRIPTION = "At the start of your turn : Gain 1 Bones. NL Innate." ;
 	private static final int COST = 1;
 	private static final int POOL = 1;
 	private final int AMOUNT = 1;
-	private static final int UPGRADE_AMOUNT = 1;
 	
 	public Bone_Armory() {
 		super(ID, NAME, NecroMod.makePath(NecroMod.BONE_ARMORY), COST, DESCRIPTION, AbstractCard.CardType.POWER,
@@ -46,7 +46,9 @@ public class Bone_Armory extends CustomCard {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeMagicNumber(UPGRADE_AMOUNT);
+            this.isInnate = true;
+            this.rawDescription = Bone_Armory.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
 		}
 	}
 	

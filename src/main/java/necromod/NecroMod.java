@@ -94,7 +94,15 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     public static final String FEAR = "cards/scare.png";
     public static final String SHACKLES_OF_PAIN = "cards/shackles_of_pain.png";
     public static final String VAMPIRIC_STRIKE = "cards/vampiric_strike.png";
-        
+    public static final String SUMMON_LICH = "cards/summon_lich.png";
+    public static final String SUMMON_VAMPIRE_LADY = "cards/summon_vampire_lady.png";
+    public static final String BLOOD_IS_POWER = "cards/blood_is_power.png";   
+    public static final String SUMMON_UNDEAD_ARMY = "cards/summon_undead_army.png";
+    public static final String FINGER_OF_DEATH = "cards/finger_of_death.png";
+    public static final String BLOOD_WHIP = "cards/blood_whip.png";
+    public static final String SUMMON_UNDEAD = "cards/summon_undead.png";
+    public static final String BONE_PRISON ="cards/bone_prison.png";
+    
     
     //power images
     
@@ -107,6 +115,13 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     public static final String HELL_FLAME_POWER = "powers/hell_flame.png";
     public static final String SPECTRAL_POWER = "powers/spectral.png";
     public static final String SHACKLES_POWER = "powers/shackles.png";
+    public static final String LICH_POWER = "powers/lich.png";
+    public static final String ELDER_LICH_POWER = "powers/elder_lich.png";
+    public static final String VAMPIRE_LADY_POWER = "powers/vampire_lady.png";
+    public static final String VAMPIRE_PRINCESS_POWER = "powers/vampire_princess.png";
+    public static final String ZOMBIE_POWER = "powers/zombie.png";
+    public static final String BONE_PRISON_POWER ="powers/bone_prison.png";
+
     
     //relic images
     
@@ -168,6 +183,31 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     public static Texture getShacklesPowerTexture() {
     	return new Texture(makePath(SHACKLES_POWER));
     }
+    
+    public static Texture getLichPowerTexture() {
+    	return new Texture(makePath(LICH_POWER));
+    }
+    
+    public static Texture getElderLichPowerTexture() {
+    	return new Texture(makePath(ELDER_LICH_POWER));
+    }
+    
+    public static Texture getVampireLadyPowerTexture() {
+    	return new Texture(makePath(VAMPIRE_LADY_POWER));
+    }
+    
+    public static Texture getVampirePrincessPowerTexture() {
+    	return new Texture(makePath(VAMPIRE_PRINCESS_POWER));
+    }
+    
+    public static Texture getZombiePowerTexture() {
+    	return new Texture(makePath(ZOMBIE_POWER));
+    }
+    
+    public static Texture getBonePrisonPowerTexture() {
+    	return new Texture(makePath(BONE_PRISON_POWER));
+    }
+    
     /**
      * Makes a full path for a resource path
      * @param resource the resource, must *NOT* have a leading "/"
@@ -287,9 +327,6 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Blood_Wake());
 		BaseMod.addCard(new Life_Tap());
 		BaseMod.addCard(new Wall_Of_Bones_Proof_Of_Concept());
-		
-		logger.info("added tested cards");
-				
 		BaseMod.addCard(new Life_Drain());
 		BaseMod.addCard(new Negative_Energy_Burst());
 		BaseMod.addCard(new Negative_Energy_Sphere());
@@ -299,9 +336,29 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Spectral_Walk());
 		BaseMod.addCard(new Blood_Shield());
 		BaseMod.addCard(new Fear());
-		
-		logger.info("added working Test Cases");
 		BaseMod.addCard(new Shackles_Of_Pain());
+		
+		logger.info("added tested cards");
+				
+		logger.info("added working Test Cases");
+		
+		BaseMod.addCard(new Blood_Is_Power());
+		logger.info("added Test Case");
+		BaseMod.addCard(new Bone_Prison());
+		logger.info("added Test Case");
+		BaseMod.addCard(new Blood_Whip());
+		logger.info("added Test Case");
+		BaseMod.addCard(new Summon_Lich());
+		logger.info("added Test Case");
+		BaseMod.addCard(new Summon_Vampire_Lady());
+		logger.info("added Test Case");
+		BaseMod.addCard(new Summon_Undead());
+		logger.info("added Test Case");
+		BaseMod.addCard(new Summon_Undead_Army());
+		logger.info("added Test Case");
+		BaseMod.addCard(new Finger_Of_Death());
+		logger.info("added Test Case");
+		
 		//BaseMod.addCard(new ());
 		
 		logger.info("done editting cards");
@@ -325,7 +382,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 	}
 	
 	public void receiveEditKeywords() {
-		String[] NegativeLevel = {"negative level", "negative levels", "Negative Level", "Negative Levels"};
+		String[] NegativeLevel = {"negativelevel", "negativelevels"};
         
 		BaseMod.addKeyword(NegativeLevel, "Apply -Strength per level. Apply Frail per level.");
 		
@@ -352,6 +409,10 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		String[] Spectral = {"spectral", "spectrals", "Spectral"};
         
 		BaseMod.addKeyword(Spectral, "Take 50% less damage this turn.");
+		
+		String[] Zombie = {"zombie", "zombies"};
+        
+		BaseMod.addKeyword(Zombie, "Summon. Deals damage to a random enemy each turn.");
 		
 		
 	}

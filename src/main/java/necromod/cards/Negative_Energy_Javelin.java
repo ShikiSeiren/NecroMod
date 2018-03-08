@@ -23,7 +23,7 @@ public class Negative_Energy_Javelin extends CustomCard{
 	public static final String NAME = "Negative Energy Javelin";
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 10;
-	public static final String DESCRIPTION = "Deal !D! damage.";
+	public static final String DESCRIPTION = "Deal !D! damage. NL Apply 1 negativelevel .";
 	private static final int UPGRADE_PLUS_DMG = 3;
 	private static final int POOL = 1;
 	public final int AMOUNT = 1;

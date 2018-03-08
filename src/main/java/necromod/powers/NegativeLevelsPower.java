@@ -14,7 +14,7 @@ public class NegativeLevelsPower extends AbstractPower {
 			"Adds -!M! Strength. NL Adds !M! Frail."
 	};
 	
-	
+	public AbstractCreature source;
     
     public NegativeLevelsPower(final AbstractCreature owner, final AbstractCreature source, final int nLevelAmt) {
         this.name = NAME;
@@ -25,6 +25,7 @@ public class NegativeLevelsPower extends AbstractPower {
         this.type = PowerType.DEBUFF;
         this.isTurnBased = false;
         this.img = NecroMod.getNegativeLevelTexture();
+        this.source = source;
         
     }
     
@@ -44,10 +45,10 @@ public class NegativeLevelsPower extends AbstractPower {
     	
         if(this.amount <1) {
         	AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "Negative_Level"));
-        	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, 1), 1));
+        	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.source, new StrengthPower(this.owner, 1), 1));
         }
         else {
-        	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount), this.amount));
+        	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.source, new StrengthPower(this.owner, this.amount), this.amount));
         }    	
 
     }

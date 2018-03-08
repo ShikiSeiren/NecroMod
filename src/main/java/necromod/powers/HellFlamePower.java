@@ -17,8 +17,9 @@ public class HellFlamePower extends AbstractPower {
 	public static final String[] DESCRIPTIONS = new String[] {
 			"Deal 8 Damage per turn. If the afflicted enemy casts a buff : Remove it."
 	};
+	public AbstractCreature source;
 	
-	public HellFlamePower(AbstractCreature owner, int amount) {
+	public HellFlamePower(AbstractCreature owner, AbstractCreature source, int amount) {
 		this.name = NAME;
 		this.ID = POWER_ID;
 		this.owner = owner;
@@ -27,13 +28,14 @@ public class HellFlamePower extends AbstractPower {
 		this.type = AbstractPower.PowerType.DEBUFF;
 		this.isTurnBased = false;
 		this.img = NecroMod.getHellFlamePowerTexture();
+		this.source = source;
 				
 	}
 	
 	@Override
     public void onApplyPower(final AbstractPower power, final AbstractCreature target, final AbstractCreature source) {
 		
-		if(power.type == PowerType.BUFF) {
+		if(power.type == PowerType.BUFF && (source != AbstractDungeon.player)) {
 			this.flash();
 			if(this.amount <1) {
 	        	AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "HellFlamePower"));
@@ -51,7 +53,7 @@ public class HellFlamePower extends AbstractPower {
     public void atStartOfTurn() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flashWithoutSound();
-            AbstractDungeon.actionManager.addToBottom(new PoisonLoseHpAction(this.owner, this.owner, 10, AbstractGameAction.AttackEffect.FIRE));
+            AbstractDungeon.actionManager.addToBottom(new PoisonLoseHpAction(this.owner, this.owner, (10*this.amount), AbstractGameAction.AttackEffect.FIRE));
         }
         
     }
