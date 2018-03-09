@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.monsters.*;
 
 import necromod.NecroMod;
-import necromod.actions.common.CheckIfDeadAction;
 
 public class DeathKnightPower extends AbstractPower {
 	public static final String POWER_ID = "DeathKnightPower";

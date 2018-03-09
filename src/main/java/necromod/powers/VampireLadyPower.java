@@ -1,12 +1,11 @@
 package necromod.powers;
 
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.monsters.*;
 
 import necromod.NecroMod;
-import necromod.actions.common.CheckIfDeadAction;
+
 
 public class VampireLadyPower extends AbstractPower {
 	public static final String POWER_ID = "VampireLadyPower";
