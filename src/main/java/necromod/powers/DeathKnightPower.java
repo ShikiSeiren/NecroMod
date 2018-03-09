@@ -1,14 +1,13 @@
 package necromod.powers;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.actions.common.*;
-
+import com.megacrit.cardcrawl.monsters.*;
 
 import necromod.NecroMod;
+import necromod.actions.common.CheckIfDeadAction;
 
 public class DeathKnightPower extends AbstractPower {
 	public static final String POWER_ID = "DeathKnightPower";
@@ -18,6 +17,7 @@ public class DeathKnightPower extends AbstractPower {
 	};
 	
 	public int DAMAGE_AMT;
+	public AbstractMonster m;
 	
 	public DeathKnightPower(AbstractCreature owner, int amount) {
 		this.name = NAME;
@@ -41,9 +41,12 @@ public class DeathKnightPower extends AbstractPower {
     public void atEndOfTurn(boolean isPlayer) {
     	
 		this.flash();
+
+		final AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(true);
+
+		AbstractDungeon.actionManager.addToBottom(new CheckIfDeadAction(randomMonster, this.owner, this.DAMAGE_AMT, this.owner.getPower("DeathKnightPower").amount, this.ID, true));
+		    
 		for(int i = 0; i < this.owner.getPower("DeathKnightPower").amount; i++) {
-			
-	        AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.getMonsters().getRandomMonster(true), new DamageInfo(this.owner, this.DAMAGE_AMT, DamageInfo.DamageType.THORNS), 0));
 			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, 5));			
 		}
 

@@ -31,7 +31,7 @@ public class LichPower extends AbstractPower {
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
 		this.img = NecroMod.getLichPowerTexture();
-
+		this.DAMAGE_AMT = damage;
 
 	}
 	

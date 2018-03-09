@@ -51,7 +51,7 @@
 		
 	"Negative_Energy_Bomb": {
 		"NAME" : "Negative Energy Bomb",
-		"DESCRIPTION" : "Deal !D! damage times 10 for each stack of NegativeLevel"
+		"DESCRIPTION" : "Deal !D! damage each stack of NegativeLevel."
 		},
 		
 	"Summon_Death_Knight": {
@@ -126,7 +126,7 @@
 		
 	"Summon_Lich": {
 		"NAME" : "Summon Lich",
-		"DESCRIPTION" : "Summon a powerful undead Mage that deals !D! damage to ALL enemies.."
+		"DESCRIPTION" : "Summon a powerful undead Mage that deals !D! damage to ALL enemies."
 		},		
 		
 	"Summon_Vampire_Lady": {
@@ -137,6 +137,11 @@
 	"Bone_Prison": {
 		"NAME" : "Bone Prison",
 		"DESCRIPTION" : "If the target intends to attack : Stun it. Add 1 Bones."
+		},
+		
+	"Spectral_Armor": {
+		"NAME" : "Spectral Armor",
+		"DESCRIPTION" : "Gain !B! Block. Gain 1 Spectral."
 		}
 		
 }	

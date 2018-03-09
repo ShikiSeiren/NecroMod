@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.powers.*;
 
 import necromod.NecroMod;
 
+
 public class HellFlamePower extends AbstractPower {
-	
 	public static final String POWER_ID = "HellFlamePower";
 	public static final String NAME = "Hellfire";
 	public static final String[] DESCRIPTIONS = new String[] {
