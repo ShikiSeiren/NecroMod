@@ -3,14 +3,21 @@ package necromod.characters;
 import java.util.ArrayList;
 
 import com.megacrit.cardcrawl.core.*;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.badlogic.gdx.math.*;
 import com.esotericsoftware.spine.*;
+import com.megacrit.cardcrawl.core.EnergyManager;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import basemod.abstracts.CustomPlayer;
 import necromod.NecroMod;
 import necromod.patches.TheNecromancerEnum;
+import necromod.actions.common.CheckIfDeadAction;
+
+
+
 
 public class TheNecromancer extends CustomPlayer{
 	
@@ -46,6 +53,16 @@ public class TheNecromancer extends CustomPlayer{
 
 				AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
 				e.setTime(e.getEndTime() * MathUtils.random());
+	}
+	
+	@Override
+	public void applyEndOfTurnTriggers() {
+		for (AbstractPower p : this.powers) {
+			p.atEndOfTurn(true);
+		}
+		// make sure that cards that get changed to ethereal are
+		// always exhausted
+		AbstractDungeon.actionManager.addToBottom(new CheckIfDeadAction(AbstractDungeon.getMonsters().getRandomMonster(true), AbstractDungeon.player, 0, 0, "", true));
 	}
 
 	public static ArrayList<String> getStartingDeck() {

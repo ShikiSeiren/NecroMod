@@ -142,6 +142,11 @@
 	"Spectral_Armor": {
 		"NAME" : "Spectral Armor",
 		"DESCRIPTION" : "Gain !B! Block. Gain 1 Spectral."
+		},
+		
+	"Detonate_Bones": {
+		"NAME" : "Detonate Bones",
+		"DESCRIPTION" : "Remove all bones. Apply !D! damage times the amount of stacks removed."
 		}
 		
 }	

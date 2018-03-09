@@ -42,9 +42,9 @@ public class DeathKnightPower extends AbstractPower {
     	
 		this.flash();
 
-		final AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(true);
+		//final AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(true);
 
-		AbstractDungeon.actionManager.addToBottom(new CheckIfDeadAction(randomMonster, this.owner, this.DAMAGE_AMT, this.owner.getPower("DeathKnightPower").amount, this.ID, true));
+		//AbstractDungeon.actionManager.addToBottom(new CheckIfDeadAction(randomMonster, this.owner, this.DAMAGE_AMT, this.owner.getPower("DeathKnightPower").amount, this.ID, true));
 		    
 		for(int i = 0; i < this.owner.getPower("DeathKnightPower").amount; i++) {
 			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, 5));			

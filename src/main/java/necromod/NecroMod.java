@@ -102,6 +102,9 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     public static final String BLOOD_WHIP = "cards/blood_whip.png";
     public static final String SUMMON_UNDEAD = "cards/summon_undead.png";
     public static final String BONE_PRISON ="cards/bone_prison.png";
+    public static final String DETONATE_BONES = "cards/detonate_bones.png";
+    public static final String SPECTRAL_ARMOR = "cards/spectral_armor.png";
+    public static final String GRASP_HEART = "cards/grasp_heart.png";
     
     
     //power images
@@ -121,6 +124,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     public static final String VAMPIRE_PRINCESS_POWER = "powers/vampire_princess.png";
     public static final String ZOMBIE_POWER = "powers/zombie.png";
     public static final String BONE_PRISON_POWER ="powers/bone_prison.png";
+    public static final String GRASP_HEART_POWER = "powers/grasp_heart.png";
 
     
     //relic images
@@ -206,6 +210,10 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     
     public static Texture getBonePrisonPowerTexture() {
     	return new Texture(makePath(BONE_PRISON_POWER));
+    }
+    
+    public static Texture getGraspHeartPowerTexture() {
+    	return new Texture(makePath(GRASP_HEART_POWER));
     }
     
     /**
@@ -337,29 +345,33 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Blood_Shield());
 		BaseMod.addCard(new Fear());
 		BaseMod.addCard(new Shackles_Of_Pain());
+		BaseMod.addCard(new Blood_Is_Power());
+		BaseMod.addCard(new Bone_Prison());
+		BaseMod.addCard(new Blood_Whip());
+		BaseMod.addCard(new Summon_Lich());
+		BaseMod.addCard(new Summon_Vampire_Lady());
+		BaseMod.addCard(new Summon_Undead());
+		BaseMod.addCard(new Summon_Undead_Army());
+		BaseMod.addCard(new Finger_Of_Death());
 		
 		logger.info("added tested cards");
+		
 				
 		logger.info("added working Test Cases");
 		
-		BaseMod.addCard(new Blood_Is_Power());
-		logger.info("added Test Case");
-		BaseMod.addCard(new Bone_Prison());
-		logger.info("added Test Case");
-		BaseMod.addCard(new Blood_Whip());
-		logger.info("added Test Case");
-		BaseMod.addCard(new Summon_Lich());
-		logger.info("added Test Case");
-		BaseMod.addCard(new Summon_Vampire_Lady());
-		logger.info("added Test Case");
-		BaseMod.addCard(new Summon_Undead());
-		logger.info("added Test Case");
-		BaseMod.addCard(new Summon_Undead_Army());
-		logger.info("added Test Case");
-		BaseMod.addCard(new Finger_Of_Death());
+		BaseMod.addCard(new Detonate_Bones());
 		logger.info("added Test Case");
 		
-		//BaseMod.addCard(new ());
+		BaseMod.addCard(new Spectral_Armor());
+		logger.info("added Test Case");
+		
+		BaseMod.addCard(new Grasp_Heart());
+		logger.info("added Test Case");
+		
+		/**	BaseMod.addCard(new ());
+			logger.info("added Test Case");
+		**/
+		
 		
 		logger.info("done editting cards");
 		
@@ -413,6 +425,10 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		String[] Zombie = {"zombie", "zombies"};
         
 		BaseMod.addKeyword(Zombie, "Summon. Deals damage to a random enemy each turn.");
+		
+		String[] CrushedHeart = {"crushedheart", "crushedhearts"};
+        
+		BaseMod.addKeyword(CrushedHeart, "Deals 3 damage each turn. Increases by 1 stack each turn.");
 		
 		
 	}

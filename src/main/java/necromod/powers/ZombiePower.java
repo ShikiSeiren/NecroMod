@@ -29,7 +29,6 @@ public class ZombiePower extends AbstractPower {
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
 		this.img = NecroMod.getZombiePowerTexture();
-
 	}
 	
 	@Override
@@ -44,9 +43,9 @@ public class ZombiePower extends AbstractPower {
 		
 		//for(int i = 0; i < this.owner.getPower("ZombiePower").amount; i++) {
 			
-		final AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(true);
+		//final AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(true);
 
-	    AbstractDungeon.actionManager.addToBottom(new CheckIfDeadAction(randomMonster, this.owner, 3, this.owner.getPower("ZombiePower").amount, this.ID, true));
+	    //AbstractDungeon.actionManager.addToBottom(new CheckIfDeadAction(randomMonster, this.owner, 3, this.owner.getPower("ZombiePower").amount, this.ID, true));
 	    
 			/**
 			m = AbstractDungeon.getMonsters().getRandomMonster(true);

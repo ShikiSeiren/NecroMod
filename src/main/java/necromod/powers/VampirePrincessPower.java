@@ -42,9 +42,9 @@ public class VampirePrincessPower extends AbstractPower {
     	
 		this.flash();
 		
-		final AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(true);
+		//final AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(true);
 
-	    AbstractDungeon.actionManager.addToBottom(new CheckIfDeadAction(randomMonster, this.owner, this.DAMAGE_AMT, this.owner.getPower("VampirePrincessPower").amount, this.ID, true));
+	    //AbstractDungeon.actionManager.addToBottom(new CheckIfDeadAction(randomMonster, this.owner, this.DAMAGE_AMT, this.owner.getPower("VampirePrincessPower").amount, this.ID, true));
 	        
 		
     }

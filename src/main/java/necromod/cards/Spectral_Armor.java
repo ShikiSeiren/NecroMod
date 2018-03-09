@@ -25,7 +25,7 @@ public class Spectral_Armor extends CustomCard {
 	private static final int POOL = 0;
 	
 	public Spectral_Armor() {
-		super(ID, NAME, NecroMod.makePath(NecroMod.DEFEND_WHITE), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
+		super(ID, NAME, NecroMod.makePath(NecroMod.SPECTRAL_ARMOR), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.WHITE, AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF, POOL);
 		this.baseBlock = BLOCK_AMT;
 	}
