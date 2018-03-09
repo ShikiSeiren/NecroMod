@@ -17,7 +17,7 @@ public class LichPower extends AbstractPower {
 	public static final String POWER_ID = "LichPower";
 	public static final String NAME = "Lich";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"A powerful undead mage. Deals !D! damge to ALL enemies at the end of each turn."
+			"A powerful undead mage. Deals 3 damge to ALL enemies at the end of each turn."
 	};
 	
 	public int DAMAGE_AMT;

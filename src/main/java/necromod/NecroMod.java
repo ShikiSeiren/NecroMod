@@ -105,6 +105,10 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     public static final String DETONATE_BONES = "cards/detonate_bones.png";
     public static final String SPECTRAL_ARMOR = "cards/spectral_armor.png";
     public static final String GRASP_HEART = "cards/grasp_heart.png";
+    public static final String NEGATIVE_ENERGY_MIST = "cards/negative_energy_mist.png";
+    public static final String CONSUME_ILLNESS = "cards/consume_illness.png";
+    public static final String BLOOD_CURSE = "cards/blood_curse.png";
+    public static final String NEGATIVE_ENERGY_SHIELD = "cards/negative_energy_shield.png";
     
     
     //power images
@@ -124,8 +128,8 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     public static final String VAMPIRE_PRINCESS_POWER = "powers/vampire_princess.png";
     public static final String ZOMBIE_POWER = "powers/zombie.png";
     public static final String BONE_PRISON_POWER ="powers/bone_prison.png";
-    public static final String GRASP_HEART_POWER = "powers/grasp_heart.png";
-
+    public static final String GRASP_HEART_POWER = "powers/crushed_heart.png";
+    public static final String NEGATIVE_SHIELD_POWER = "powers/negative_shield.png";
     
     //relic images
     
@@ -214,6 +218,10 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     
     public static Texture getGraspHeartPowerTexture() {
     	return new Texture(makePath(GRASP_HEART_POWER));
+    }
+    
+    public static Texture getNegativeShieldPowerTexture() {
+    	return new Texture(makePath(NEGATIVE_SHIELD_POWER));
     }
     
     /**
@@ -368,6 +376,19 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Grasp_Heart());
 		logger.info("added Test Case");
 		
+		BaseMod.addCard(new Consume_Illness());
+		logger.info("added Test Case");
+		
+		BaseMod.addCard(new Negative_Energy_Mist());
+		logger.info("added Test Case");
+		
+		BaseMod.addCard(new Blood_Curse());
+		logger.info("added Test Case");
+		
+		BaseMod.addCard(new Negative_Energy_Shield());
+		logger.info("added Test Case");
+		
+		/****/
 		/**	BaseMod.addCard(new ());
 			logger.info("added Test Case");
 		**/

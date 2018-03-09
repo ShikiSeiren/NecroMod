@@ -17,7 +17,7 @@ public class ElderLichPower extends AbstractPower {
 	public static final String POWER_ID = "ElderLichPower";
 	public static final String NAME = "Elder Lich";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"A powerful undead mage. Deals !D! damge to ALL enemies at the end of each turn."
+			"A powerful undead mage. Deals 5 damge to ALL enemies at the end of each turn."
 	};
 	
 	public int DAMAGE_AMT;
@@ -49,7 +49,7 @@ public class ElderLichPower extends AbstractPower {
 			
 			this.flash();
 	        AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
-	        AbstractDungeon.actionManager.addToBottom(new VFXAction(this.owner, new CleaveEffect(), 0.25f));
+	        //AbstractDungeon.actionManager.addToBottom(new VFXAction(this.owner, new CleaveEffect(), 0.25f));
 	        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(this.DAMAGE_AMT, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
 	        
 		}
