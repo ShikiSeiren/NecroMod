@@ -28,6 +28,7 @@ public class Bone_Prison extends CustomCard {
 	public Bone_Prison() {
 		super(ID, NAME, NecroMod.makePath(NecroMod.BONE_PRISON), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.WHITE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+		this.exhaust = true;
 	
 	}
 	

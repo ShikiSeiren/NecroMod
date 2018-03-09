@@ -11,7 +11,7 @@
 	
 	"Negative_Energy_Arrows": {
 		"NAME" : "Negative Energy Arrows",
-		"DESCRIPTION": "Deal !D! damage !M! times. NL Apply !M! Negative Level."
+		"DESCRIPTION": "Deal !D! damage !M! times. NL Apply !M! NegativeLevel."
 	},
 	
 	"Bone_Wall": {
@@ -21,7 +21,7 @@
 	
 	"Negative_Energy_Javelin": {
 		"NAME" : "Negative Energy Javelin",
-		"DESCRIPTION" : "Deal !D! damage. NL Apply !M! Negative Level."
+		"DESCRIPTION" : "Deal !D! damage. NL Apply !M! NegativeLevel."
 	},
 	
 	"Thousand_Bone_Knives": {
@@ -51,7 +51,7 @@
 		
 	"Negative_Energy_Bomb": {
 		"NAME" : "Negative Energy Bomb",
-		"DESCRIPTION" : "Deal !D! damage each stack of NegativeLevel."
+		"DESCRIPTION" : "Deal !D! damage for each stack of NegativeLevel."
 		},
 		
 	"Summon_Death_Knight": {
@@ -147,6 +147,21 @@
 	"Detonate_Bones": {
 		"NAME" : "Detonate Bones",
 		"DESCRIPTION" : "Remove all bones. Apply !D! damage times the amount of stacks removed."
+		},
+		
+	"Negative_Energy_Mist": {
+		"NAME" : "Negative Energy Mist",
+		"DESCRIPTION" : "Apply 2 NegativeLevels."
+		},
+		
+	"Consume_Illness": {
+		"NAME" : "Consume Illness",
+		"DESCRIPTION" : "Remove a negative effect. If you do : Heal 3 HP. Exhaust."
+		},
+		
+	"Negative_Energy_Shield": {
+		"NAME" : "Negative Energy Shield",
+		"DESCRIPTION" : "Gain !B! Block. Gain 1 Negative Energy Shield."
 		}
 		
 }	

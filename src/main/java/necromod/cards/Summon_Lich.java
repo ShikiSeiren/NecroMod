@@ -27,17 +27,17 @@ public class Summon_Lich extends CustomCard{
 	public Summon_Lich() {
 		super(ID, NAME, NecroMod.makePath(NecroMod.SUMMON_LICH), COST, DESCRIPTION, AbstractCard.CardType.POWER,
 				AbstractCardEnum.WHITE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
-		this.baseDamage = this.damage = 3;
+		//this.baseDamage = this.damage = 3;
 		
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		
 		if(this.name.equals("Summon Lich")){
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LichPower(p, 1, this.upgraded, this.damage), 1));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LichPower(p, 1, this.upgraded, 3), 1));
 		}
 		else {
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ElderLichPower(p, 1, this.upgraded, this.damage), 1));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ElderLichPower(p, 1, this.upgraded, 5), 1));
 		}
 
 			

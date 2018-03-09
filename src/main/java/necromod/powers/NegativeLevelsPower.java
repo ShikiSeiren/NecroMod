@@ -38,7 +38,7 @@ public class NegativeLevelsPower extends AbstractPower {
     @Override
     public void atEndOfTurn(final boolean isPlayer) {
     	
-    	this.amount = (int) (this.amount/2);
+    	this.amount -= 1;
         this.flash();
         
         
