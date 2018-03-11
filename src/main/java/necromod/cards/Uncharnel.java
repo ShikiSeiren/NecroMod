@@ -20,21 +20,20 @@ public class Uncharnel extends AbstractNecromancerCards {
 	public static final	String NAME = cardStrings.NAME;
 	public static final	String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;
-	private static final int BLOCK_AMT = 6;
-	private static final int UPGRADE_PLUS_BLOCK = 3;
 	private static final int POOL = 1;
 	
 	public Uncharnel() {
 		super(ID, NAME, NecroMod.makePath(NecroMod.UNCHARNEL), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.WHITE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
-		
-		this.baseBlock = BLOCK_AMT;
+
+		this.exhaust = true;
+		this.baseMagicNumber = this.magicNumber = 1;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		
 		AbstractDungeon.actionManager.addToBottom(new UncharnelAction(false));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ZombiePower(p, 1), 1));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ZombiePower(p, this.magicNumber), this.magicNumber));
 	}
 	
 	public AbstractCard makeCopy() {
@@ -44,7 +43,7 @@ public class Uncharnel extends AbstractNecromancerCards {
 	public void upgrade() {
 		if (!this.upgraded) {
 			upgradeName();
-			upgradeBlock(UPGRADE_PLUS_BLOCK);
+			upgradeMagicNumber(1);
 		}
 	}	
 

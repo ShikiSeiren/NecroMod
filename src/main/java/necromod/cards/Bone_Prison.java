@@ -46,6 +46,7 @@ public class Bone_Prison extends AbstractNecromancerCards {
 				
 			}
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new BonePrisonPower(m), 1));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BonesPower(p, 1), 1));
 			
                     }
         else {
