@@ -77,7 +77,7 @@ public class Shackles extends AbstractPower {
         	
         	AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, "Shackles", 1));	
         	for (int temp = AbstractDungeon.getCurrRoom().monsters.monsters.size(), i = 0; i < temp; ++i) {
-				AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "Shackles"));
+				AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, "Shackles", 1));
                 if (    AbstractDungeon.getCurrRoom().monsters.monsters.get(i).hasPower("OfPain") 
                         && !AbstractDungeon.getCurrRoom().monsters.monsters.get(i).isDying 
                         && AbstractDungeon.getCurrRoom().monsters.monsters.get(i).currentHealth > 0 

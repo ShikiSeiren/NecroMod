@@ -171,7 +171,22 @@
 		
 	"Blood_Magic": {
 		"NAME" : "Blood Magic",
-		"DESCRIPTION" : "Gain Blood Magic"
+		"DESCRIPTION" : "Gain Blood Magic."
+		},
+		
+	"Violent_Necrosis": {
+		"NAME" : "Violent Necrosis",
+		"DESCRIPTION" : "Double all of the targets debuffs. Exhaust."
+		},
+		
+	"Corrupt": {
+		"NAME" : "Corrupt Power",
+		"DESCRIPTION" : "Corrupt all non-unique buffs of the target. Exhaust."
+		},
+		
+	"Epidemic": {
+		"NAME" : "Epidemic",
+		"DESCRIPTION" : "Spread all debuffs of the target to all enemies."
 		}
 		
 }	

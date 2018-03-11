@@ -10,8 +10,6 @@ import com.megacrit.cardcrawl.vfx.combat.*;
 import com.megacrit.cardcrawl.actions.animations.*;
 import com.megacrit.cardcrawl.actions.utility.*;
 
-
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.actions.common.BloodAction;

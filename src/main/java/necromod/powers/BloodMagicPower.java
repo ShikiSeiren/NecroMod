@@ -20,7 +20,7 @@ public class BloodMagicPower extends AbstractPower{
 		updateDescription();
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
-		this.img = NecroMod.getBloodPowerTexture();
+		this.img = NecroMod.getBloodMagicPowerTexture();
 		
 	}
 	

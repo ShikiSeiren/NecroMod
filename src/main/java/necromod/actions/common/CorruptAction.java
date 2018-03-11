@@ -13,10 +13,12 @@ import necromod.powers.*;
 
 public class CorruptAction extends AbstractGameAction {
 	
-	public CorruptAction(final AbstractCreature target, final AbstractCreature source) {
+	public String cb;
+	
+	public CorruptAction(final AbstractCreature target, final AbstractCreature source, String buff) {
         this.target = target;
         this.source = source;
-       
+        this.cb = buff;
     }
 	
 	@Override
@@ -41,7 +43,7 @@ public class CorruptAction extends AbstractGameAction {
 		if(this.target.hasPower("Dexterity") && (this.target.getPower("Dexterity").amount > 0)){
 			Buff.add("Dexterity");
 		}
-		
+		/**
 		ArrayList<String> currentBuffs = new ArrayList<String>();
 		
 		for(String b : Buff) {
@@ -51,64 +53,72 @@ public class CorruptAction extends AbstractGameAction {
 			
 		}
 		
-
-		for(String cb : currentBuffs) {
+		
+		for(String cb : currentBuffs) {**/
 			
-			switch(cb){
+			switch(this.cb){
 			case "Metallicize" : 
 				amount = this.target.getPower("Metallicize").amount;
-				AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.target, this.source, cb));
+				AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.target, this.source, this.cb));
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new FrailPower(this.target, amount, false),amount, true, AbstractGameAction.AttackEffect.NONE));
 				break;
 				
-			case "Weakened" :
-				amount = this.target.getPower("Weakened").amount;
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new WeakPower(this.target, amount, false), amount));
+			case "Curl Up" :
+				amount = this.target.getPower("Curl Up").amount;
+				AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.target, this.source, this.cb));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new FrailPower(this.target, amount, false),amount, true, AbstractGameAction.AttackEffect.NONE));
 				break;
 				
 			case "Frail" :
 				amount = this.target.getPower("Frail").amount;
+				AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.target, this.source, this.cb));
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new FrailPower(this.target, amount, false),amount, true, AbstractGameAction.AttackEffect.NONE));
 				break;
 				
-			case "Vulnerable" :
-				amount = this.target.getPower("Vulnerable").amount;
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new VulnerablePower(this.target, amount, false), amount));
-				break;
-				
-			case "Strength" :
-				amount = -1*(this.target.getPower("Strength").amount);
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new StrengthPower(this.target, -amount), -amount));
-				break;
-				
-			case "Dexterity" :
-				amount = -1*(this.target.getPower("Dexterity").amount);
+			case "Plated Armor" :
+				amount = this.target.getPower("Plated Armor").amount;
+				AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.target, this.source, this.cb));
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new DexterityPower(this.target, -amount), -amount));
 				break;
 				
-			case "HellFlamePower" :
-				amount = this.target.getPower("HellFlamePower").amount;
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new HellFlamePower(this.target, this.source, amount), amount));
+			case "Thorns" :
+				amount = -1*(this.target.getPower("Thorns").amount);
+				AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.target, this.source, this.cb));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new PoisonPower(this.target, this.source, amount), amount, AbstractGameAction.AttackEffect.POISON));
 				break;
 				
-			case "GraspHeartPower" :
-				amount = this.target.getPower("GraspHeartPower").amount;
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new GraspHeartPower(this.target, this.source, amount), amount));
+			case "Explosive" :
+				amount = -1*(this.target.getPower("Explosive").amount);
+				AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.target, this.source, this.cb));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new HellFlamePower(this.target, this.source, 2), 2));
 				break;
 				
-			case "NegativeLevelsPower" : 
-				amount = this.target.getPower("NegativeLevelsPower").amount;
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new NegativeLevelsPower(this.target, this.source, amount), amount));
+			case "Artifact" :
+				amount = this.target.getPower("Artifact").amount;
+				AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.target, this.source, this.cb));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new VulnerablePower(this.target, amount, false), amount));
+				break;
+				
+			case "Barricade" :
+				amount = this.target.getPower("Barricade").amount;
+				AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.target, this.source, this.cb));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new GraspHeartPower(this.target, this.source, 1), 1));
+				break;
+				
+			case "Strength" : 
+				amount = this.target.getPower("Strength").amount;
+				AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.target, this.source, this.cb));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new StrengthPower(this.target, -amount), -amount));
 				break;
 			
-			case "OfPain" :
-				amount = this.target.getPower("OfPain").amount;
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new OfPain(this.target, amount), amount));
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source, new Shackles(this.source, this.target, amount), amount));
+			case "Dexterity" :
+				amount = this.target.getPower("Dexterity").amount;
+				AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.target, this.source, this.cb));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new DexterityPower(this.target, -amount), -amount));
 				break;
 				
 			}
-		}
+		//}
     	    		
 		this.isDone = true;
     }

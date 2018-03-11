@@ -114,6 +114,9 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     public static final String PLAGUE_BOLT = "cards/plague_bolt.png";
     public static final String BLOOD_MAGIC = "cards/blood_magic.png";
     public static final String VIOLENT_NECROSIS = "cards/violent_necrosis.png";
+    public static final String CORRUPT = "cards/corrupt.png";
+    public static final String REAP_THE_WEAK = "cards/reap_the_weak.png";
+    public static final String EPIDEMIC = "cards/epidemic.png";
     
     //power images
     
@@ -227,6 +230,10 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     
     public static Texture getNegativeShieldPowerTexture() {
     	return new Texture(makePath(NEGATIVE_SHIELD_POWER));
+    }
+    
+    public static Texture getBloodMagicPowerTexture() {
+    	return new Texture(makePath(BLOOD_MAGIC_POWER));
     }
     
     /**
@@ -391,6 +398,15 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Violent_Necrosis());
 		logger.info("added Test Case");
 		
+		BaseMod.addCard(new Corrupt_Power());
+		logger.info("added Test Case");
+		
+		BaseMod.addCard(new Epidemic());
+		logger.info("added Test Case");
+		
+		BaseMod.addCard(new Reap_The_Weak());
+		logger.info("added Test Case");
+		
 		/****/
 		/**	BaseMod.addCard(new ());
 			logger.info("added Test Case");
@@ -457,6 +473,10 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		String[] BloodMagic = {"bloodmagic", "bloodmagics"};
         
 		BaseMod.addKeyword(BloodMagic, "If you do not have enough Energy to play a card: You can play it for 3 HP times the cost instead.");
+		
+		String[] Corrupt = {"corrupt", "corrupts"};
+        
+		BaseMod.addKeyword(Corrupt, "Turn a buff of the target into a debuff.");
 		
 		
 	}
