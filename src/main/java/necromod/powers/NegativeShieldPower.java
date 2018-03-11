@@ -6,8 +6,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import necromod.NecroMod;
-import necromod.actions.common.NegativeLevelAction;
-import necromod.powers.NegativeLevelsPower;
 
 import com.megacrit.cardcrawl.actions.common.*;
 
@@ -20,7 +18,6 @@ public class NegativeShieldPower extends AbstractPower {
 	
 	public int DAMAGE_AMT;
 	public int TOTAL_DAMAGE = 0;
-	
 	
 	public NegativeShieldPower(AbstractCreature owner, int amount){
 		this.name = NAME;

@@ -8,13 +8,12 @@ import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.*;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.actions.common.BloodAction;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.BloodPower;
 
-public class Blood_Shield extends CustomCard {
+public class Blood_Shield extends AbstractNecromancerCards {
 	public static final String ID = "Blood_Shield";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final	String NAME = cardStrings.NAME;
@@ -37,7 +36,7 @@ public class Blood_Shield extends CustomCard {
 		AbstractDungeon.actionManager.addToBottom(new BloodAction(p, p, this.magicNumber));
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BloodPower(p, 1), 1));
-		
+				
 	}
 	
 	public AbstractCard makeCopy() {

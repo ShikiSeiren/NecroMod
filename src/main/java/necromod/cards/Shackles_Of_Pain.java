@@ -8,13 +8,12 @@ import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.*;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.Shackles;
 import necromod.powers.OfPain;
 
-public class Shackles_Of_Pain extends CustomCard {
+public class Shackles_Of_Pain extends AbstractNecromancerCards {
 	public static final String ID = "Shackles_Of_Pain";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final	String NAME = cardStrings.NAME;

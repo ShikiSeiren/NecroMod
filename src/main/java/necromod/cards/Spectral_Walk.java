@@ -8,12 +8,11 @@ import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.*;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.SpectralPower;
 
-public class Spectral_Walk extends CustomCard {
+public class Spectral_Walk extends AbstractNecromancerCards {
 	public static final String ID = "Spectral_Walk";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final	String NAME = cardStrings.NAME;

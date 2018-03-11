@@ -8,13 +8,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.VampireLadyPower;
 import necromod.powers.VampirePrincessPower;
 
-public class Summon_Vampire_Lady extends CustomCard {
+public class Summon_Vampire_Lady extends AbstractNecromancerCards {
 	public static String ID = "Summon_Vampire_Lady";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static String NAME = "Summon Vampire Lady";

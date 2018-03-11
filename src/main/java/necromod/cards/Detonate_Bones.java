@@ -14,7 +14,7 @@ import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.actions.unique.DetonateBonesAction;
 
-public class Detonate_Bones extends CustomCard {
+public class Detonate_Bones extends AbstractNecromancerCards {
 	private static final String ID = "Detonate_Bones";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final String NAME = cardStrings.NAME;

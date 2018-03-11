@@ -17,7 +17,7 @@ import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.HellFlamePower;
 
-public class Hell_Flame extends CustomCard {
+public class Hell_Flame extends AbstractNecromancerCards {
 	public static final String ID = "Hellfire";
 	public static final String NAME = "Hell Flame";
 	private static final int COST = 2;

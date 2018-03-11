@@ -15,7 +15,7 @@ import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.BonesPower;
 
-public class Bone_Armor extends CustomCard {
+public class Bone_Armor extends AbstractNecromancerCards {
 	
 	public static final String ID = "Bone_Armor";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

@@ -109,7 +109,11 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     public static final String CONSUME_ILLNESS = "cards/consume_illness.png";
     public static final String BLOOD_CURSE = "cards/blood_curse.png";
     public static final String NEGATIVE_ENERGY_SHIELD = "cards/negative_energy_shield.png";
-    
+    public static final String UNCHARNEL = "cards/uncharnel.png";
+    public static final String SLAY_LIVING = "cards/slay_living.png";
+    public static final String PLAGUE_BOLT = "cards/plague_bolt.png";
+    public static final String BLOOD_MAGIC = "cards/blood_magic.png";
+    public static final String VIOLENT_NECROSIS = "cards/violent_necrosis.png";
     
     //power images
     
@@ -130,7 +134,8 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     public static final String BONE_PRISON_POWER ="powers/bone_prison.png";
     public static final String GRASP_HEART_POWER = "powers/crushed_heart.png";
     public static final String NEGATIVE_SHIELD_POWER = "powers/negative_shield.png";
-    
+    public static final String BLOOD_MAGIC_POWER = "powers/blood_magic.png";
+        
     //relic images
     
     public static final String VAMPIRE_AMULET_RELIC = "relics/vampire_amulet.png";
@@ -361,31 +366,29 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Summon_Undead());
 		BaseMod.addCard(new Summon_Undead_Army());
 		BaseMod.addCard(new Finger_Of_Death());
+		BaseMod.addCard(new Detonate_Bones());
+		BaseMod.addCard(new Spectral_Armor());
+		BaseMod.addCard(new Grasp_Heart());
+		BaseMod.addCard(new Consume_Illness());
+		BaseMod.addCard(new Negative_Energy_Mist());
+		BaseMod.addCard(new Blood_Curse());
+		BaseMod.addCard(new Negative_Energy_Shield());
 		
 		logger.info("added tested cards");
 		
-				
-		logger.info("added working Test Cases");
-		
-		BaseMod.addCard(new Detonate_Bones());
+		BaseMod.addCard(new Uncharnel());					
 		logger.info("added Test Case");
 		
-		BaseMod.addCard(new Spectral_Armor());
+		BaseMod.addCard(new Slay_Living());
 		logger.info("added Test Case");
 		
-		BaseMod.addCard(new Grasp_Heart());
+		BaseMod.addCard(new Blood_Magic());
 		logger.info("added Test Case");
 		
-		BaseMod.addCard(new Consume_Illness());
+		BaseMod.addCard(new Plague_Bolt());
 		logger.info("added Test Case");
 		
-		BaseMod.addCard(new Negative_Energy_Mist());
-		logger.info("added Test Case");
-		
-		BaseMod.addCard(new Blood_Curse());
-		logger.info("added Test Case");
-		
-		BaseMod.addCard(new Negative_Energy_Shield());
+		BaseMod.addCard(new Violent_Necrosis());
 		logger.info("added Test Case");
 		
 		/****/
@@ -429,7 +432,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		
 		String[] Hellfire = {"hellfire", "hellfires", "Hellfire"};
         
-		BaseMod.addKeyword(Hellfire, "Deal damage per turn. Removed when the afflicted enemy a buff.");
+		BaseMod.addKeyword(Hellfire, "Deal 10 damage per turn. Removed when the afflicted enemy gains a buff.");
 		
 		String[] ShacklesOfPain = {"shackles", "shackle", "shackles of pain", "shackle of pain", "Shackles of Pain"};
         
@@ -437,7 +440,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		
 		String[] DeathKnight = {"deathknight", "deathknights", "death knight", "death knights", "Death Knight"};
         
-		BaseMod.addKeyword(DeathKnight, "Summon. Deals damage to a random enemy each turn. Buffs the summoner with block");
+		BaseMod.addKeyword(DeathKnight, "Summon. Deals 5 damage to a random enemy each turn. Buffs the summoner with 5 block");
 		
 		String[] Spectral = {"spectral", "spectrals", "Spectral"};
         
@@ -445,11 +448,15 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		
 		String[] Zombie = {"zombie", "zombies"};
         
-		BaseMod.addKeyword(Zombie, "Summon. Deals damage to a random enemy each turn.");
+		BaseMod.addKeyword(Zombie, "Summon. Deals 4 damage to a random enemy each turn.");
 		
 		String[] CrushedHeart = {"crushedheart", "crushedhearts"};
         
 		BaseMod.addKeyword(CrushedHeart, "Deals 3 damage each turn. Increases by 1 stack each turn.");
+		
+		String[] BloodMagic = {"bloodmagic", "bloodmagics"};
+        
+		BaseMod.addKeyword(BloodMagic, "If you do not have enough Energy to play a card: You can play it for 3 HP times the cost instead.");
 		
 		
 	}

@@ -9,12 +9,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.actions.common.BloodAction;
 
-public class Blood_Is_Power extends CustomCard {
+public class Blood_Is_Power extends AbstractNecromancerCards {
 	
 	public static final String ID = "Blood_Is_Power";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

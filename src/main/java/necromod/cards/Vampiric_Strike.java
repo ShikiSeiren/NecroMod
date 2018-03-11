@@ -1,6 +1,7 @@
 package necromod.cards;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
+
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -12,10 +13,10 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
-public class Vampiric_Strike extends CustomCard {
+
+public class Vampiric_Strike extends AbstractNecromancerCards {
 	public static final String ID = "Vampiric_Strike";
 	public static final String NAME = "Vampiric Strike";
 	private static final int COST = 1;

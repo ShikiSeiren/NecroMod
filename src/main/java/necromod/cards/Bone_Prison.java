@@ -10,13 +10,12 @@ import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.actions.unique.*;
 import com.megacrit.cardcrawl.vfx.*;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.BonesPower;
 import necromod.powers.BonePrisonPower;
 
-public class Bone_Prison extends CustomCard {
+public class Bone_Prison extends AbstractNecromancerCards {
 	public static final String ID = "Bone_Prison";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final	String NAME = cardStrings.NAME;

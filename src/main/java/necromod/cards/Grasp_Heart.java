@@ -17,7 +17,7 @@ import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.GraspHeartPower;
 
-public class Grasp_Heart extends CustomCard {
+public class Grasp_Heart extends AbstractNecromancerCards {
 	public static final String ID = "Grasp_Heart";
 	public static final String NAME = "Grasp Heart";
 	private static final int COST = 2;

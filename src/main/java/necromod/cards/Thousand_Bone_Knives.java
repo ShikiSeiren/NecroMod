@@ -11,11 +11,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 
-public class Thousand_Bone_Knives extends CustomCard{
+public class Thousand_Bone_Knives extends AbstractNecromancerCards{
 	
 	private static final String ID = "Thousand_Bone_Knives";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

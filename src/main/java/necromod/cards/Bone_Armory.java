@@ -8,13 +8,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 
 import necromod.powers.BoneArmoryPower;
 
-public class Bone_Armory extends CustomCard {
+public class Bone_Armory extends AbstractNecromancerCards {
 	
 	public static final String ID = "Bone_Armory";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

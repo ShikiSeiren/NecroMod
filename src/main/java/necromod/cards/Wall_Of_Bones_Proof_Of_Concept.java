@@ -6,13 +6,12 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.WallOfBonesPoCPower;
 
 
-public class Wall_Of_Bones_Proof_Of_Concept extends CustomCard {
+public class Wall_Of_Bones_Proof_Of_Concept extends AbstractNecromancerCards {
 	
 	public static final String ID = "WallConcept";
 	public static final	String NAME = "Wall Concept";

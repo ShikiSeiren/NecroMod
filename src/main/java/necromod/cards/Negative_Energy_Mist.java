@@ -10,19 +10,20 @@ import com.megacrit.cardcrawl.actions.animations.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.*;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.actions.common.NegativeLevelAction;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.NegativeLevelsPower;
 
-public class Negative_Energy_Mist extends CustomCard {
+public class Negative_Energy_Mist extends AbstractNecromancerCards {
 	public static final String ID = "Negative_Energy_Mist";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final	String NAME = cardStrings.NAME;
 	public static final	String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;
 	private static final int POOL = 1;
+	
+	public static final String UPGRADE_DESCRIPTION = "Apply 2 NegativeLevels.";
 	
 	public Negative_Energy_Mist() {
 		super(ID, NAME, NecroMod.makePath(NecroMod.NEGATIVE_ENERGY_MIST), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
@@ -48,6 +49,8 @@ public class Negative_Energy_Mist extends CustomCard {
 		if (!this.upgraded) {
 			this.upgradeName();
 			this.exhaust = false;
+			this.rawDescription = Negative_Energy_Mist.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
 		}
 	}
 

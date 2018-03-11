@@ -8,13 +8,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.LichPower;
 import necromod.powers.ElderLichPower;
 
-public class Summon_Lich extends CustomCard{
+public class Summon_Lich extends AbstractNecromancerCards{
 	public static final String ID = "Summon_Lich";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static String NAME = "Summon Lich";
@@ -28,6 +27,7 @@ public class Summon_Lich extends CustomCard{
 		super(ID, NAME, NecroMod.makePath(NecroMod.SUMMON_LICH), COST, DESCRIPTION, AbstractCard.CardType.POWER,
 				AbstractCardEnum.WHITE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
 		//this.baseDamage = this.damage = 3;
+		this.baseMagicNumber = this.magicNumber = 3;
 		
 	}
 	
@@ -52,6 +52,7 @@ public class Summon_Lich extends CustomCard{
 		if (!this.upgraded) {
 			this.name = this.NAME2;
 			this.upgradeName();
+			this.upgradeMagicNumber(2);
 			this.upgradeDamage(this.UPGRADE_DMG_AMT);
 		}
 	}

@@ -12,11 +12,10 @@ import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import java.util.*;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 
-public class Consume_Illness extends CustomCard{
+public class Consume_Illness extends AbstractNecromancerCards{
 	
 		public static final String ID = "Consume_Illness";
 		private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -73,7 +72,7 @@ public class Consume_Illness extends CustomCard{
 					AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, 3));
 				}
 				else {
-					int amount = -1*(p.getPower("Strength").amount);
+					int amount = -1*(p.getPower("Dexterity").amount);
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, amount), amount));
 					AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, 3));
 				}

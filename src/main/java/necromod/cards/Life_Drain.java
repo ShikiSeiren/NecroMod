@@ -14,7 +14,7 @@ import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 
-public class Life_Drain extends CustomCard {
+public class Life_Drain extends AbstractNecromancerCards {
 	
 	public static final String ID = "Life_Drain";
 	public static final String NAME = "Life Drain";

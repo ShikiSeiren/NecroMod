@@ -15,7 +15,7 @@ public class HellFlamePower extends AbstractPower {
 	public static final String POWER_ID = "HellFlamePower";
 	public static final String NAME = "Hellfire";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"Deal 8 Damage per turn. If the afflicted enemy casts a buff : Remove it."
+			"Deal 8 Damage per turn. If the afflicted enemy gains a buff : Remove it."
 	};
 	public AbstractCreature source;
 	

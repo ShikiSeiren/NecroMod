@@ -13,7 +13,7 @@ import necromod.NecroMod;
 import necromod.actions.common.BloodAction;
 import necromod.patches.AbstractCardEnum;
 
-public class Life_Tap extends CustomCard {
+public class Life_Tap extends AbstractNecromancerCards {
 	public static final String ID = "Life_Tap";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final	String NAME = cardStrings.NAME;

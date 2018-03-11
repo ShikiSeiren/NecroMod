@@ -12,11 +12,11 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
+import necromod.cards.AbstractNecromancerCards;
 
-public class Blood_Curse extends CustomCard {
+public class Blood_Curse extends AbstractNecromancerCards {
 	public static final String ID = "Blood_Curse";
 	public static final String NAME = "Blood Curse";
 	private static final int COST = 1;

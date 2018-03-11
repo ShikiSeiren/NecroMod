@@ -7,12 +7,11 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 //import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.actions.common.TrulyRandomCardFromListAction;
 
-public class Summon_Undead extends CustomCard {
+public class Summon_Undead extends AbstractNecromancerCards {
 	
 	public static final String ID = "Summon_Undead";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

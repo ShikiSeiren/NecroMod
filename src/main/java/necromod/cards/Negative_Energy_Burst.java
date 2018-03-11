@@ -16,7 +16,7 @@ import necromod.patches.AbstractCardEnum;
 import necromod.powers.NegativeLevelsPower;
 import necromod.actions.common.NegativeLevelAction;
 
-public class Negative_Energy_Burst extends CustomCard{
+public class Negative_Energy_Burst extends AbstractNecromancerCards{
 	
 	public static final String ID = "Negative_Energy_Burst";
 	public static final String NAME = "Negative Energy Burst";

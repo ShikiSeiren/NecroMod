@@ -11,19 +11,18 @@ import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.NegativeLevelsPower;
 import necromod.actions.common.NegativeLevelAction;
 
-public class Negative_Energy_Javelin extends CustomCard{
+public class Negative_Energy_Javelin extends AbstractNecromancerCards{
 	
 	public static final String ID = "Negative_Energy_Javelin";
 	public static final String NAME = "Negative Energy Javelin";
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 10;
-	public static final String DESCRIPTION = "Deal !D! damage. NL Apply 1 negativelevel .";
+	public static final String DESCRIPTION = "Deal !D! damage. NL Apply 1 NegativeLevel .";
 	private static final int UPGRADE_PLUS_DMG = 3;
 	private static final int POOL = 1;
 	public final int AMOUNT = 1;

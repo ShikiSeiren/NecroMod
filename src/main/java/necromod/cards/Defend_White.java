@@ -12,7 +12,7 @@ import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 
-public class Defend_White extends CustomCard {
+public class Defend_White extends AbstractNecromancerCards {
 	public static final String ID = "Defend_W";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final	String NAME = cardStrings.NAME;

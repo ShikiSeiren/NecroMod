@@ -8,12 +8,11 @@ import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.*;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.actions.unique.ShadeStepAction;
 
-public class Shade_Step extends CustomCard{
+public class Shade_Step extends AbstractNecromancerCards{
 	
 		public static final String ID = "Shade_Step";
 		private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

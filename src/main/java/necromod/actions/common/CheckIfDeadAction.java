@@ -41,7 +41,7 @@ public class CheckIfDeadAction extends AbstractGameAction {
     			
       			this.ID = "ZombiePower";
     			final AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(true);
-    			this.DAMAGE_AMT = 3;
+    			this.DAMAGE_AMT = 4;
     			
     			if(ZPPack > 0) {
     				AbstractDungeon.actionManager.addToBottom(new CheckIfDeadAction(randomMonster, this.owner, 3*this.DAMAGE_AMT, ZPPack, this.ID, false));
@@ -55,7 +55,7 @@ public class CheckIfDeadAction extends AbstractGameAction {
     		if(this.owner.hasPower("VampireLadyPower")) {
     			int VLP = this.owner.getPower("VampireLadyPower").amount;
     			this.ID = "VampireLadyPower";
-    			this.DAMAGE_AMT = 4;
+    			this.DAMAGE_AMT = 3;
     			final AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(true);
                 AbstractDungeon.actionManager.addToBottom(new CheckIfDeadAction(randomMonster, this.owner, this.DAMAGE_AMT, VLP, this.ID, false));
                
@@ -64,7 +64,7 @@ public class CheckIfDeadAction extends AbstractGameAction {
     		if(this.owner.hasPower("VampirePrincessPower")) {
     			int VPP = this.owner.getPower("VampirePrincessPower").amount;
     			this.ID = "VampirePrincessPower";
-    			this.DAMAGE_AMT = 4;
+    			this.DAMAGE_AMT = 3;
     			final AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(true);
                 AbstractDungeon.actionManager.addToBottom(new CheckIfDeadAction(randomMonster, this.owner, this.DAMAGE_AMT, VPP, this.ID, false));
               
@@ -93,21 +93,25 @@ public class CheckIfDeadAction extends AbstractGameAction {
     		}
     		if (this.target.currentHealth > 0) {
     			if(this.ID.equals("DeathKnightPower")) {
-    				AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target, new DamageInfo(this.owner, this.DAMAGE_AMT, DamageInfo.DamageType.THORNS), 0));
+    				AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target, new DamageInfo(this.owner, 5, DamageInfo.DamageType.THORNS), 0));
+    				AbstractDungeon.actionManager.addToTop(new WaitAction(0.05f));
     			}
     			
     			if(this.ID.equals("ZombiePower")) {
-    				AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target, new DamageInfo(this.owner, this.DAMAGE_AMT, DamageInfo.DamageType.THORNS), 0));
+    				AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target, new DamageInfo(this.owner, 4, DamageInfo.DamageType.THORNS), 0));
+    				AbstractDungeon.actionManager.addToTop(new WaitAction(0.05f));
     			}
     			
     			if(this.ID.equals("VampireLadyPower")){
-    				AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(this.target, new DamageInfo(this.owner, this.DAMAGE_AMT, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+    				AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(this.target, new DamageInfo(this.owner, 3, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+    				AbstractDungeon.actionManager.addToTop(new WaitAction(0.05f));
     			}
     			
     			if(this.ID.equals("VampirePrincessPower")){
-    				AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(this.target, new DamageInfo(this.owner, this.DAMAGE_AMT, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+    				AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(this.target, new DamageInfo(this.owner, 3, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+    				AbstractDungeon.actionManager.addToTop(new WaitAction(0.05f));
     			}
-    			AbstractDungeon.actionManager.addToTop(new WaitAction(0.05f));
+    			//AbstractDungeon.actionManager.addToTop(new WaitAction(0.1f));
     			/**test : for(int i =0; i <= numTime; i++{
     			 * if(!AbstractDungeon.getMonsters().areMonstersBasicallyDead()){
     			 * 	do the above

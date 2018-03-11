@@ -10,11 +10,10 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 
-public class Bone_Spikes extends CustomCard {
+public class Bone_Spikes extends AbstractNecromancerCards {
 	
 	public static final String ID = "Bone_Spikes";
 	public static final String NAME = "Bone Spikes";

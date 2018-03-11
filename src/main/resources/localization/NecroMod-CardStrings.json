@@ -126,7 +126,7 @@
 		
 	"Summon_Lich": {
 		"NAME" : "Summon Lich",
-		"DESCRIPTION" : "Summon a powerful undead Mage that deals !D! damage to ALL enemies."
+		"DESCRIPTION" : "Summon a powerful undead Mage that deals !M! damage to ALL enemies."
 		},		
 		
 	"Summon_Vampire_Lady": {
@@ -136,7 +136,7 @@
 		
 	"Bone_Prison": {
 		"NAME" : "Bone Prison",
-		"DESCRIPTION" : "If the target intends to attack : Stun it. Add 1 Bones."
+		"DESCRIPTION" : "If the target intends to attack : Stun it. Add 1 Bones. Exhaust."
 		},
 		
 	"Spectral_Armor": {
@@ -151,7 +151,7 @@
 		
 	"Negative_Energy_Mist": {
 		"NAME" : "Negative Energy Mist",
-		"DESCRIPTION" : "Apply 2 NegativeLevels."
+		"DESCRIPTION" : "Apply 2 NegativeLevelsto ALL enemies. Exhaust."
 		},
 		
 	"Consume_Illness": {
@@ -162,6 +162,21 @@
 	"Negative_Energy_Shield": {
 		"NAME" : "Negative Energy Shield",
 		"DESCRIPTION" : "Gain !B! Block. Gain 1 Negative Energy Shield."
+		},
+		
+	"Uncharnel": {
+		"NAME" : "Uncharnel",
+		"DESCRIPTION" : "Add an exhausted card to your drawpile. Gain 1 Zombie."
+		},
+		
+	"Blood_Magic": {
+		"NAME" : "Blood Magic",
+		"DESCRIPTION" : "Gain Blood Magic."
+		},
+		
+	"Violent_Necrosis": {
+		"NAME" : "Violent Necrosis",
+		"DESCRIPTION" : "Gain Blood Magic"
 		}
 		
 }	

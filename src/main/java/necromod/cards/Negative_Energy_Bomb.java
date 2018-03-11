@@ -16,7 +16,7 @@ import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.actions.unique.NegativeEnergyBombAction;
 
-public class Negative_Energy_Bomb extends CustomCard{
+public class Negative_Energy_Bomb extends AbstractNecromancerCards{
 	
 	private static final String ID = "Negative_Energy_Bomb";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);

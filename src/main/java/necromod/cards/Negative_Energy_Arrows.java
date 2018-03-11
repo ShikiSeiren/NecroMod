@@ -8,13 +8,12 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.actions.common.NegativeLevelAction;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.NegativeLevelsPower;
 
-public class Negative_Energy_Arrows extends CustomCard{
+public class Negative_Energy_Arrows extends AbstractNecromancerCards{
 	
 	public static final String ID = "Negative_Energy_Arrows";
 	public static final String NAME = "Negative Energy Arrows";

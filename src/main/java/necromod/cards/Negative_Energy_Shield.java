@@ -14,7 +14,7 @@ import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.NegativeShieldPower;
 
-public class Negative_Energy_Shield extends CustomCard {
+public class Negative_Energy_Shield extends AbstractNecromancerCards {
 	public static final String ID = "Negative_Energy_Shield";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final	String NAME = cardStrings.NAME;

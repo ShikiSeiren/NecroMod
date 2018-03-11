@@ -14,7 +14,7 @@ import necromod.NecroMod;
 import necromod.actions.common.BloodAction;
 import necromod.patches.AbstractCardEnum;
 
-public class Blood_Whip extends CustomCard {
+public class Blood_Whip extends AbstractNecromancerCards {
 	public static final String ID = "Blood_Whip";
 	public static final String NAME = "Blood Whip";
 	private static final int COST = 1;

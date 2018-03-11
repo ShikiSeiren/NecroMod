@@ -16,7 +16,7 @@ import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.actions.common.BloodAction;
 
-public class Blood_Wake extends CustomCard {
+public class Blood_Wake extends AbstractNecromancerCards {
 	
 	public static final String ID = "Blood_Wake";
 	public static final String NAME = "Blood Wake";

@@ -16,7 +16,7 @@ import necromod.patches.AbstractCardEnum;
 import necromod.powers.NegativeLevelsPower;
 import necromod.actions.common.NegativeLevelAction;
 
-public class Negative_Energy_Sphere extends CustomCard {
+public class Negative_Energy_Sphere extends AbstractNecromancerCards {
 	
 	public static final String ID = "Negative_Energy_Sphere";
 	public static final String NAME = "Negative Energy Sphere";

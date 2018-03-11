@@ -8,8 +8,6 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 
 import com.megacrit.cardcrawl.actions.utility.*;
-import com.megacrit.cardcrawl.vfx.combat.*;
-import com.megacrit.cardcrawl.actions.animations.*;
 
 import necromod.NecroMod;
 

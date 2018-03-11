@@ -6,11 +6,10 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 
-public class Strike_White extends CustomCard{
+public class Strike_White extends AbstractNecromancerCards{
 	public static final String ID = "Strike_W";
 	public static final String NAME = "Strike";
 	public static final String DESCRIPTION = "Deal !D! damage.";
