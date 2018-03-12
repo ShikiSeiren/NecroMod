@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.actions.unique.VampireDamageAction;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 

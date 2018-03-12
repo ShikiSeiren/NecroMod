@@ -4,13 +4,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-//import com.megacrit.cardcrawl.core.*;
-//import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-//import com.megacrit.cardcrawl.cards.DamageInfo;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.NegativeLevelsPower;
@@ -30,7 +26,7 @@ public class Negative_Energy_Burst extends AbstractNecromancerCards{
 	public Negative_Energy_Burst() {
 		super (ID, NAME, NecroMod.makePath(NecroMod.NEGATIVE_ENERGY_BURST), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.WHITE,
-				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
+				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ALL_ENEMY, POOL);
 		
 		this.baseDamage = this.damage =  ATTACK_DMG;
 		this.baseMagicNumber = this.magicNumber = this.AMOUNT;

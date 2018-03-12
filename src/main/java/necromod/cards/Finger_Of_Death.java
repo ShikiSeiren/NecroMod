@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.actions.unique.FoDAction;

@@ -37,7 +37,7 @@ public class Slay_Living extends AbstractNecromancerCards {
 	public Slay_Living() {
 		super (ID, NAME, NecroMod.makePath(NecroMod.SLAY_LIVING), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.WHITE,
-				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
 		
 		this.baseDamage = this.damage =  ATTACK_DMG;
 
@@ -66,7 +66,7 @@ public class Slay_Living extends AbstractNecromancerCards {
 		super.update();	
 		
 		if(AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom() instanceof MonsterRoom || AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite || AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
-			System.out.println(AbstractDungeon.getCurrRoom().toString());
+		
 			for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 				
 					this.HPThreshhold = ((int) (mo.maxHealth*0.3))+1;

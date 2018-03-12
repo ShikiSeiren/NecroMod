@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.NegativeShieldPower;
@@ -26,7 +25,7 @@ public class Negative_Energy_Shield extends AbstractNecromancerCards {
 	
 	public Negative_Energy_Shield() {
 		super(ID, NAME, NecroMod.makePath(NecroMod.NEGATIVE_ENERGY_SHIELD), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
-				AbstractCardEnum.WHITE, AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCardEnum.WHITE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
 		this.baseBlock = BLOCK_AMT;
 		
 	}

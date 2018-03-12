@@ -166,7 +166,7 @@
 		
 	"Uncharnel": {
 		"NAME" : "Uncharnel",
-		"DESCRIPTION" : "Add an exhausted card to your drawpile. Gain 1 Zombie."
+		"DESCRIPTION" : "Add an exhausted card to your drawpile. Gain 1 Zombie. Exhaust."
 		},
 		
 	"Blood_Magic": {
@@ -187,6 +187,22 @@
 	"Epidemic": {
 		"NAME" : "Epidemic",
 		"DESCRIPTION" : "Spread all debuffs of the target to all enemies."
+		},
+		
+	"Toxic_Smoke_Screen": {
+		"NAME" : "Toxic Smokescreen",
+		"DESCRIPTION" : "Gain !B! Block. When attacked : Apply !M! Poison to the attacker."
+		},
+		
+	"Pandemic": {
+		"NAME" : "Pandemic",
+		"DESCRIPTION" : "Apply 4 poison and 2 Vulnerable to the targetand half that to ALL other enemies. Exhaust."
+		},
+		
+	"Siphon_Strength": {
+		"NAME" : "Siphon Strength",
+		"DESCRIPTION" : "Drain 2 Strength from the target. Exhaust."
 		}
+		
 		
 }	

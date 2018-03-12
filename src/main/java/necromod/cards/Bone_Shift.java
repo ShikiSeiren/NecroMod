@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.*;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.BonesPower;

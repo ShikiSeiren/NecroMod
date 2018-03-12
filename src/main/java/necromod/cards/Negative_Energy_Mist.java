@@ -23,7 +23,7 @@ public class Negative_Energy_Mist extends AbstractNecromancerCards {
 	private static final int COST = 1;
 	private static final int POOL = 1;
 	
-	public static final String UPGRADE_DESCRIPTION = "Apply 2 NegativeLevels.";
+	public static final String UPGRADE_DESCRIPTION = "Apply 2 NegativeLevels to ALL enemies.";
 	
 	public Negative_Energy_Mist() {
 		super(ID, NAME, NecroMod.makePath(NecroMod.NEGATIVE_ENERGY_MIST), COST, DESCRIPTION, AbstractCard.CardType.SKILL,

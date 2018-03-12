@@ -6,13 +6,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-//import com.megacrit.cardcrawl.core.*;
-//import com.megacrit.cardcrawl.powers.*;
+
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-//import com.megacrit.cardcrawl.cards.DamageInfo;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.GraspHeartPower;
@@ -41,7 +38,7 @@ public class Grasp_Heart extends AbstractNecromancerCards {
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 
-		AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+		AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
 		
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new GraspHeartPower(m, p, AMOUNT), AMOUNT));
         

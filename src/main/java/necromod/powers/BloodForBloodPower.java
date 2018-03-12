@@ -19,7 +19,6 @@ public class BloodForBloodPower extends AbstractPower {
 			"Gain !M! Blood at the start of your turn."
 	};
 	
-	public int counter = 0;
 	
     public BloodForBloodPower(final AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -41,21 +40,12 @@ public class BloodForBloodPower extends AbstractPower {
     public int onAttacked(final DamageInfo info, final int damageAmount) {
         if (info.owner != null && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) {
             this.flash();
-            //AbstractDungeon.actionManager.addToBottom(new GainBloodAction(this.owner, this.owner, this.amount));
-            this.counter ++;
+            if(this.owner.getPower("Blood").amount <= 3) {
+            	AbstractDungeon.actionManager.addToBottom(new GainBloodAction(this.owner, this.owner, this.amount));
+            }
         }
         return damageAmount;
     }
-    
-    @Override
-    public void atEndOfTurn(boolean isPlayer) {
-    	if(counter < 3) {
-    		AbstractDungeon.actionManager.addToBottom(new GainBloodAction(this.owner, this.owner, this.counter));
-    	}
-    	else {
-    		AbstractDungeon.actionManager.addToBottom(new GainBloodAction(this.owner, this.owner, 3));
-    	}
-    	
-    }
+
 
 }

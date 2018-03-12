@@ -25,7 +25,7 @@ public class Spectral_Armor extends AbstractNecromancerCards {
 	
 	public Spectral_Armor() {
 		super(ID, NAME, NecroMod.makePath(NecroMod.SPECTRAL_ARMOR), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
-				AbstractCardEnum.WHITE, AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCardEnum.WHITE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
 		this.baseBlock = BLOCK_AMT;
 	}
 	

@@ -3,14 +3,9 @@ package necromod.cards;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.monsters.*;
-import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.utility.*;
 
 public abstract class AbstractNecromancerCards extends CustomCard{
@@ -18,8 +13,7 @@ public abstract class AbstractNecromancerCards extends CustomCard{
 	//private final AbstractPlayer p = AbstractDungeon.player;
 	
 	public int BloodCost;
-	
-	private boolean damageHappened;
+
 	private boolean isActive;
 	
 	private final String savedDescription;
@@ -28,7 +22,6 @@ public abstract class AbstractNecromancerCards extends CustomCard{
 			int cardPool) {
 		super(id, name, img, cost, rawDescription, type, color, rarity, target, cardPool);
 		
-		this.damageHappened = false;
 		this.isActive = false;
 		this.savedDescription = rawDescription;
 		this.BloodCost = this.cost*3;

@@ -19,13 +19,13 @@ public class Blood_Shield extends AbstractNecromancerCards {
 	public static final	String NAME = cardStrings.NAME;
 	public static final	String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;
-	private static final int BLOCK_AMT = 12;
+	private static final int BLOCK_AMT = 13;
 	private static final int HP_LOSS_AMT = 2;
 	private static final int POOL = 1;
 	
 	public Blood_Shield() {
 		super(ID, NAME, NecroMod.makePath(NecroMod.BLOOD_SHIELD), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
-				AbstractCardEnum.WHITE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCardEnum.WHITE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
 		this.baseMagicNumber = this.magicNumber = HP_LOSS_AMT;
 		this.baseBlock = BLOCK_AMT;
 		

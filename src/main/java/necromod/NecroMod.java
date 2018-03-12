@@ -41,6 +41,7 @@ import necromod.characters.TheNecromancer;
 import necromod.patches.AbstractCardEnum;
 import necromod.patches.TheNecromancerEnum;
 import necromod.relics.Vampire_Amulet;
+import necromod.relics.Phylactery;
 
 @SpireInitializer
 public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber,
@@ -117,6 +118,13 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     public static final String CORRUPT = "cards/corrupt.png";
     public static final String REAP_THE_WEAK = "cards/reap_the_weak.png";
     public static final String EPIDEMIC = "cards/epidemic.png";
+    public static final String ACID_JAVELIN = "cards/acid_javelin.png";
+    public static final String NECROTIC_CLAWS = "cards/necrotic_claws.png";
+    public static final String STOP_HEART = "cards/stop_heart.png";
+    public static final String STRIKE_FROM_BEYOND = "cards/strike_from_beyond.png";
+    public static final String TOXIC_SMOKE_SCREEN = "cards/toxic_smoke_screen.png";
+    public static final String SIPHON_STRENGTH = "cards/siphon_strength.png";
+    public static final String PANDEMIC = "cards/pandemic.png";
     
     //power images
     
@@ -138,10 +146,12 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     public static final String GRASP_HEART_POWER = "powers/crushed_heart.png";
     public static final String NEGATIVE_SHIELD_POWER = "powers/negative_shield.png";
     public static final String BLOOD_MAGIC_POWER = "powers/blood_magic.png";
+    public static final String TOXIC_SCREEN_POWER = "powers/toxic_screen.png";
         
     //relic images
     
     public static final String VAMPIRE_AMULET_RELIC = "relics/vampire_amulet.png";
+    public static final String PHYLACTERY_RELIC = "relics/phylactery.png";
     
     //necromancer assets
     
@@ -236,6 +246,15 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     	return new Texture(makePath(BLOOD_MAGIC_POWER));
     }
     
+    public static Texture getToxicScreenPowerTexture() {
+    	return new Texture(makePath(TOXIC_SCREEN_POWER));
+    }
+    
+    public static Texture getPhylacteryTexture() {
+    	return new Texture(makePath(PHYLACTERY_RELIC));
+    }
+    
+    
     /**
      * Makes a full path for a resource path
      * @param resource the resource, must *NOT* have a leading "/"
@@ -328,6 +347,8 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
         // Add relics
         RelicLibrary.add(new Vampire_Amulet());
         
+        //BaseMod.addRelicToCustomPool(new Phylactery(), "WHITE");
+        
         logger.info("done editting relics");
 	}
 
@@ -380,33 +401,40 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Negative_Energy_Mist());
 		BaseMod.addCard(new Blood_Curse());
 		BaseMod.addCard(new Negative_Energy_Shield());
+		BaseMod.addCard(new Uncharnel());
+		BaseMod.addCard(new Slay_Living());
+		BaseMod.addCard(new Blood_Magic());
+		BaseMod.addCard(new Blood_Magic());
+		BaseMod.addCard(new Plague_Bolt());	
+		BaseMod.addCard(new Violent_Necrosis());
+		BaseMod.addCard(new Corrupt_Power());
+		BaseMod.addCard(new Epidemic());		
+		BaseMod.addCard(new Reap_The_Weak());
 		
 		logger.info("added tested cards");
 		
-		BaseMod.addCard(new Uncharnel());					
+		BaseMod.addCard(new Strike_From_Beyond());
 		logger.info("added Test Case");
 		
-		BaseMod.addCard(new Slay_Living());
+		BaseMod.addCard(new Siphon_Strength());
 		logger.info("added Test Case");
 		
-		BaseMod.addCard(new Blood_Magic());
+		BaseMod.addCard(new Toxic_Smoke_Screen());
 		logger.info("added Test Case");
 		
-		BaseMod.addCard(new Plague_Bolt());
+		BaseMod.addCard(new Pandemic());
 		logger.info("added Test Case");
 		
-		BaseMod.addCard(new Violent_Necrosis());
+		BaseMod.addCard(new Acid_Javelin());
 		logger.info("added Test Case");
 		
-		BaseMod.addCard(new Corrupt_Power());
+		BaseMod.addCard(new Necrotic_Claws());
 		logger.info("added Test Case");
 		
-		BaseMod.addCard(new Epidemic());
+		BaseMod.addCard(new Stop_Heart());
 		logger.info("added Test Case");
-		
-		BaseMod.addCard(new Reap_The_Weak());
-		logger.info("added Test Case");
-		
+
+				
 		/****/
 		/**	BaseMod.addCard(new ());
 			logger.info("added Test Case");

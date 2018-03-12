@@ -32,7 +32,7 @@ public class Plague_Bolt extends AbstractNecromancerCards {
 	public Plague_Bolt() {
 		super (ID, NAME, NecroMod.makePath(NecroMod.PLAGUE_BOLT), COST, DESCRIPTION,
 				AbstractCard.CardType.ATTACK, AbstractCardEnum.WHITE,
-				AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
+				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
 		
 		this.baseDamage = this.damage =  ATTACK_DMG;
 
@@ -53,7 +53,7 @@ public class Plague_Bolt extends AbstractNecromancerCards {
 		int r;
 		int amount;
 		
-		for(int x = 0; x < 2;x++) {
+		
 			
 			for(String d : Debuff) {
 				if (p.hasPower(d)){
@@ -67,12 +67,15 @@ public class Plague_Bolt extends AbstractNecromancerCards {
 			if(p.hasPower("Dexterity") && (p.getPower("Dexterity").amount < 0)){
 					Random.add("Dexterity");
 			}
-			
+			System.out.println(Random.toString());
 			if(!Random.isEmpty()) {
 				i = Random.size();
 				r = (int) Math.random()*i;
+				System.out.println(i);
+				System.out.println(r);
 				
-			
+			for(int x = 0; x < 2;x++) {
+				
 				String debuff = Random.get(r);
 			
 				switch(debuff){
@@ -112,9 +115,15 @@ public class Plague_Bolt extends AbstractNecromancerCards {
 					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new DexterityPower(m, -amount), -amount));
 					break;
 				}
-			}
-			Random.clear();
-							
+				
+			
+			Random.remove(Random.get(r));
+			i--;
+			r = (int) Math.random()*i;
+			System.out.println(i);
+			System.out.println(r);
+			System.out.println(Random.toString());
+			}				
 		}
 		AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));	          
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new PoisonPower(m, p, this.AMOUNT), this.AMOUNT, AbstractGameAction.AttackEffect.POISON));

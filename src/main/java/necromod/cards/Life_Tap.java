@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.*;
 
-import basemod.abstracts.CustomCard;
 import necromod.NecroMod;
 import necromod.actions.common.BloodAction;
 import necromod.patches.AbstractCardEnum;
@@ -29,6 +28,7 @@ public class Life_Tap extends AbstractNecromancerCards {
 				AbstractCardEnum.WHITE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
 		this.energyGain = ENERGY_AMT;
 		this.baseMagicNumber = this.magicNumber = 2;
+		this.exhaust = true;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
@@ -45,6 +45,7 @@ public class Life_Tap extends AbstractNecromancerCards {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
+			this.exhaust = false;
 			this.baseMagicNumber = this.magicNumber -= 1;
 		}
 	}
