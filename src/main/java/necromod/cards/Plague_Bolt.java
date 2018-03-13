@@ -68,62 +68,65 @@ public class Plague_Bolt extends AbstractNecromancerCards {
 					Random.add("Dexterity");
 			}
 			System.out.println(Random.toString());
-			if(!Random.isEmpty()) {
-				i = Random.size();
-				r = (int) Math.random()*i;
-				System.out.println(i);
-				System.out.println(r);
+				if(!Random.isEmpty()) {
+					i = Random.size();
+					r = (int) Math.random()*i;
+					System.out.println(i);
+					System.out.println(r);
 				
 			for(int x = 0; x < 2;x++) {
+				if(!Random.isEmpty()){
 				
-				String debuff = Random.get(r);
 			
-				switch(debuff){
-				case "Poison" : 
-					amount = p.getPower("Poison").amount;
-					AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Poison"));
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new PoisonPower(m, p, amount), amount, AbstractGameAction.AttackEffect.POISON));
-					break;
+					String debuff = Random.get(r);
+			
+					switch(debuff){
+					case "Poison" : 
+						amount = p.getPower("Poison").amount;
+						AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Poison"));
+						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new PoisonPower(m, p, amount), amount, AbstractGameAction.AttackEffect.POISON));
+						break;
 				
-				case "Weakened" :
-					amount = p.getPower("Weakened").amount;
-					AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Weakened"));
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, amount, false), amount));
-					break;
+					case "Weakened" :
+						amount = p.getPower("Weakened").amount;
+						AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Weakened"));
+						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, amount, false), amount));
+						break;
 				
-				case "Frail" :
-					amount = p.getPower("Frail").amount;
-					AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Frail"));
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new FrailPower(m, amount, false),amount, true, AbstractGameAction.AttackEffect.NONE));
-					break;
+					case "Frail" :
+						amount = p.getPower("Frail").amount;
+						AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Frail"));
+						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new FrailPower(m, amount, false),amount, true, AbstractGameAction.AttackEffect.NONE));
+						break;
 				
-				case "Vulnerable" :
-					amount = p.getPower("Vulnerable").amount;
-					AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Vulnerable"));
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, amount, false), amount));
-					break;
+					case "Vulnerable" :
+						amount = p.getPower("Vulnerable").amount;
+						AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Vulnerable"));
+						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, amount, false), amount));
+						break;
 				
-				case "Strength" :
-					amount = -1*(p.getPower("Strength").amount);
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, amount), amount));
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -amount), -amount));
-					break;
+					case "Strength" :
+						amount = -1*(p.getPower("Strength").amount);
+						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, amount), amount));
+						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -amount), -amount));
+						break;
 				
-				case "Dexterity" :
-					amount = -1*(p.getPower("Dexterity").amount);
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, amount), amount));
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new DexterityPower(m, -amount), -amount));
-					break;
+					case "Dexterity" :
+						amount = -1*(p.getPower("Dexterity").amount);
+						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, amount), amount));
+						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new DexterityPower(m, -amount), -amount));
+						break;
+					}
+				
+			
+					Random.remove(Random.get(r));
+					i--;
+					r = (int) Math.random()*i;
+					System.out.println(i);
+					System.out.println(r);
+					System.out.println(Random.toString());
 				}
-				
-			
-			Random.remove(Random.get(r));
-			i--;
-			r = (int) Math.random()*i;
-			System.out.println(i);
-			System.out.println(r);
-			System.out.println(Random.toString());
-			}				
+			}
 		}
 		AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));	          
 		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new PoisonPower(m, p, this.AMOUNT), this.AMOUNT, AbstractGameAction.AttackEffect.POISON));

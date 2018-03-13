@@ -48,7 +48,7 @@ public class NegativeLevelsPower extends AbstractPower {
         	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.source, new StrengthPower(this.owner, 1), 1));
         }
         else {
-        	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.source, new StrengthPower(this.owner, this.amount), this.amount));
+        	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.source, new StrengthPower(this.owner, 1), 1));
         }    	
 
     }

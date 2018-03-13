@@ -30,7 +30,7 @@ public class Bone_Shift extends AbstractNecromancerCards {
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
 
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BonesPower(p, 3), 3));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BonesPower(p, 2), 2));
 			AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
 	}
 	

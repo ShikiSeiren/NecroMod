@@ -24,7 +24,7 @@ public class Detonate_Bones extends AbstractNecromancerCards {
 	
 	private static final int COST = 2;
 	private static final int ATTACK_DMG = 3;
-	private static final int UPGRADE_DMG_AMT = 2;
+	private static final int UPGRADE_DMG_AMT = 1;
 	private static final int POOL = 1;
 	
 	public Detonate_Bones() {

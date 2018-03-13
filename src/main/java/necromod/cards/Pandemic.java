@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.core.*;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 
-public class Pandemic extends AbstractCard {
+public class Pandemic extends AbstractNecromancerCards {
 	public static final String ID = "Pandemic";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final	String NAME = cardStrings.NAME;
@@ -22,7 +22,7 @@ public class Pandemic extends AbstractCard {
 	private static final int COST = 2;
 	private static final int POOL = 1;
 	
-	public static final String UPGRADE_DESCRIPTION = "Apply 6 poison and 3 Vulnerable to the target and half that to all other enemies. Exhaust.";
+	public static final String UPGRADE_DESCRIPTION = "Apply 6 poison and 3 Vulnerable to the target. Apply 3 poison and 2 Vulnerability to ALL other enemies. Exhaust.";
 	
 	public Pandemic() {
 		super(ID, NAME, NecroMod.makePath(NecroMod.PANDEMIC), COST, DESCRIPTION, AbstractCard.CardType.SKILL,

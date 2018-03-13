@@ -41,7 +41,7 @@ import necromod.characters.TheNecromancer;
 import necromod.patches.AbstractCardEnum;
 import necromod.patches.TheNecromancerEnum;
 import necromod.relics.Vampire_Amulet;
-import necromod.relics.Phylactery;
+//import necromod.relics.Phylactery;
 
 @SpireInitializer
 public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber,
@@ -433,6 +433,9 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		
 		BaseMod.addCard(new Stop_Heart());
 		logger.info("added Test Case");
+		
+		BaseMod.addCard(new Skeleton_Dragon());
+		logger.info("added Test Case");
 
 				
 		/****/
@@ -492,7 +495,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		
 		String[] Zombie = {"zombie", "zombies"};
         
-		BaseMod.addKeyword(Zombie, "Summon. Deals 4 damage to a random enemy each turn.");
+		BaseMod.addKeyword(Zombie, "Summon. Deals 3 damage to a random enemy each turn.");
 		
 		String[] CrushedHeart = {"crushedheart", "crushedhearts"};
         
@@ -505,6 +508,10 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		String[] Corrupt = {"corrupt", "corrupts"};
         
 		BaseMod.addKeyword(Corrupt, "Turn a buff of the target into a debuff.");
+		
+		String[] SkeletonDragon = {"corrupt", "corrupts"};
+        
+		BaseMod.addKeyword(SkeletonDragon, "Deals damage to ALL enemies. Applies 1 Hellfire to those not already burning.");
 		
 		
 	}

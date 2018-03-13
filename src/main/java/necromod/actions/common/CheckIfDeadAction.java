@@ -41,10 +41,10 @@ public class CheckIfDeadAction extends AbstractGameAction {
     			
       			this.ID = "ZombiePower";
     			final AbstractMonster randomMonster = AbstractDungeon.getMonsters().getRandomMonster(true);
-    			this.DAMAGE_AMT = 4;
+    			this.DAMAGE_AMT = 3;
     			
     			if(ZPPack > 0) {
-    				AbstractDungeon.actionManager.addToBottom(new CheckIfDeadAction(randomMonster, this.owner, 3*this.DAMAGE_AMT, ZPPack, this.ID, false));
+    				AbstractDungeon.actionManager.addToBottom(new CheckIfDeadAction(randomMonster, this.owner, (3*this.DAMAGE_AMT), ZPPack, this.ID, false));
     			}
     			if(ZP > 0) {
     				AbstractDungeon.actionManager.addToBottom(new CheckIfDeadAction(randomMonster, this.owner, this.DAMAGE_AMT, ZP, this.ID, false));
@@ -98,7 +98,7 @@ public class CheckIfDeadAction extends AbstractGameAction {
     			}
     			
     			if(this.ID.equals("ZombiePower")) {
-    				AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target, new DamageInfo(this.owner, 4, DamageInfo.DamageType.THORNS), 0));
+    				AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target, new DamageInfo(this.owner, this.DAMAGE_AMT, DamageInfo.DamageType.THORNS), 0));
     				AbstractDungeon.actionManager.addToTop(new WaitAction(0.05f));
     			}
     			

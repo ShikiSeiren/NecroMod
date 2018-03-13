@@ -38,13 +38,11 @@ public class ToxicScreenPower extends AbstractPower {
 	}
 	@Override
 	public int onAttacked(final DamageInfo info, int damageAmount) {
-	       if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner) {
-	           this.flash();
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(info.owner, this.owner, new PoisonPower(info.owner, this.owner, this.stacks), this.stacks, AbstractGameAction.AttackEffect.POISON));
+	    if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner) {
+	        this.flash();
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(info.owner, this.owner, new PoisonPower(info.owner, this.owner, this.stacks), this.stacks, AbstractGameAction.AttackEffect.POISON));
 
-	       }
-	        
-		damageAmount = 0;
+	    }	        
 		return damageAmount;
 	}
 

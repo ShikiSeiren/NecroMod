@@ -20,7 +20,7 @@ public class Reap_The_Weak extends AbstractNecromancerCards {
 	public static final String NAME = "Reap the Weak";
 	private static final int COST = 2;
 	private static final int ATTACK_DMG = 5;
-	public static final String DESCRIPTION = "Lose 3 HP. Deal !D! damage to ALL enemies.";
+	public static final String DESCRIPTION = "Deal !D! damage times the amount of unique debuffs on the target.";
 	private static final int UPGRADE_PLUS_DMG = 2;
 	private static final int POOL = 1;
 	public final int AMOUNT = 1;
@@ -46,7 +46,9 @@ public class Reap_The_Weak extends AbstractNecromancerCards {
 				}
 			}
 		}
-		AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, (this.damage*counter), this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+		this.baseDamage = this.damage *= counter;
+		
+		AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
         counter = 0;	
     }
 	

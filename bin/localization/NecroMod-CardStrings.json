@@ -56,7 +56,7 @@
 		
 	"Summon_Death_Knight": {
 		"NAME" : "Summon Death Knight",
-		"DESCRIPTION" : "Summon a Death Knight."
+		"DESCRIPTION" : "Summon a DeathKnight."
 		},
 		
 	"Life_Tap": {
@@ -166,12 +166,12 @@
 		
 	"Uncharnel": {
 		"NAME" : "Uncharnel",
-		"DESCRIPTION" : "Add an exhausted card to your drawpile. Gain 1 Zombie. Exhaust."
+		"DESCRIPTION" : "Add an exhausted card to your drawpile. Gain !M! Zombie (s). Exhaust."
 		},
 		
 	"Blood_Magic": {
 		"NAME" : "Blood Magic",
-		"DESCRIPTION" : "Gain Blood Magic."
+		"DESCRIPTION" : "Gain BloodMagic."
 		},
 		
 	"Violent_Necrosis": {
@@ -196,13 +196,17 @@
 		
 	"Pandemic": {
 		"NAME" : "Pandemic",
-		"DESCRIPTION" : "Apply 4 poison and 2 Vulnerable to the targetand half that to ALL other enemies. Exhaust."
+		"DESCRIPTION" : "Apply 4 Poison and 2 Vulnerable to the target. Apply 2 Poison and 1 Vulnerable to ALL other enemies. Exhaust."
 		},
 		
 	"Siphon_Strength": {
 		"NAME" : "Siphon Strength",
 		"DESCRIPTION" : "Drain 2 Strength from the target. Exhaust."
-		}
+		},
 		
+	"Skeleton_Dragon": {
+		"NAME" : "Summon Skeleton Dragon",
+		"DESCRIPTION" : "Summon a SkeletonDragon. Costs 1 Energy less for each stack of Bones, consuming them."
+		}		
 		
 }	

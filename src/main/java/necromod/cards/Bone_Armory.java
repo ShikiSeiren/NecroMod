@@ -26,7 +26,7 @@ public class Bone_Armory extends AbstractNecromancerCards {
 	
 	public Bone_Armory() {
 		super(ID, NAME, NecroMod.makePath(NecroMod.BONE_ARMORY), COST, DESCRIPTION, AbstractCard.CardType.POWER,
-				AbstractCardEnum.WHITE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.SELF, POOL);
+				AbstractCardEnum.WHITE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
 		
 		this.baseMagicNumber = this.magicNumber = AMOUNT;
 		

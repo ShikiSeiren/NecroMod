@@ -21,7 +21,6 @@ public class Slay_Living extends AbstractNecromancerCards {
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 10;
 	public static final String DESCRIPTION = "When the target has 30% or less HP remaining : Kill it instantly.";
-	private static final int UPGRADE_PLUS_DMG = 3;
 	private static final int POOL = 1;
 	public final int AMOUNT = 1;
 	
@@ -30,9 +29,11 @@ public class Slay_Living extends AbstractNecromancerCards {
 	};
 	
 	public static final String DESCRIPTION_ON_DEADLY = "Kills target instantly.";
+	public final String UPGRADE_DESCRIPTION = "When the target has 40% or less HP remaining : Kill it instantly.";
 	
 	public AbstractMonster target;
 	public int HPThreshhold;
+	public double Multiplier = 0.3;
 	
 	public Slay_Living() {
 		super (ID, NAME, NecroMod.makePath(NecroMod.SLAY_LIVING), COST, DESCRIPTION,
@@ -40,12 +41,12 @@ public class Slay_Living extends AbstractNecromancerCards {
 				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
 		
 		this.baseDamage = this.damage =  ATTACK_DMG;
-
+		this.baseMagicNumber = this.magicNumber = 3;
 	}
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-			this.HPThreshhold = ((int) (m.maxHealth*0.3));
+			this.HPThreshhold = ((int) (m.maxHealth*this.Multiplier-1));
 			
 			if(m.currentHealth <= HPThreshhold) {
 				AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, 999, this.damageTypeForTurn), AbstractGameAction.AttackEffect.POISON));
@@ -69,13 +70,14 @@ public class Slay_Living extends AbstractNecromancerCards {
 		
 			for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
 				
-					this.HPThreshhold = ((int) (mo.maxHealth*0.3))+1;
+					this.HPThreshhold = ((int) (mo.maxHealth*this.Multiplier));
 					
 					if(mo.hb.hovered && (mo.currentHealth <= HPThreshhold)) {
 						this.rawDescription = Slay_Living.DESCRIPTION_ON_DEADLY;
 						this.initializeDescription();
 					}
 					else {
+						mo.unhover();
 						this.rawDescription = Slay_Living.DESCRIPTION;
 						this.initializeDescription();
 					}
@@ -94,7 +96,9 @@ public class Slay_Living extends AbstractNecromancerCards {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(UPGRADE_PLUS_DMG);
+            this.Multiplier = 0.4;
+            this.rawDescription = this.UPGRADE_DESCRIPTION;
+	        this.initializeDescription();
         }
 	
     }

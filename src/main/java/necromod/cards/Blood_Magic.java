@@ -16,10 +16,8 @@ public class Blood_Magic extends AbstractNecromancerCards{
 	public static final String ID = "Blood_Magic";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static String NAME = "Blood Magic";
-	public String NAME2 = "Summon Elder Lich";
 	public static final	String DESCRIPTION = cardStrings.DESCRIPTION;
-	private final int UPGRADE_DMG_AMT = 2;
-	private static final int COST = 2;
+	private static final int COST = 5;
 	private static final int POOL = 1;	
 	
 	public Blood_Magic() {
@@ -27,7 +25,7 @@ public class Blood_Magic extends AbstractNecromancerCards{
 				AbstractCardEnum.WHITE, AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.SELF, POOL);
 		
 		//this.baseDamage = this.damage = 3;
-		this.baseMagicNumber = this.magicNumber = 3;
+		this.baseMagicNumber = this.magicNumber = 5;
 		
 	}
 	
@@ -44,10 +42,8 @@ public class Blood_Magic extends AbstractNecromancerCards{
 	
 	public void upgrade() {
 		if (!this.upgraded) {
-			this.name = this.NAME2;
 			this.upgradeName();
-			this.upgradeMagicNumber(2);
-			this.upgradeDamage(this.UPGRADE_DMG_AMT);
+			this.baseMagicNumber = this.magicNumber = 3;
 		}
 	}
 	

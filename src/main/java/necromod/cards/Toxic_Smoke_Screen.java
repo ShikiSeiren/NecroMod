@@ -34,7 +34,7 @@ public class Toxic_Smoke_Screen extends AbstractNecromancerCards {
 	public void use(AbstractPlayer p, AbstractMonster m) {
 
 		AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ToxicScreenPower(m, 1, this.magicNumber),1));
+		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ToxicScreenPower(p, 1, this.magicNumber),1));
 				
 	}
 	

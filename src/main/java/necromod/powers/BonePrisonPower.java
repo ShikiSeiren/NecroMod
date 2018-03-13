@@ -57,6 +57,7 @@ public class BonePrisonPower extends AbstractPower{
 			m.setMove(moveByte, moveIntent);
 			m.createIntent();
 			AbstractDungeon.actionManager.addToBottom(new SetMoveAction(m, moveByte, moveIntent));
+			m.updatePowers();
 		}
 	}	
 

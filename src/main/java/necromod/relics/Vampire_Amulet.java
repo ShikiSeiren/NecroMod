@@ -23,7 +23,7 @@ public class Vampire_Amulet extends CustomRelic{
 	
 	@Override
 	public void onMonsterDeath(final AbstractMonster m) {
-		if (m.currentHealth == 0){ //&& !(this.target.hasPower("Minion")) if too powerful
+		if (m.isDying && m.currentHealth <= 0 && !m.halfDead){ //&& !(this.target.hasPower("Minion")) if too powerful
 			this.flash();
 			 AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(m, this));
 			 AbstractDungeon.player.heal(2, true);
