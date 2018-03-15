@@ -6,8 +6,8 @@ import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import com.badlogic.gdx.math.*;
-import com.esotericsoftware.spine.*;
+//import com.badlogic.gdx.math.*;
+//import com.esotericsoftware.spine.*;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -39,7 +39,7 @@ public class TheNecromancer extends CustomPlayer{
 
 	
 	public TheNecromancer(String name, PlayerClass setClass) {
-		super(name, setClass, orbTextures, "img/char/necromancer/orb/vfx.png", null, null);
+		super(name, setClass, orbTextures, "img/char/necromancer/orb/vfx.png", "img/necromancer.g3dj", "Necromancer_Render|idle"); //super(name, setClass, orbTextures, "img/char/necromancer/orb/vfx.png", null, null);
 		
 		this.dialogX = this.drawX + 0.0f * Settings.scale;
 		this.dialogY = this.drawY + 170.0f * Settings.scale;
@@ -49,10 +49,10 @@ public class TheNecromancer extends CustomPlayer{
 				NecroMod.makePath(NecroMod.NECROMANCER_CORPSE), 
 				getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
 		
-				this.loadAnimation("img/char/necromancer/skeleton.atlas", "img/char/necromancer/skeleton.json", 1.0F);
+				//this.loadAnimation("img/char/necromancer/skeleton.atlas", "img/char/necromancer/skeleton.json", 1.0F);
 
-				AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
-				e.setTime(e.getEndTime() * MathUtils.random());
+				//AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
+				//e.setTime(e.getEndTime() * MathUtils.random());
 	}
 	
 	@Override
@@ -60,8 +60,7 @@ public class TheNecromancer extends CustomPlayer{
 		for (AbstractPower p : this.powers) {
 			p.atEndOfTurn(true);
 		}
-		// make sure that cards that get changed to ethereal are
-		// always exhausted
+
 		AbstractDungeon.actionManager.addToBottom(new CheckIfDeadAction(AbstractDungeon.getMonsters().getRandomMonster(true), AbstractDungeon.player, 0, 0, "", true));
 	}
 

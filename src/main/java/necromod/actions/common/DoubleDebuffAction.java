@@ -76,12 +76,16 @@ public class DoubleDebuffAction extends AbstractGameAction {
 				
 			case "Strength" :
 				amount = -1*(this.target.getPower("Strength").amount);
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new StrengthPower(this.target, -amount), -amount));
+				if(amount > 0) {
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new StrengthPower(this.target, -amount), -amount));
+				}			
 				break;
 				
 			case "Dexterity" :
 				amount = -1*(this.target.getPower("Dexterity").amount);
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new DexterityPower(this.target, -amount), -amount));
+				if(amount > 0) {
+						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new DexterityPower(this.target, -amount), -amount));
+				}	
 				break;
 				
 			case "HellFlamePower" :

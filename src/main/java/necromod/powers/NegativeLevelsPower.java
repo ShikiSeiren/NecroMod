@@ -11,7 +11,7 @@ public class NegativeLevelsPower extends AbstractPower {
 	public static final String POWER_ID = "Negative_Level";
 	public static final String NAME = "Negative Level";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"Adds -!M! Strength. NL Adds !M! Frail."
+			"Adds -1 Strength and 2 Frail per Negative Level."
 	};
 	
 	public AbstractCreature source;

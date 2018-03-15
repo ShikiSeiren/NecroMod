@@ -23,11 +23,11 @@ public class Plague_Bolt extends AbstractNecromancerCards {
 	public static final String ID = "Plague_Bolt";
 	public static final String NAME = "Plague Bolt";
 	private static final int COST = 1;
-	private static final int ATTACK_DMG = 4;
-	public static final String DESCRIPTION = "Deal !D! damage. NL Apply 3 Poison. NL Transfer 2 negative effects.";
-	private static final int UPGRADE_PLUS_DMG = 2;
+	private static final int ATTACK_DMG = 6;
+	public static final String DESCRIPTION = "Deal !D! damage. NL Apply 2 Poison. NL Transfer !M! negative effects.";
+	//private static final int UPGRADE_PLUS_DMG = 2;
 	private static final int POOL = 1;
-	public final int AMOUNT = 3;
+	public final int AMOUNT = 2;
 	
 	public Plague_Bolt() {
 		super (ID, NAME, NecroMod.makePath(NecroMod.PLAGUE_BOLT), COST, DESCRIPTION,
@@ -35,6 +35,7 @@ public class Plague_Bolt extends AbstractNecromancerCards {
 				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
 		
 		this.baseDamage = this.damage =  ATTACK_DMG;
+		this.baseMagicNumber = this.magicNumber = 1;
 
 	}
 	
@@ -52,7 +53,6 @@ public class Plague_Bolt extends AbstractNecromancerCards {
 		int i;
 		int r;
 		int amount;
-		
 		
 			
 			for(String d : Debuff) {
@@ -74,7 +74,7 @@ public class Plague_Bolt extends AbstractNecromancerCards {
 					System.out.println(i);
 					System.out.println(r);
 				
-			for(int x = 0; x < 2;x++) {
+			for(int z = 0; z < this.magicNumber; z++) {
 				if(!Random.isEmpty()){
 				
 			
@@ -107,14 +107,18 @@ public class Plague_Bolt extends AbstractNecromancerCards {
 				
 					case "Strength" :
 						amount = -1*(p.getPower("Strength").amount);
-						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, amount), amount));
-						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -amount), -amount));
+						if(amount >0) {
+							AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, amount), amount));
+							AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -amount), -amount));
+						}
 						break;
 				
 					case "Dexterity" :
 						amount = -1*(p.getPower("Dexterity").amount);
-						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, amount), amount));
-						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new DexterityPower(m, -amount), -amount));
+						if(amount > 0) {
+							AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, amount), amount));
+							AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new DexterityPower(m, -amount), -amount));
+						}
 						break;
 					}
 				
@@ -142,7 +146,7 @@ public class Plague_Bolt extends AbstractNecromancerCards {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(UPGRADE_PLUS_DMG);
+            this.upgradeMagicNumber(1);
         }
 	
     }

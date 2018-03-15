@@ -107,14 +107,19 @@ public class CorruptAction extends AbstractGameAction {
 				
 			case "Strength" : 
 				amount = this.target.getPower("Strength").amount;
-				AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.target, this.source, this.cb));
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new StrengthPower(this.target, -amount), -amount));
+				if(amount > 0) {
+					AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.target, this.source, this.cb));
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new StrengthPower(this.target, -amount), -amount));
+				}
+				
 				break;
 			
 			case "Dexterity" :
 				amount = this.target.getPower("Dexterity").amount;
-				AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.target, this.source, this.cb));
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new DexterityPower(this.target, -amount), -amount));
+				if(amount > 0) {
+					AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.target, this.source, this.cb));
+					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new DexterityPower(this.target, -amount), -amount));
+				}
 				break;
 				
 			}

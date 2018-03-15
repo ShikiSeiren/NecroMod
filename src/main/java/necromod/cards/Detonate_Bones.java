@@ -33,7 +33,7 @@ public class Detonate_Bones extends AbstractNecromancerCards {
 				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY, POOL);
 	
 		this.baseDamage = this.damage = ATTACK_DMG;
-		
+		this.isMultiDamage = true;
 		
 	}
 	
@@ -43,17 +43,26 @@ public class Detonate_Bones extends AbstractNecromancerCards {
             AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0f, Detonate_Bones.EXTENDED_DESCRIPTION[0], true));
             return;
         }
+		this.baseDamage = p.getPower("Bones").amount;
+		if(!this.upgraded) {
+			this.baseDamage *=6;
+			this.damage = this.baseDamage;
+		}
 		else {
+			this.baseDamage *=8;
+			this.damage = this.baseDamage;
+		}
+			/**
 		this.baseMagicNumber = p.getPower("Bones").amount;
 		
 		this.baseDamage = this.damage *= baseMagicNumber;
-		
+		**/
 		this.calculateCardDamage(m);
 		
 		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), 0));
 		AbstractDungeon.actionManager.addToBottom(new DetonateBonesAction(p, p));
 		
-		}
+
 	}
 	
 	@Override

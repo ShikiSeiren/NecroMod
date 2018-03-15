@@ -21,7 +21,7 @@ public class Negative_Energy_Arrows extends AbstractNecromancerCards{
 	private static final int ATTACK_DMG = 3;
 	private static final int TIMES = 3;
 	public static final String DESCRIPTION = "Deal !D! damage " + TIMES + " times. Add 1 negativelevel.";
-	private static final int UPGRADE_PLUS_DMG = 2;
+	private static final int UPGRADE_PLUS_DMG = 1;
 	private static final int POOL = 0;
 	
 	private final int AMOUNT = 1;

@@ -26,7 +26,7 @@
 	
 	"Thousand_Bone_Knives": {
 		"NAME" : "Thousand Bone Knives",
-		"DESCRIPTION" : "Deal !D! damage !M! times. NL If you have Bones : NL Hit an additional time."
+		"DESCRIPTION" : "Deal !D! damage !M! times. NL If you have Bones : NL Hit 2 additional times. Remove 1 Bones."
 	},
 	
 	"Shade_Step": {
@@ -46,7 +46,7 @@
 		
 	"Bone_Spikes": {
 		"NAME" : "Bone Spikes",
-		"DESCRIPTION" : "Deal !D! Damage. NL If you have Bones : Deal 4 additional Damage."
+		"DESCRIPTION" : "Deal !D! Damage. NL If you have Bones : Deal 4 additional Damage. Remove 1 Bones."
 		},
 		
 	"Negative_Energy_Bomb": {
@@ -71,10 +71,10 @@
 		
 	"Bone_Shift": {
 		"NAME" : "Bone Shift",
-		"DESCRIPTION" : "Draw !M! cards. Gain 3 Bones."
+		"DESCRIPTION" : "Draw !M! cards. Gain 2 Bones."
 		},
 	
-	"Blood_For_Blood": {
+	"Blood_for_Blood": {
 		"NAME" : "Blood for Blood",
 		"DESCRIPTION" : "Whenever you lose HP : Gain 1 Blood."
 		},
@@ -121,17 +121,17 @@
 		
 	"Summon_Undead": {
 		"NAME" : "Summon Undead",
-		"DESCRIPTION" : "Summon a random Undead."
+		"DESCRIPTION" : "Summon a random Undead. Exhaust."
 		},
 		
 	"Summon_Lich": {
 		"NAME" : "Summon Lich",
-		"DESCRIPTION" : "Summon a powerful undead Mage that deals !M! damage to ALL enemies."
+		"DESCRIPTION" : "Summon a powerful undead Mage that deals !M! damage to ALL enemies each turn."
 		},		
 		
 	"Summon_Vampire_Lady": {
 		"NAME" : "Summon Lich",
-		"DESCRIPTION" : "Summon a powerful Vampire that deals !D! damage to a random enemy and heals for unblocked damage dealt."
+		"DESCRIPTION" : "Summon a powerful Vampire that deals 3 damage to a random enemy each turn and heals for unblocked damage dealt."
 		},			
 		
 	"Bone_Prison": {
@@ -146,7 +146,7 @@
 		
 	"Detonate_Bones": {
 		"NAME" : "Detonate Bones",
-		"DESCRIPTION" : "Remove all bones. Apply !D! damage times the amount of stacks removed."
+		"DESCRIPTION" : "Remove all bones. Deal !D! damage times the amount of stacks removed."
 		},
 		
 	"Negative_Energy_Mist": {

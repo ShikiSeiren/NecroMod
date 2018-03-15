@@ -15,13 +15,13 @@ import necromod.patches.AbstractCardEnum;
 public class Cloud_Kill extends AbstractNecromancerCards {
 	public static final String ID = "Cloudkill";
 	public static final String NAME = "Cloudkill";
-	private static final int COST = 1;
+	private static final int COST = 3;
 	public static final String DESCRIPTION = "Apply !M! Poison to all enemies.";
 	private static final int POOL = 1;
 	public final int AMOUNT = 7;
 	
 	public Cloud_Kill() {
-		super (ID, NAME, NecroMod.makePath(NecroMod.BONE_SPIKES), COST, DESCRIPTION,
+		super (ID, NAME, NecroMod.makePath(NecroMod.CLOUDKILL), COST, DESCRIPTION,
 				AbstractCard.CardType.SKILL, AbstractCardEnum.WHITE,
 				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ALL_ENEMY, POOL);
 		

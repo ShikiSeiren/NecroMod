@@ -30,7 +30,7 @@ public abstract class AbstractNecromancerCards extends CustomCard{
 	@Override
 	public void update() {
 		super.update();
-		
+		if(AbstractDungeon.player != null) {
 		if(AbstractDungeon.player.hasPower("BloodMagicPower")) {
 			if((this.cost > EnergyPanel.totalCount || this.costForTurn > EnergyPanel.totalCount) && this.isActive == false) {
 				this.costForTurn = 0;
@@ -54,7 +54,7 @@ public abstract class AbstractNecromancerCards extends CustomCard{
 		}
 		
 	}
-	
+	}
 	@Override
 	public void onPlayCard(AbstractCard c, AbstractMonster m) {
 		if(c == this) {

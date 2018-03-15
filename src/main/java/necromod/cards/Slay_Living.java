@@ -30,6 +30,7 @@ public class Slay_Living extends AbstractNecromancerCards {
 	
 	public static final String DESCRIPTION_ON_DEADLY = "Kills target instantly.";
 	public final String UPGRADE_DESCRIPTION = "When the target has 40% or less HP remaining : Kill it instantly.";
+	public static final String UPGRADE_DESCRIPTION2 = "When the target has 40% or less HP remaining : Kill it instantly.";
 	
 	public AbstractMonster target;
 	public int HPThreshhold;
@@ -65,26 +66,37 @@ public class Slay_Living extends AbstractNecromancerCards {
 	@Override
 	public void update() {
 		super.update();	
-		
+		if(AbstractDungeon.player != null) {
 		if(AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom() instanceof MonsterRoom || AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite || AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
 		
 			for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+				this.HPThreshhold = ((int) (mo.maxHealth*this.Multiplier));
 				
-					this.HPThreshhold = ((int) (mo.maxHealth*this.Multiplier));
-					
+				if(AbstractDungeon.isScreenUp = false ) { //|| AbstractDungeon.screen != AbstractDungeon.CurrentScreen.CARD_REWARD
+										
 					if(mo.hb.hovered && (mo.currentHealth <= HPThreshhold)) {
 						this.rawDescription = Slay_Living.DESCRIPTION_ON_DEADLY;
 						this.initializeDescription();
 					}
 					else {
-						mo.unhover();
-						this.rawDescription = Slay_Living.DESCRIPTION;
-						this.initializeDescription();
+						if(!this.upgraded) {
+							mo.unhover();
+							this.rawDescription = Slay_Living.DESCRIPTION;
+							this.initializeDescription();
+						}
+						else {
+							mo.unhover();
+							this.rawDescription = Slay_Living.UPGRADE_DESCRIPTION2;
+						}
+						
 					}
+				}
+					
+
 
 			}
 		}	
-
+	}
 	}
 	
 	@Override

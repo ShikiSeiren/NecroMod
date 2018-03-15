@@ -17,7 +17,7 @@ public class Blood_Magic extends AbstractNecromancerCards{
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static String NAME = "Blood Magic";
 	public static final	String DESCRIPTION = cardStrings.DESCRIPTION;
-	private static final int COST = 5;
+	private static final int COST = 3;
 	private static final int POOL = 1;	
 	
 	public Blood_Magic() {
@@ -43,7 +43,7 @@ public class Blood_Magic extends AbstractNecromancerCards{
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.baseMagicNumber = this.magicNumber = 3;
+			this.upgradeBaseCost(2);
 		}
 	}
 	

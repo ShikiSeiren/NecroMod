@@ -14,7 +14,7 @@ import necromod.patches.AbstractCardEnum;
 import necromod.powers.BloodForBloodPower;
 
 public class Blood_For_Blood extends AbstractNecromancerCards{
-	public static final String ID = "Blood_For_Blood";
+	public static final String ID = "Blood_for_Blood";
 	private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 	public static final	String NAME = cardStrings.NAME;
 	public static final	String DESCRIPTION = cardStrings.DESCRIPTION;

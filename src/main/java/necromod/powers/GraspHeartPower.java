@@ -15,7 +15,7 @@ public class GraspHeartPower extends AbstractPower {
 	public static final String POWER_ID = "GraspHeartPower";
 	public static final String NAME = "Crushed Heart";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"Deal 8 Damage per turn. If the afflicted enemy casts a buff : Remove it."
+			"Deal 3 damage per stack each turn. Increases by 1 stack each turn."
 	};
 	public AbstractCreature source;
 	

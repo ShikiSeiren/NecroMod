@@ -19,7 +19,7 @@ public class SkeletonDragonPower extends AbstractPower {
 	public static final String POWER_ID = "SkeletonDragonPower";
 	public static final String NAME = "Skeleton Dragon";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"A skeletal dragon assumed to be the pinnacle of Necromancy. Deals 5 damage to ALL enemies at the end of each turn. NL Applies Hellfire to those not already burning."
+			"A skeletal dragon assumed to be the pinnacle of Necromancy. Deals 7 damage to ALL enemies at the end of each turn. NL Applies Hellfire to those not already burning."
 	};
 	
 	
@@ -33,7 +33,7 @@ public class SkeletonDragonPower extends AbstractPower {
 		updateDescription();
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
-		this.img = NecroMod.getElderLichPowerTexture();
+		this.img = NecroMod.getSkeletonDragonPowerTexture();
 		this.DAMAGE_AMT = damage;
 		this.amount = amount;
 

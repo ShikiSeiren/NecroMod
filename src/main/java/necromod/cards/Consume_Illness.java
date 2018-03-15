@@ -68,13 +68,20 @@ public class Consume_Illness extends AbstractNecromancerCards{
 				}
 				else if(Random.get(r).equals("Strength")){
 					int amount = -1*(p.getPower("Strength").amount);
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, amount), amount));
-					AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, 3));
+					
+					if(amount > 0) {
+						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, amount), amount));
+						AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, 3));
+					}
+					
 				}
 				else {
 					int amount = -1*(p.getPower("Dexterity").amount);
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, amount), amount));
-					AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, 3));
+					if(amount > 0) {
+						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(p, amount), amount));
+						AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, 3));
+					}
+					
 				}
 				
 					

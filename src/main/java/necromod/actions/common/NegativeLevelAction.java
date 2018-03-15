@@ -16,10 +16,12 @@ public class NegativeLevelAction extends AbstractGameAction {
 	
 	@Override
 	public void update() {
-			
+		if(!this.target.hasPower("Artifact")) {
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new StrengthPower(this.target, -this.amount), -this.amount));
 			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new FrailPower(this.target, (this.amount*2), false),
 					(this.amount*2), true, AbstractGameAction.AttackEffect.NONE));
+		}
+			
 			
 			this.isDone = true;
 					

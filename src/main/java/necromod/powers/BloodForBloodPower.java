@@ -3,12 +3,10 @@ package necromod.powers;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.*;
 
-
 import necromod.NecroMod;
-import necromod.actions.common.GainBloodAction;
-
 
 public class BloodForBloodPower extends AbstractPower {
 	
@@ -19,6 +17,7 @@ public class BloodForBloodPower extends AbstractPower {
 			"Gain !M! Blood at the start of your turn."
 	};
 	
+	public int bloodCounter = 0;
 	
     public BloodForBloodPower(final AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -39,10 +38,18 @@ public class BloodForBloodPower extends AbstractPower {
     @Override
     public int onAttacked(final DamageInfo info, final int damageAmount) {
         if (info.owner != null && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) {
-            this.flash();
-            if(this.owner.getPower("Blood").amount <= 3) {
-            	AbstractDungeon.actionManager.addToBottom(new GainBloodAction(this.owner, this.owner, this.amount));
+            
+            if(this.owner.hasPower("Blood")) {
+            	if(this.owner.getPower("Blood").amount < 3) {
+            		this.flash();
+            		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new BloodPower(this.owner, 1), 1));
+            	}
             }
+            else {
+            	this.flash();
+            	AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new BloodPower(this.owner, 1), 1));
+            }
+            
         }
         return damageAmount;
     }

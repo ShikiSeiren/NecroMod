@@ -15,7 +15,7 @@ public class HellFlamePower extends AbstractPower {
 	public static final String POWER_ID = "HellFlamePower";
 	public static final String NAME = "Hellfire";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"Deal 8 Damage per turn. If the afflicted enemy gains a buff : Remove it."
+			"Deal 10 Damage per turn. If the afflicted enemy gains a buff : Remove it."
 	};
 	public AbstractCreature source;
 	
@@ -50,6 +50,7 @@ public class HellFlamePower extends AbstractPower {
 	//Possibly damage atEndOfTurn of monster or at startOfTurn player.
 	
 	@Override
+	
     public void atStartOfTurn() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flashWithoutSound();

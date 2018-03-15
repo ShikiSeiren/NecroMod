@@ -87,12 +87,16 @@ public class EpidemicAction extends AbstractGameAction{
 				
 					case "Strength" :
 						amount = -1*(this.target.getPower("Strength").amount);
-						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, this.source, new StrengthPower(mo, -amount), -amount));
+						if(amount > 0) {
+							AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, this.source, new StrengthPower(mo, -amount), -amount));
+						}						
 						break;
 				
 					case "Dexterity" :
 						amount = -1*(this.target.getPower("Dexterity").amount);
-						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, this.source, new DexterityPower(mo, -amount), -amount));
+						if(amount > 0) {
+							AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, this.source, new DexterityPower(mo, -amount), -amount));
+						}		
 						break;
 				
 					case "HellFlamePower" :

@@ -14,7 +14,7 @@ public class SpectralPower extends AbstractPower {
 	public static final String POWER_ID = "SpectralPower";
 	public static final String NAME = "Spectral";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"Take halved damage."
+			"Take halved unblocked damage."
 	};
 	
 	public int DAMAGE_AMT;

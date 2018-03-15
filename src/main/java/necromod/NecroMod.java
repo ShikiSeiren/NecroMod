@@ -125,6 +125,10 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     public static final String TOXIC_SMOKE_SCREEN = "cards/toxic_smoke_screen.png";
     public static final String SIPHON_STRENGTH = "cards/siphon_strength.png";
     public static final String PANDEMIC = "cards/pandemic.png";
+    public static final String SKELETON_DRAGON = "cards/skeleton_dragon.png";
+    public static final String CLOUDKILL = "cards/cloudkill.png";
+    public static final String REQUIEM = "cards/requiem.png";
+    
     
     //power images
     
@@ -147,6 +151,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     public static final String NEGATIVE_SHIELD_POWER = "powers/negative_shield.png";
     public static final String BLOOD_MAGIC_POWER = "powers/blood_magic.png";
     public static final String TOXIC_SCREEN_POWER = "powers/toxic_screen.png";
+    public static final String SKELETON_DRAGON_POWER = "powers/skeleton_dragon.png";
         
     //relic images
     
@@ -252,6 +257,10 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
     
     public static Texture getPhylacteryTexture() {
     	return new Texture(makePath(PHYLACTERY_RELIC));
+    }
+    
+    public static Texture getSkeletonDragonPowerTexture() {
+    	return new Texture(makePath(SKELETON_DRAGON_POWER));
     }
     
     
@@ -436,6 +445,12 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		
 		BaseMod.addCard(new Skeleton_Dragon());
 		logger.info("added Test Case");
+		
+		BaseMod.addCard(new Cloud_Kill());
+		logger.info("added Test Case");
+		
+		BaseMod.addCard(new Requiem());
+		logger.info("added Test Case");
 
 				
 		/****/
@@ -471,7 +486,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		
 		String[] Bones = {"bone", "bones", "Bones"};
         
-		BaseMod.addKeyword(Bones, "Upgrades the next Bone-type Attack.");
+		BaseMod.addKeyword(Bones, "Buffs the next Bone-type Attack.");
 		
 		String[] Blood = {"blood", "bloods", "Blood"};
         
@@ -487,7 +502,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		
 		String[] DeathKnight = {"deathknight", "deathknights", "death knight", "death knights", "Death Knight"};
         
-		BaseMod.addKeyword(DeathKnight, "Summon. Deals 5 damage to a random enemy each turn. Buffs the summoner with 5 block");
+		BaseMod.addKeyword(DeathKnight, "Summon. Deals 5 damage to a random enemy each turn. Buffs the summoner with 5 block.");
 		
 		String[] Spectral = {"spectral", "spectrals", "Spectral"};
         
@@ -495,7 +510,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		
 		String[] Zombie = {"zombie", "zombies"};
         
-		BaseMod.addKeyword(Zombie, "Summon. Deals 3 damage to a random enemy each turn.");
+		BaseMod.addKeyword(Zombie, "Summon. Deals 3 damage to a random enemy each turn. Pack Tactics : Every 3 Zombies will stage a combined attack for 9 damage.");
 		
 		String[] CrushedHeart = {"crushedheart", "crushedhearts"};
         

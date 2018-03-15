@@ -39,17 +39,17 @@ public class Reap_The_Weak extends AbstractNecromancerCards {
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 		
-		if(m.powers != null) {	
+		if(m.powers != null) {
+			counter = 0;	
 			for(AbstractPower power : m.powers) {
 				if(power.type == PowerType.DEBUFF) {
 					counter++;
 				}
 			}
 		}
-		this.baseDamage = this.damage *= counter;
 		
-		AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        counter = 0;	
+		AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, (this.damage*counter), this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+       	
     }
 	
 	@Override
