@@ -19,7 +19,7 @@ public class SkeletonDragonPower extends AbstractPower {
 	public static final String POWER_ID = "SkeletonDragonPower";
 	public static final String NAME = "Skeleton Dragon";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"A skeletal dragon assumed to be the pinnacle of Necromancy. Deals 7 damage to ALL enemies at the end of each turn. NL Applies Hellfire to those not already burning."
+			"A skeletal dragon assumed to be the pinnacle of Necromancy. Deals 5 damage to ALL enemies at the end of each turn. NL Applies Hellfire to those not already burning."
 	};
 	
 	
@@ -49,14 +49,13 @@ public class SkeletonDragonPower extends AbstractPower {
     	
 		this.flash();
 		for(int i = 0; i < this.owner.getPower("SkeletonDragonPower").amount; i++) {
-			
 			this.flash();
 	        AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
 	        AbstractDungeon.actionManager.addToBottom(new VFXAction(this.owner, new CleaveEffect(), 0.25f));
 	        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(this.owner, DamageInfo.createDamageMatrix(this.DAMAGE_AMT, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
 	        
 	        for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-	        	if(!(mo.hasPower("Hellfire"))){
+	        	if(!(mo.hasPower("HellFlamePower"))){
 	        		AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, mo, new HellFlamePower(mo, mo, 1), 1));
 	        	}
 	        }

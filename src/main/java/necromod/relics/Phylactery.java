@@ -14,7 +14,7 @@ public class Phylactery extends CustomRelic{
 	private static boolean usedThisCombat = false;
 	
 	private static final String ID = "Phylactery";
-	public final String[] DESCRIPTIONS = new String[] {
+	public static final String[] DESCRIPTIONS = new String[] {
 			"Once per combat, if you would receive fatal damage: Revive with 10% of your max. HP "
 	}; 
 	//private static final int HP_TO_HEAL;
@@ -26,7 +26,7 @@ public class Phylactery extends CustomRelic{
 
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0];
+        return DESCRIPTIONS[0];
     }
     
     @Override

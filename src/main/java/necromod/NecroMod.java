@@ -41,7 +41,7 @@ import necromod.characters.TheNecromancer;
 import necromod.patches.AbstractCardEnum;
 import necromod.patches.TheNecromancerEnum;
 import necromod.relics.Vampire_Amulet;
-//import necromod.relics.Phylactery;
+import necromod.relics.Phylactery;
 
 @SpireInitializer
 public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber,
@@ -356,7 +356,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
         // Add relics
         RelicLibrary.add(new Vampire_Amulet());
         
-        //BaseMod.addRelicToCustomPool(new Phylactery(), "WHITE");
+        BaseMod.addRelicToCustomPool(new Phylactery(), AbstractCardEnum.WHITE.toString());
         
         logger.info("done editting relics");
 	}
