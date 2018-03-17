@@ -19,7 +19,7 @@ public class Bone_Spikes extends AbstractNecromancerCards {
 	public static final String NAME = "Bone Spikes";
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 9;
-	public static final String DESCRIPTION = "Deal !D! damage.";
+	public static final String DESCRIPTION = "Deal !D! damage. If you have Bones: Consume 1 , deal 4 additional damage.";
 	private static final int UPGRADE_PLUS_DMG = 2;
 	private static final int POOL = 1;
 	public final int AMOUNT = 1;

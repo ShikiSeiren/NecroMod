@@ -82,7 +82,7 @@ public class CorruptAction extends AbstractGameAction {
 				break;
 				
 			case "Thorns" :
-				amount = -1*(this.target.getPower("Thorns").amount);
+				amount = this.target.getPower("Thorns").amount;
 				AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.target, this.source, this.cb));
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.source, new PoisonPower(this.target, this.source, amount), amount, AbstractGameAction.AttackEffect.POISON));
 				break;

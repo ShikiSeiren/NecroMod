@@ -13,7 +13,7 @@ public class BoneArmoryPower extends AbstractPower {
 	public static final String NAME = "Bone Armory";
 	
 	public static final String[] DESCRIPTIONS = new String[] {
-			"Gain !M! Bones at the start of your turn."
+			"Gain 1 Bones at the start of your turn."
 	};
 	
     public BoneArmoryPower(final AbstractCreature owner, int amount) {

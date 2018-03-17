@@ -1,9 +1,17 @@
 {
   "Vampire_Amulet": {
     "NAME": "Vampire Amulet",
-    "FLAVOR": "ShikiSeiren",
+    "FLAVOR": "A mysterious amulet that seems to draw in life force.",
     "DESCRIPTIONS": [
       "On (non minion) Kill : Heal 2 HP."
+    ]
+  },
+  
+  "Phylactery": {
+    "NAME": "Phylactery",
+    "FLAVOR": "A gem that holds the soul of its creator, turning that mage into a lich.",
+    "DESCRIPTIONS": [
+      "Once per combat, if you would die: Heal to 10% of your max. HP instead."
     ]
   }
 }

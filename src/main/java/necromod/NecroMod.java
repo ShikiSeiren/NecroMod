@@ -41,7 +41,7 @@ import necromod.characters.TheNecromancer;
 import necromod.patches.AbstractCardEnum;
 import necromod.patches.TheNecromancerEnum;
 import necromod.relics.Vampire_Amulet;
-import necromod.relics.Phylactery;
+//import necromod.relics.Phylactery;
 
 @SpireInitializer
 public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditCharactersSubscriber,
@@ -356,7 +356,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
         // Add relics
         RelicLibrary.add(new Vampire_Amulet());
         
-        BaseMod.addRelicToCustomPool(new Phylactery(), AbstractCardEnum.WHITE.toString());
+        //BaseMod.addRelicToCustomPool(new Phylactery(), AbstractCardEnum.WHITE.toString());
         
         logger.info("done editting relics");
 	}
@@ -482,7 +482,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 	public void receiveEditKeywords() {
 		String[] NegativeLevel = {"negativelevel", "negativelevels"};
         
-		BaseMod.addKeyword(NegativeLevel, "Apply -Strength per level. Apply Frail per level.");
+		BaseMod.addKeyword(NegativeLevel, "Apply -Strength per level. Apply Frail per level. Drops by 2 each turn, returning 1 Strength to the target.");
 		
 		String[] Bones = {"bone", "bones", "Bones"};
         
@@ -524,9 +524,9 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
         
 		BaseMod.addKeyword(Corrupt, "Turn a buff of the target into a debuff.");
 		
-		String[] SkeletonDragon = {"corrupt", "corrupts"};
+		String[] SkeletonDragon = {"skeletondragon", "skeletondragons"};
         
-		BaseMod.addKeyword(SkeletonDragon, "Deals damage to ALL enemies. Applies 1 Hellfire to those not already burning.");
+		BaseMod.addKeyword(SkeletonDragon, "Deals 5 (7) damage to ALL enemies. Applies 1 Hellfire to those not already burning.");
 		
 		
 	}

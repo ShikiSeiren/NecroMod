@@ -21,9 +21,13 @@ public class SkeletonDragonPower extends AbstractPower {
 	public static final String[] DESCRIPTIONS = new String[] {
 			"A skeletal dragon assumed to be the pinnacle of Necromancy. Deals 5 damage to ALL enemies at the end of each turn. NL Applies Hellfire to those not already burning."
 	};
+	public static final String[] DESCRIPTIONS2 = new String[] {
+			"A skeletal dragon assumed to be the pinnacle of Necromancy. Deals 7 damage to ALL enemies at the end of each turn. NL Applies Hellfire to those not already burning."
+	};
 	
 	
 	public int DAMAGE_AMT;
+	public boolean upgraded;
 	
 	public SkeletonDragonPower(AbstractCreature owner, int amount, boolean isUpgraded, int damage) {
 		
@@ -36,12 +40,19 @@ public class SkeletonDragonPower extends AbstractPower {
 		this.img = NecroMod.getSkeletonDragonPowerTexture();
 		this.DAMAGE_AMT = damage;
 		this.amount = amount;
+		this.upgraded = isUpgraded;
 
 	}
 	
 	@Override
 	public void updateDescription() {
-		this.description = DESCRIPTIONS[0];
+		if(!this.upgraded) {
+			this.description = DESCRIPTIONS[0];
+		}
+		else {
+			this.description = DESCRIPTIONS2[0];
+		}
+		
 	}
 	
 	@Override

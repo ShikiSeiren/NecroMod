@@ -22,7 +22,7 @@ public class Pandemic extends AbstractNecromancerCards {
 	private static final int COST = 2;
 	private static final int POOL = 1;
 	
-	public static final String UPGRADE_DESCRIPTION = "Apply 6 poison and 3 Vulnerable to the target. Apply 3 poison and 2 Vulnerability to ALL other enemies. Exhaust.";
+	public static final String UPGRADE_DESCRIPTION = "Apply 6 poison and 3 Vulnerable to the target. Apply 3 poison and 2 Vulnerable to ALL other enemies. Exhaust.";
 	
 	public Pandemic() {
 		super(ID, NAME, NecroMod.makePath(NecroMod.PANDEMIC), COST, DESCRIPTION, AbstractCard.CardType.SKILL,

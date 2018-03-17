@@ -41,7 +41,7 @@ public class Vampiric_Strike extends AbstractNecromancerCards {
 		
 		if (m.currentHealth >= (m.maxHealth * 0.5)) {
 			if(this.damage > m.currentBlock) {
-				this.HealAmount = (int) ((this.damage -= m.currentBlock)*0.5);
+				this.HealAmount = (int) ((this.damage -= m.currentBlock)*0.25);
 				if(this.HealAmount < 1) {
 					this.HealAmount = 1;
 				}

@@ -45,7 +45,8 @@ public class GraspHeartPower extends AbstractPower {
     public void atStartOfTurn() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flashWithoutSound();
-            AbstractDungeon.actionManager.addToBottom(new PoisonLoseHpAction(this.owner, this.owner, (3*this.amount), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+            AbstractDungeon.actionManager.addToBottom(new PoisonLoseHpAction(this.owner, this.source, (3*this.amount), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+            //AbstractDungeon.actionManager.addToBottom(new DamageAction(this.owner, new DamageInfo(this.source, 3*this.amount, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
         
     }

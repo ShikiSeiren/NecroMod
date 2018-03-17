@@ -18,7 +18,7 @@ import necromod.patches.AbstractCardEnum;
 public class Slay_Living extends AbstractNecromancerCards {
 	public static final String ID = "Slay_Living";
 	public static final String NAME = "Slay Living";
-	private static final int COST = 1;
+	private static final int COST = 2;
 	private static final int ATTACK_DMG = 10;
 	public static final String DESCRIPTION = "When the target has 30% or less HP remaining : Kill it instantly.";
 	private static final int POOL = 1;
@@ -34,7 +34,7 @@ public class Slay_Living extends AbstractNecromancerCards {
 	
 	public AbstractMonster target;
 	public int HPThreshhold;
-	public double Multiplier = 0.3;
+	//public double Multiplier = 0.3;
 	
 	public Slay_Living() {
 		super (ID, NAME, NecroMod.makePath(NecroMod.SLAY_LIVING), COST, DESCRIPTION,
@@ -47,7 +47,13 @@ public class Slay_Living extends AbstractNecromancerCards {
 	
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-			this.HPThreshhold = ((int) (m.maxHealth*this.Multiplier-1));
+		if(this.upgraded) {
+			this.HPThreshhold = ((int) ((m.maxHealth*0.4)-1));
+		}
+		else {
+			this.HPThreshhold = ((int) ((m.maxHealth*0.3)-1));
+		}
+			
 			
 			if(m.currentHealth <= HPThreshhold) {
 				AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, 999, this.damageTypeForTurn), AbstractGameAction.AttackEffect.POISON));
@@ -68,36 +74,53 @@ public class Slay_Living extends AbstractNecromancerCards {
 		super.update();	
 		if(AbstractDungeon.player != null) {
 		if(AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom() instanceof MonsterRoom || AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite || AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
-		
 			for (final AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-				this.HPThreshhold = ((int) (mo.maxHealth*this.Multiplier));
 				
-				if(AbstractDungeon.isScreenUp = false ) { //|| AbstractDungeon.screen != AbstractDungeon.CurrentScreen.CARD_REWARD
-										
-					if(mo.hb.hovered && (mo.currentHealth <= HPThreshhold)) {
+				
+				//this.HPThreshhold = ((int) (mo.maxHealth*0.3));
+				if(!this.upgraded) {
+					System.out.println(this.HPThreshhold);
+					
+					if(mo.hb.hovered && (mo.currentHealth <= (int) (mo.maxHealth*0.3))) {
 						this.rawDescription = Slay_Living.DESCRIPTION_ON_DEADLY;
 						this.initializeDescription();
 					}
 					else {
-						if(!this.upgraded) {
-							mo.unhover();
-							this.rawDescription = Slay_Living.DESCRIPTION;
-							this.initializeDescription();
-						}
-						else {
-							mo.unhover();
-							this.rawDescription = Slay_Living.UPGRADE_DESCRIPTION2;
-						}
-						
+						this.rawDescription = Slay_Living.DESCRIPTION;
+						this.initializeDescription();
 					}
 				}
 					
+				
+				if(this.upgraded) {
+							//|| AbstractDungeon.screen != AbstractDungeon.CurrentScreen.CARD_REWARD	AbstractDungeon.isScreenUp = false 												
 
-
+					if(mo.hb.hovered && (mo.currentHealth <= mo.maxHealth*0.4)) {
+						this.rawDescription = Slay_Living.DESCRIPTION_ON_DEADLY;
+						this.initializeDescription();
+					}
+					else {
+						this.rawDescription = Slay_Living.UPGRADE_DESCRIPTION2;
+						this.initializeDescription();
+					}
+					
+				}
 			}
-		}	
+		}
+		}
 	}
-	}
+	
+	@Override
+    public void onMoveToDiscard() {
+		if(!this.upgraded) {
+			this.rawDescription = DESCRIPTION;
+			this.initializeDescription();
+		}
+		else {
+			this.rawDescription = UPGRADE_DESCRIPTION2;
+			this.initializeDescription();
+		}
+    }
 	
 	@Override
     public AbstractCard makeCopy() {
@@ -108,7 +131,7 @@ public class Slay_Living extends AbstractNecromancerCards {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.Multiplier = 0.4;
+            //this.Multiplier = 0.4;
             this.rawDescription = this.UPGRADE_DESCRIPTION;
 	        this.initializeDescription();
         }

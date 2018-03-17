@@ -14,7 +14,7 @@ public class BloodForBloodPower extends AbstractPower {
 	public static final String NAME = "Blood for Blood";
 	
 	public static final String[] DESCRIPTIONS = new String[] {
-			"Gain !M! Blood at the start of your turn."
+			"Gain 1 Blood when you lose HP."
 	};
 	
 	public int bloodCounter = 0;
@@ -37,7 +37,7 @@ public class BloodForBloodPower extends AbstractPower {
     
     @Override
     public int onAttacked(final DamageInfo info, final int damageAmount) {
-        if (info.owner != null && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) {
+        if (info.owner != null  && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) {
             
             if(this.owner.hasPower("Blood")) {
             	if(this.owner.getPower("Blood").amount < 3) {

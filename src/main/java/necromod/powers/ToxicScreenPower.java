@@ -16,7 +16,7 @@ public class ToxicScreenPower extends AbstractPower {
 	public static final String POWER_ID = "ToxicScreenPower";
 	public static final String NAME = "Toxic Smoke Screen";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"When attacked : Apply 1 Negative level to the attacker."
+			"When attacked : Apply Poison to the attacker."
 	};
 	
 	public int DAMAGE_AMT;

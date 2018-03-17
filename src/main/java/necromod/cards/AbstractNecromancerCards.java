@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.monsters.*;
 import com.megacrit.cardcrawl.actions.utility.*;
+import com.megacrit.cardcrawl.rooms.*;
 
 public abstract class AbstractNecromancerCards extends CustomCard{
 	
@@ -31,6 +32,7 @@ public abstract class AbstractNecromancerCards extends CustomCard{
 	public void update() {
 		super.update();
 		if(AbstractDungeon.player != null) {
+			if(AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
 		if(AbstractDungeon.player.hasPower("BloodMagicPower")) {
 			if((this.cost > EnergyPanel.totalCount || this.costForTurn > EnergyPanel.totalCount) && this.isActive == false) {
 				this.costForTurn = 0;
@@ -52,7 +54,13 @@ public abstract class AbstractNecromancerCards extends CustomCard{
 			}
 			
 		}
-		
+	}
+			else {
+				this.isActive = false;
+				this.costForTurn = this.cost;
+				this.rawDescription = this.savedDescription;
+				this.initializeDescription();
+			}
 	}
 	}
 	@Override
