@@ -18,7 +18,7 @@ public class Grasp_Heart extends AbstractNecromancerCards {
 	public static final String ID = "Grasp_Heart";
 	public static final String NAME = "Grasp Heart";
 	private static final int COST = 2;
-	private static final int ATTACK_DMG = 25;
+	private static final int ATTACK_DMG = 20;
 	public static final String DESCRIPTION = "Deal !D! damage. Apply 1 CrushedHeart . Exhaust.";
 	private static final int UPGRADE_PLUS_DMG = 5;
 	private static final int POOL = 1;

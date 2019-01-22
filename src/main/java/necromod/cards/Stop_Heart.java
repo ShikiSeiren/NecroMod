@@ -23,7 +23,7 @@ public class Stop_Heart extends AbstractNecromancerCards {
 	
 	public Stop_Heart() {
 		super (ID, NAME, NecroMod.makePath(NecroMod.STOP_HEART), COST, DESCRIPTION,
-				AbstractCard.CardType.ATTACK, AbstractCardEnum.WHITE,
+				AbstractCard.CardType.SKILL, AbstractCardEnum.WHITE,
 				AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.ENEMY, POOL);
 		
 		this.baseMagicNumber = this.magicNumber = 1;

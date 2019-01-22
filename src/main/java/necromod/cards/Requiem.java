@@ -16,7 +16,7 @@ public class Requiem extends AbstractNecromancerCards {
 	public static final String ID = "Requiem";
 	public static final String NAME = "Requiem";
 	private static final int COST = 3;
-	public static final String DESCRIPTION = "Deals damage equal to 50% of missing health. Affects ALL enemies.";
+	public static final String DESCRIPTION = "Deals damage to each enemy amounting to 50% of their missing health.";
 	private static final int POOL = 1;
 	public final int AMOUNT = 1;
 	

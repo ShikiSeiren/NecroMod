@@ -2,7 +2,7 @@ package necromod.actions.common;
 
 import com.megacrit.cardcrawl.actions.*;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.unique.VampireDamageAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.cards.*;
 import com.megacrit.cardcrawl.core.*;
 import com.megacrit.cardcrawl.dungeons.*;
@@ -103,12 +103,16 @@ public class CheckIfDeadAction extends AbstractGameAction {
     			}
     			
     			if(this.ID.equals("VampireLadyPower")){
-    				AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(this.target, new DamageInfo(this.owner, 3, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+    				//AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(this.target, new DamageInfo(this.owner, 3, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+    				AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target, new DamageInfo(this.owner, 6, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+    				AbstractDungeon.actionManager.addToBottom(new HealAction(this.owner, this.owner, 3));
     				AbstractDungeon.actionManager.addToTop(new WaitAction(0.05f));
     			}
     			
     			if(this.ID.equals("VampirePrincessPower")){
-    				AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(this.target, new DamageInfo(this.owner, 3, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+    				//AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(this.target, new DamageInfo(this.owner, 3, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+    				AbstractDungeon.actionManager.addToBottom(new DamageAction(this.target, new DamageInfo(this.owner, 6, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+    				AbstractDungeon.actionManager.addToBottom(new HealAction(this.owner, this.owner, 3));
     				AbstractDungeon.actionManager.addToTop(new WaitAction(0.05f));
     			}
     			//AbstractDungeon.actionManager.addToTop(new WaitAction(0.1f));

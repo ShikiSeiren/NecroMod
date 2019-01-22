@@ -26,7 +26,7 @@
 	
 	"Thousand_Bone_Knives": {
 		"NAME" : "Thousand Bone Knives",
-		"DESCRIPTION" : "Deal !D! damage !M! times. NL If you have Bones : NL Hit 2 additional times. Remove 1 Bones."
+		"DESCRIPTION" : "Deal !D! damage !M! times. NL If you have Bones : NL Hit 1 additional time. Remove 1 Bones."
 	},
 	
 	"Shade_Step": {
@@ -51,7 +51,7 @@
 		
 	"Negative_Energy_Bomb": {
 		"NAME" : "Negative Energy Bomb",
-		"DESCRIPTION" : "Deal !D! damage for each stack of NegativeLevel."
+		"DESCRIPTION" : "Remove all NegativeLevels. NL Deal 6 damage for each stack of NegativeLevel removed to ALL enemies."
 		},
 		
 	"Summon_Death_Knight": {
@@ -131,7 +131,7 @@
 		
 	"Summon_Vampire_Lady": {
 		"NAME" : "Summon Lich",
-		"DESCRIPTION" : "Summon a powerful Vampire that deals 3 damage to a random enemy each turn and heals for unblocked damage dealt."
+		"DESCRIPTION" : "Summon a Vampire that deals6 damage to a random enemy each turn and heals for 50% damage dealt."
 		},			
 		
 	"Bone_Prison": {
@@ -151,7 +151,7 @@
 		
 	"Negative_Energy_Mist": {
 		"NAME" : "Negative Energy Mist",
-		"DESCRIPTION" : "Apply 2 NegativeLevelsto ALL enemies. Exhaust."
+		"DESCRIPTION" : "Apply 2 NegativeLevels to ALL enemies. Exhaust."
 		},
 		
 	"Consume_Illness": {
@@ -186,7 +186,7 @@
 		
 	"Epidemic": {
 		"NAME" : "Epidemic",
-		"DESCRIPTION" : "Spread all debuffs of the target to all enemies."
+		"DESCRIPTION" : "Spread all debuffs of the target to all enemies. Exhaust."
 		},
 		
 	"Toxic_Smoke_Screen": {

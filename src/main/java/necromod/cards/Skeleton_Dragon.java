@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
@@ -37,7 +38,7 @@ public class Skeleton_Dragon extends AbstractNecromancerCards {
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
 		
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SkeletonDragonPower(p, 1, true, this.damage), 1));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SkeletonDragonPower(p, 1, this.upgraded, this.damage), 1));
 			
 			if(p.hasPower("Bones")) {
 				if(p.getPower("Bones").amount > (this.cost - this.costForTurn)) {
@@ -54,6 +55,8 @@ public class Skeleton_Dragon extends AbstractNecromancerCards {
 	@Override
 	public void update() {
 		super.update();
+		if(AbstractDungeon.player != null) {
+			if(AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
 		if(AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom() instanceof MonsterRoom || AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite || AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
 			if(AbstractDungeon.player.hasPower("Bones") && (this.cost - AbstractDungeon.player.getPower("Bones").amount) >= 0) {
 				this.costForTurn = this.cost - AbstractDungeon.player.getPower("Bones").amount;
@@ -63,7 +66,8 @@ public class Skeleton_Dragon extends AbstractNecromancerCards {
 			}
 		}
 	}
-	
+	}
+	}
 	public AbstractCard makeCopy() {
 		return new Skeleton_Dragon();
 	}

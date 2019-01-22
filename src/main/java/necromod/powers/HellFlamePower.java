@@ -54,7 +54,7 @@ public class HellFlamePower extends AbstractPower {
     public void atStartOfTurn() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flashWithoutSound();
-            AbstractDungeon.actionManager.addToBottom(new PoisonLoseHpAction(this.owner, this.owner, (10*this.amount), AbstractGameAction.AttackEffect.FIRE));
+            AbstractDungeon.actionManager.addToBottom(new PoisonLoseHpAction(this.owner, this.source, (10*this.amount), AbstractGameAction.AttackEffect.FIRE));
         }
         
     }

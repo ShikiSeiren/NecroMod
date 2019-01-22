@@ -21,9 +21,9 @@ public class Thousand_Bone_Knives extends AbstractNecromancerCards{
 	public static final String NAME = cardStrings.NAME;
 	public static final String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;
-	private static final int ATTACK_DMG = 2;
-	private static final int TIMES = 4;
-	private static final int UPGRADE_TIMES_AMT = 2;
+	private static final int ATTACK_DMG = 3;
+	private static final int TIMES = 3;
+	private static final int UPGRADE_TIMES_AMT = 1;
 	private static final int POOL = 1;
 	
 	public Thousand_Bone_Knives() {
@@ -40,7 +40,7 @@ public class Thousand_Bone_Knives extends AbstractNecromancerCards{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
     	if(p.hasPower("Bones")) {
-    		this.magicNumber += 2;
+    		this.magicNumber += 1;
     		AbstractDungeon.actionManager.addToTop(new ReducePowerAction(p, p, "Bones", 1));
     	}
         for (int i = 0; i < this.magicNumber; i++) {

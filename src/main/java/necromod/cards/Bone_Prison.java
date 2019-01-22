@@ -45,12 +45,13 @@ public class Bone_Prison extends AbstractNecromancerCards {
 				
 				
 			}
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new BonePrisonPower(m), 1));
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BonesPower(p, 1), 1));
-			
+			else {
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new BonePrisonPower(m), 1));
+				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BonesPower(p, 1), 1));
+			}
                     }
         else {
-            AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0f, OpeningAction.TEXT[0], true));
+            AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0f, "The enemy is not attacking!", true));
         }
 		
 	}

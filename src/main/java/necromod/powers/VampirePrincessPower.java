@@ -10,7 +10,7 @@ public class VampirePrincessPower extends AbstractPower {
 	public static final String POWER_ID = "VampirePrincessPower";
 	public static final String NAME = "Vampire Princess";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"A powerful Vampire. Deals !D! damge to a random enemy at the end of each turn. Heals for unblocked damage deal."
+			"Deals 6 damge to a random enemy at the end of each turn. Heals for 50% damage dealt."
 	};
 	
 	public int DAMAGE_AMT;

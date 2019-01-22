@@ -4,7 +4,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.actions.common.*;
 
-import com.megacrit.cardcrawl.rooms.*;
+//import com.megacrit.cardcrawl.rooms.*;
 
 import basemod.abstracts.CustomRelic;
 import necromod.NecroMod;
@@ -39,10 +39,11 @@ public class Phylactery extends CustomRelic{
     
     @Override
     public void onTrigger() {
-    	if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !Phylactery.usedThisCombat) {
+    	if (Phylactery.usedThisCombat = false) { //AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && 
     		this.flash();
     		AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     		AbstractDungeon.player.heal(AbstractDungeon.player.maxHealth / 10, true);
+    		Phylactery.usedThisCombat = true;
     	}
         
     }

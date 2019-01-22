@@ -37,7 +37,7 @@ public class EpidemicAction extends AbstractGameAction{
 		Debuff.add("Vulnerable");
 		Debuff.add("HellFlamePower");
 		Debuff.add("GraspHeartPower");
-		Debuff.add("NegativeLevelsPower");
+		Debuff.add("Negative_Level");
 		Debuff.add("OfPain");
 		
 		int amount;
@@ -109,8 +109,8 @@ public class EpidemicAction extends AbstractGameAction{
 						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, this.source, new GraspHeartPower(mo, this.source, amount), amount));
 						break;
 				
-					case "NegativeLevelsPower" : 
-						amount = this.target.getPower("NegativeLevelsPower").amount;
+					case "Negative_Level" : 
+						amount = this.target.getPower("Negative_Level").amount;
 						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, this.source, new NegativeLevelsPower(mo, this.source, amount), amount));
 						break;
 			

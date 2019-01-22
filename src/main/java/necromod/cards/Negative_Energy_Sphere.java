@@ -17,9 +17,9 @@ public class Negative_Energy_Sphere extends AbstractNecromancerCards {
 	public static final String ID = "Negative_Energy_Sphere";
 	public static final String NAME = "Negative Energy Sphere";
 	private static final int COST = 1;
-	private static final int ATTACK_DMG = 7;
-	public static final String DESCRIPTION = "Deal !D! damage to ALL enemies. Apply !M! NegativeLevel. NL Apply -1 Strength. NL Apply 1 Frail.";
-	private static final int UPGRADE_PLUS_DMG = 3;
+	private static final int ATTACK_DMG = 6;
+	public static final String DESCRIPTION = "Deal !D! damage to ALL enemies. Apply !M! NegativeLevel.";
+	private static final int UPGRADE_PLUS_DMG = 2;
 	private static final int POOL = 1;
 	public final int AMOUNT = 1;
 	
