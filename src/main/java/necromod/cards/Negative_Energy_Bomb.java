@@ -24,10 +24,9 @@ public class Negative_Energy_Bomb extends AbstractNecromancerCards{
 	public static final String[] EXTENDED_DESCRIPTION = new String[] {
 			"This Enemy does not have any Negative Levels."
 	};
+	public static final String UPGRADE_DESCRIPTION = "Remove all NegativeLevels. NL Deal 8 damage for each stack of NegativeLevel removed to ALL enemies.";
 	
 	private static final int COST = 2;
-	private static final int ATTACK_DMG = 10;
-	private static final int UPGRADE_DMG_AMT = 3;
 	private static final int POOL = 1;
 	
 	public Negative_Energy_Bomb() {
@@ -36,7 +35,6 @@ public class Negative_Energy_Bomb extends AbstractNecromancerCards{
 				AbstractCard.CardRarity.RARE, AbstractCard.CardTarget.ENEMY, POOL);
 	
 		this.isMultiDamage = true;
-		this.baseDamage = this.damage = ATTACK_DMG;
 		
 		
 	}
@@ -48,9 +46,14 @@ public class Negative_Energy_Bomb extends AbstractNecromancerCards{
             return;
         }
 		else {
-		this.baseMagicNumber = m.getPower("Negative_Level").amount;
+		this.baseDamage = m.getPower("Negative_Level").amount;
 		
-		this.baseDamage = this.damage *= baseMagicNumber;
+		if(!this.upgraded) {
+			this.baseDamage *= 6;
+		}
+		else {
+			this.baseDamage *= 8;
+		}
 		
 		this.calculateCardDamage(m);
 		
@@ -69,7 +72,8 @@ public class Negative_Energy_Bomb extends AbstractNecromancerCards{
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.upgradeDamage(UPGRADE_DMG_AMT);
+			this.rawDescription = UPGRADE_DESCRIPTION;
+			this.initializeDescription();
 		}
 	}
 

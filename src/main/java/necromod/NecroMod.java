@@ -53,7 +53,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 	private static final String AUTHOR = "ShikiSeiren";
 	private static final String DESCRIPTION = "v0.0.1\n Adds The Necromancer as a playable third character";
 	
-	private static final Color WHITE = CardHelper.getColor(255.0f, 250.0f, 250.0f);
+	public static final Color WHITE = CardHelper.getColor(255.0f, 250.0f, 250.0f);
 	private static final String NECROMOD_ASSETS_FOLDER = "img";
 	
 	// card backgrounds
@@ -269,11 +269,14 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
      * @param resource the resource, must *NOT* have a leading "/"
      * @return the full path
      */
-    public static final String makePath(String resource) {
-    	return NECROMOD_ASSETS_FOLDER + "/" + resource;
+    public static final String makePath(String ressource) {
+    	return NECROMOD_ASSETS_FOLDER + "/" + ressource;
     }
     
     public NecroMod() {
+    	
+    	BaseMod.subscribe(this);
+    	/* 
     	logger.info("subscribing to postInitialize event");
         BaseMod.subscribeToPostInitialize(this);
         
@@ -292,7 +295,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
         logger.info("subscribing to editKeywords event");
         BaseMod.subscribeToEditKeywords(this);
         
-        /* Disable this during playtesting for being counterproductive */
+        Disable this during playtesting for being counterproductive */
 //        logger.info("subscribing to setUnlocks event");
 //        BaseMod.subscribeToSetUnlocks(this);
         
@@ -305,7 +308,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
          * `images/` folder must be relocated
          */
         logger.info("creating the color " + AbstractCardEnum.WHITE.toString());
-        BaseMod.addColor(AbstractCardEnum.WHITE.toString(),
+        BaseMod.addColor(AbstractCardEnum.WHITE,
         		WHITE, WHITE, WHITE, WHITE, WHITE, WHITE, WHITE,
         		makePath(ATTACK_WHITE), makePath(SKILL_WHITE),
         		makePath(POWER_WHITE), makePath(ENERGY_ORB_WHITE),
@@ -327,7 +330,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
         // Mod badge
         Texture badgeTexture = new Texture(makePath(BADGE_IMG));
         ModPanel settingsPanel = new ModPanel();
-        settingsPanel.addLabel("NecroMod does not have any settings!", 400.0f, 700.0f, (me) -> {});
+        //settingsPanel.addLabel("NecroMod does not have any settings!", 400.0f, 700.0f, (me) -> {});
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
         
         Settings.isDailyRun = false;
@@ -340,10 +343,9 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		logger.info("begin editting characters");
 		
 		logger.info("add " + TheNecromancerEnum.NECROMANCER.toString());
-		BaseMod.addCharacter(TheNecromancer.class, "The Necromancer", "Necromancer class string",
-				AbstractCardEnum.WHITE.toString(), "The Necromancer",
+		BaseMod.addCharacter(new TheNecromancer(TheNecromancer.NAME, TheNecromancerEnum.NECROMANCER),
 				makePath(NECROMANCER_BUTTON), makePath(NECROMANCER_PORTRAIT),
-				TheNecromancerEnum.NECROMANCER.toString());
+				TheNecromancerEnum.NECROMANCER);
 		
 		logger.info("done editting characters");
 	}
@@ -482,7 +484,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 	public void receiveEditKeywords() {
 		String[] NegativeLevel = {"negativelevel", "negativelevels"};
         
-		BaseMod.addKeyword(NegativeLevel, "Apply -Strength per level. Apply Frail per level. Drops by 2 each turn, returning 1 Strength to the target.");
+		BaseMod.addKeyword(NegativeLevel, "Apply -Strength per level. Apply Frail per level. Drops by 1 each turn, returning 1 Strength to the target.");
 		
 		String[] Bones = {"bone", "bones", "Bones"};
         

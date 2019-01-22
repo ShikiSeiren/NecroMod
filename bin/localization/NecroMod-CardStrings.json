@@ -51,7 +51,7 @@
 		
 	"Negative_Energy_Bomb": {
 		"NAME" : "Negative Energy Bomb",
-		"DESCRIPTION" : "Remove all NegativeLevels. NL Deal !D! damage for each stack of NegativeLevel removed to ALL enemies."
+		"DESCRIPTION" : "Remove all NegativeLevels. NL Deal 6 damage for each stack of NegativeLevel removed to ALL enemies."
 		},
 		
 	"Summon_Death_Knight": {

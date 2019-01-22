@@ -21,7 +21,7 @@ public class Negative_Energy_Shield extends AbstractNecromancerCards {
 	private static final int COST = 1;
 	private static final int BLOCK_AMT = 8;
 	private static final int UPGRADE_PLUS_BLOCK = 3;
-	private static final int POOL = 0;	
+	private static final int POOL = 1;	
 	
 	public Negative_Energy_Shield() {
 		super(ID, NAME, NecroMod.makePath(NecroMod.NEGATIVE_ENERGY_SHIELD), COST, DESCRIPTION, AbstractCard.CardType.SKILL,

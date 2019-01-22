@@ -14,6 +14,8 @@ import com.megacrit.cardcrawl.rooms.*;
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 
+import basemod.abstracts.CustomCard;
+
 
 public class Slay_Living extends AbstractNecromancerCards {
 	public static final String ID = "Slay_Living";
@@ -29,7 +31,7 @@ public class Slay_Living extends AbstractNecromancerCards {
 	};
 	
 	public static final String DESCRIPTION_ON_DEADLY = "Kills target instantly.";
-	public final String UPGRADE_DESCRIPTION = "When the target has 40% or less HP remaining : Kill it instantly.";
+	public static final String UPGRADE_DESCRIPTION = "When the target has 40% or less HP remaining : Kill it instantly.";
 	public static final String UPGRADE_DESCRIPTION2 = "When the target has 40% or less HP remaining : Kill it instantly.";
 	
 	public AbstractMonster target;
@@ -69,7 +71,7 @@ public class Slay_Living extends AbstractNecromancerCards {
 				
 			//}
     }
-	@Override
+	/**@Override
 	public void update() {
 		super.update();	
 		if(AbstractDungeon.player != null) {
@@ -108,6 +110,19 @@ public class Slay_Living extends AbstractNecromancerCards {
 			}
 		}
 		}
+	}**/
+	
+	@Override
+	public void calculateCardDamage(AbstractMonster mo) {
+		if(mo.hb.hovered && (mo.currentHealth <= (int) (mo.maxHealth*0.3))) {
+			this.rawDescription = Slay_Living.DESCRIPTION_ON_DEADLY;
+			this.initializeDescription();
+		}
+		else {
+			this.rawDescription = Slay_Living.DESCRIPTION;
+			this.initializeDescription();
+		}
+		
 	}
 	
 	@Override
@@ -132,7 +147,7 @@ public class Slay_Living extends AbstractNecromancerCards {
         if (!this.upgraded) {
             this.upgradeName();
             //this.Multiplier = 0.4;
-            this.rawDescription = this.UPGRADE_DESCRIPTION;
+            this.rawDescription = UPGRADE_DESCRIPTION;
 	        this.initializeDescription();
         }
 	

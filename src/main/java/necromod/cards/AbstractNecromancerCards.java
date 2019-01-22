@@ -17,16 +17,23 @@ public abstract class AbstractNecromancerCards extends CustomCard{
 
 	private boolean isActive;
 	
-	private final String savedDescription;
+	private String savedDescription;
 	
 	public AbstractNecromancerCards(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target,
 			int cardPool) {
-		super(id, name, img, cost, rawDescription, type, color, rarity, target, cardPool);
+		super(id, name, img, cost, rawDescription, type, color, rarity, target);
 		
 		this.isActive = false;
 		this.savedDescription = rawDescription;
 		this.BloodCost = this.cost*3;
 	}
+	
+	@Override
+	public void displayUpgrades()
+	  {
+	    super.displayUpgrades();
+	    this.savedDescription = rawDescription;
+	  }
 
 	@Override
 	public void update() {

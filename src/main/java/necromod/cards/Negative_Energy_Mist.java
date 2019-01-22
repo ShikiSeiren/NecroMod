@@ -49,7 +49,7 @@ public class Negative_Energy_Mist extends AbstractNecromancerCards {
 		if (!this.upgraded) {
 			this.upgradeName();
 			this.exhaust = false;
-			this.rawDescription = Negative_Energy_Mist.UPGRADE_DESCRIPTION;
+			this.rawDescription = UPGRADE_DESCRIPTION;
             this.initializeDescription();
 		}
 	}
