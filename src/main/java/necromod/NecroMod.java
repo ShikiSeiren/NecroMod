@@ -51,7 +51,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 	
 	private static final String MODNAME = "NecroMod";
 	private static final String AUTHOR = "ShikiSeiren";
-	private static final String DESCRIPTION = "v0.0.1\n Adds The Necromancer as a playable third character";
+	private static final String DESCRIPTION = "v1.00\n Adds The Necromancer as a playable character";
 	
 	public static final Color WHITE = CardHelper.getColor(255.0f, 250.0f, 250.0f);
 	private static final String NECROMOD_ASSETS_FOLDER = "img";
@@ -386,7 +386,6 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Summon_Death_Knight());
 		BaseMod.addCard(new Blood_Wake());
 		BaseMod.addCard(new Life_Tap());
-		BaseMod.addCard(new Wall_Of_Bones_Proof_Of_Concept());
 		BaseMod.addCard(new Life_Drain());
 		BaseMod.addCard(new Negative_Energy_Burst());
 		BaseMod.addCard(new Negative_Energy_Sphere());
@@ -421,6 +420,14 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		BaseMod.addCard(new Corrupt_Power());
 		BaseMod.addCard(new Epidemic());		
 		BaseMod.addCard(new Reap_The_Weak());
+		
+		//BaseMod.addCard(new Wall_Of_Bones_Proof_Of_Concept());
+		//BaseMod.addCard(new Whirlwind_of_Bones());
+		//BaseMod.addCard(new Bones_to_Steel());
+		BaseMod.addCard(new Deaths_Shadow());
+		BaseMod.addCard(new Death_Knell());
+		BaseMod.addCard(new Flesh_Made_Foul());
+		BaseMod.addCard(new Chill_Blood());
 		
 		logger.info("added tested cards");
 		
@@ -484,7 +491,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 	public void receiveEditKeywords() {
 		String[] NegativeLevel = {"negativelevel", "negativelevels"};
         
-		BaseMod.addKeyword(NegativeLevel, "Apply -Strength per level. Apply Frail per level. Drops by 1 each turn, returning 1 Strength to the target.");
+		BaseMod.addKeyword(NegativeLevel, "Apply -1 Strength per stack. Apply 2 Frail per stack. Drops by 1 each turn, returning 1 Strength to the target.");
 		
 		String[] Bones = {"bone", "bones", "Bones"};
         
@@ -498,13 +505,13 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
         
 		BaseMod.addKeyword(Hellfire, "Deal 10 damage per turn. Removed when the afflicted enemy gains a buff.");
 		
-		String[] ShacklesOfPain = {"shackles", "shackle", "shackles of pain", "shackle of pain", "Shackles of Pain"};
+		String[] Shackles_of_Pain = {"shackles", "shackle", "shackles of pain", "shackle of pain", "Shackles of Pain"};
         
-		BaseMod.addKeyword(ShacklesOfPain, "Apply Shackles of Pain. All Damage you take is also applied to the afflicted enemy.");
+		BaseMod.addKeyword(Shackles_of_Pain, "Apply Shackles of Pain. All damage you take is also applied to the afflicted enemy.");
 		
 		String[] DeathKnight = {"deathknight", "deathknights", "death knight", "death knights", "Death Knight"};
         
-		BaseMod.addKeyword(DeathKnight, "Summon. Deals 5 damage to a random enemy each turn. Buffs the summoner with 5 block.");
+		BaseMod.addKeyword(DeathKnight, "Summon. Deals 5 damage to a random enemy at the start of each enemy's turn. Buffs the summoner with 5 block.");
 		
 		String[] Spectral = {"spectral", "spectrals", "Spectral"};
         
@@ -512,7 +519,7 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
 		
 		String[] Zombie = {"zombie", "zombies"};
         
-		BaseMod.addKeyword(Zombie, "Summon. Deals 3 damage to a random enemy each turn. Pack Tactics : Every 3 Zombies will stage a combined attack for 9 damage.");
+		BaseMod.addKeyword(Zombie, "Summon. Deals 3 damage to a random enemy at the start of each enemy's turn. Pack Tactics : Every 3 Zombies will stage a combined attack for 9 damage.");
 		
 		String[] CrushedHeart = {"crushedheart", "crushedhearts"};
         
@@ -530,6 +537,14 @@ public class NecroMod implements PostInitializeSubscriber, EditCardsSubscriber, 
         
 		BaseMod.addKeyword(SkeletonDragon, "Deals 5 (7) damage to ALL enemies. Applies 1 Hellfire to those not already burning.");
 		
+		String[] Shatter = {"shatter", "Shatter"};
+        
+		BaseMod.addKeyword(Shatter, "Shatter effects consume this many Bones to activate.");
+		//Consume the specified amount of bones to trigger an extended effect.
+		
+		String[] Buff = {"buff", "Buff"};
+        
+		BaseMod.addKeyword(Buff, "Metallicize, Curl Up, Frail, Plated Armor, Thorns, Explosive, Artifact, Barricade, Strength, Dexterity");
 		
 	}
 	/**

@@ -38,7 +38,7 @@ public class NegativeShieldPower extends AbstractPower {
 	           AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(info.owner, this.owner, new NegativeShieldPower2(info.owner, this.owner, 1), 1));
 	       }
 	        
-		damageAmount = 0;
+		//damageAmount = 0;
 		return damageAmount;
 	}
 

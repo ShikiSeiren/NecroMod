@@ -36,6 +36,7 @@ public class HellFlamePower extends AbstractPower {
     public void onApplyPower(final AbstractPower power, final AbstractCreature target, final AbstractCreature source) {
 		
 		if(power.type == PowerType.BUFF && (source != AbstractDungeon.player)) {
+				
 			this.flash();
 			if(this.amount <1) {
 	        	AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "HellFlamePower"));
@@ -43,6 +44,16 @@ public class HellFlamePower extends AbstractPower {
 	        else {
 	        	AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, "HellFlamePower", 1));
 	        } 
+		}
+		
+		else if(power.name.equals("Strength") && power.amount > 0) {
+			this.flash();
+			if(this.amount <1) {
+	        	AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "HellFlamePower"));
+	        }
+	        else {
+	        	AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, "HellFlamePower", 1));
+	        } 			
 		}
 		
     }

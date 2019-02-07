@@ -30,23 +30,35 @@ public class SpectralPower extends AbstractPower {
 		this.type = AbstractPower.PowerType.BUFF;
 		this.isTurnBased = false;
 		this.img = NecroMod.getSpectralPowerTexture();
+		this.priority = 99;
 
 	}
-	
+	/**
 	@Override
 	public int onAttacked(final DamageInfo info, int damageAmount) {
 		damageAmount = (int) (damageAmount*0.5);
 		return damageAmount;
 	}
+	**/
 	
 	@Override
-	public void atStartOfTurn() {
+	public float atDamageReceive(float damage, final DamageInfo.DamageType type) {
+		if(damage > 1.0f) {
+			damage = damage*0.5f;
+		}
+		
+		return damage;
+	}
+	
+	
+	@Override
+	public void atEndOfRound() {
 		this.flash();		
 		if(this.amount <1) {
-        	AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "SpectralPower"));
+        	AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "SpectralPower"));
         }
         else {
-        	AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, "SpectralPower", 1));
+        	AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, "SpectralPower", 1));
         } 
 	}
 	

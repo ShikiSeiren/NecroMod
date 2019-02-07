@@ -47,6 +47,7 @@ public class Plague_Bolt extends AbstractNecromancerCards {
 		Debuff.add("Weakened");
 		Debuff.add("Frail");
 		Debuff.add("Vulnerable");
+		Debuff.add("Constricted");
 		
 		ArrayList<String> Random = new ArrayList<String>();
 		
@@ -103,6 +104,12 @@ public class Plague_Bolt extends AbstractNecromancerCards {
 						amount = p.getPower("Vulnerable").amount;
 						AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Vulnerable"));
 						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, amount, false), amount));
+						break;
+						
+					case "Constricted" :
+						amount = p.getPower("Constricted").amount;
+						AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, "Constricted"));
+						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new ConstrictedPower(m, p, amount)));
 						break;
 				
 					case "Strength" :

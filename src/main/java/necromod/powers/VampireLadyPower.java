@@ -11,7 +11,7 @@ public class VampireLadyPower extends AbstractPower {
 	public static final String POWER_ID = "VampireLadyPower";
 	public static final String NAME = "Vampire Lady";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"Deals 6 damge to a random enemy at the end of each turn. Heals for 50% damage dealt."
+			"Deals 6 damage to a random enemy at the start of each enemy's turn. Heals for 50% damage dealt."
 	};
 	
 	public int DAMAGE_AMT;

@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="C:/Program Files (x86)/Steam/SteamApps/common/SlayTheSpire/desktop-1.0.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/Steam/SteamApps/common/SlayTheSpire/ModTheSpire.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/Steam/SteamApps/common/SlayTheSpire/mods/BaseMod.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/Steam/SteamApps/workshop/content/646570/1609158507/StSLib.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

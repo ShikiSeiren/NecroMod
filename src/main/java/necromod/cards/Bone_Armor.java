@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ArtifactPower;
+//import com.megacrit.cardcrawl.powers.ArtifactPower;
 
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
@@ -35,8 +35,8 @@ public class Bone_Armor extends AbstractNecromancerCards {
 	public void use(AbstractPlayer p, AbstractMonster m) {
 
 			AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BonesPower(p, 1), 1));
-			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ArtifactPower(p, 1), 1));
+			AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BonesPower(p, 2), 2));
+			//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ArtifactPower(p, 1), 1));
 	}
 	
 	public AbstractCard makeCopy() {

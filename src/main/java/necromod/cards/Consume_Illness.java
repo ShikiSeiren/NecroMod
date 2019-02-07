@@ -42,6 +42,7 @@ public class Consume_Illness extends AbstractNecromancerCards{
 			Debuff.add("Weakened");
 			Debuff.add("Frail");
 			Debuff.add("Vulnerable");
+			Debuff.add("Constricted");
 			
 			ArrayList<String> Random = new ArrayList<String>();
 				

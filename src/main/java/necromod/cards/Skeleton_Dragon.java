@@ -55,17 +55,23 @@ public class Skeleton_Dragon extends AbstractNecromancerCards {
 	@Override
 	public void update() {
 		super.update();
+		
+		if(this.costForTurn == 0) {
+			
+		}
+		else {
 		if(AbstractDungeon.player != null) {
 			if(AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-		if(AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom() instanceof MonsterRoom || AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite || AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
-			if(AbstractDungeon.player.hasPower("Bones") && (this.cost - AbstractDungeon.player.getPower("Bones").amount) >= 0) {
-				this.costForTurn = this.cost - AbstractDungeon.player.getPower("Bones").amount;
-			}
-			else if(AbstractDungeon.player.hasPower("Bones") && (this.cost - AbstractDungeon.player.getPower("Bones").amount) < 0) {
-				this.costForTurn = 0;
+				if(AbstractDungeon.getCurrRoom() == null || AbstractDungeon.getCurrRoom() instanceof MonsterRoom || AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite || AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
+					if(AbstractDungeon.player.hasPower("Bones") && (this.cost - AbstractDungeon.player.getPower("Bones").amount) >= 0) {
+						this.costForTurn = this.cost - AbstractDungeon.player.getPower("Bones").amount;
+					}
+					else if(AbstractDungeon.player.hasPower("Bones") && (this.cost - AbstractDungeon.player.getPower("Bones").amount) < 0) {
+						this.costForTurn = 0;
+					}	
+				}
 			}
 		}
-	}
 	}
 	}
 	public AbstractCard makeCopy() {

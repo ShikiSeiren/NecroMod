@@ -19,13 +19,13 @@ public class Shackles_Of_Pain extends AbstractNecromancerCards {
 	public static final	String NAME = cardStrings.NAME;
 	public static final	String DESCRIPTION = cardStrings.DESCRIPTION;
 	private static final int COST = 1;
-	private static final int UPGRADE_AMT = 1;
+	private static final int UPGRADE_AMT = 2;
 	private static final int POOL = 1;
 	
 	public Shackles_Of_Pain() {
 		super(ID, NAME, NecroMod.makePath(NecroMod.SHACKLES_OF_PAIN), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.WHITE, AbstractCard.CardRarity.COMMON, AbstractCard.CardTarget.ENEMY, POOL);
-		this.baseMagicNumber = this.magicNumber = 1;
+		this.baseMagicNumber = this.magicNumber = 3;
 		
 	}
 	

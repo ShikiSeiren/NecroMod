@@ -25,7 +25,7 @@ public class Blood_Is_Power extends AbstractNecromancerCards {
 	private static final String UPGRADE_DESCRIPTION = "Lose 2 HP. Gain 2 Strength.";
 	
 	public Blood_Is_Power() {
-		super(ID, NAME, NecroMod.makePath(NecroMod.BLOOD_IS_POWER), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
+		super(ID, NAME, NecroMod.makePath(NecroMod.BLOOD_IS_POWER), COST, Blood_Is_Power.DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.WHITE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
 		
 		this.exhaust = true;

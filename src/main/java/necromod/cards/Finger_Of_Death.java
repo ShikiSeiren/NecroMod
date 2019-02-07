@@ -12,7 +12,7 @@ import necromod.actions.unique.FoDAction;
 
 public class Finger_Of_Death extends AbstractNecromancerCards {
 	
-	public static final String ID = "finger_Of_Death";
+	public static final String ID = "Finger_Of_Death";
 	public static final String NAME = "Finger of Death";
 	private static final int COST = 1;
 	private static final int ATTACK_DMG = 8;

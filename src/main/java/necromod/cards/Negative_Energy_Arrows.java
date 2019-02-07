@@ -50,7 +50,7 @@ public class Negative_Energy_Arrows extends AbstractNecromancerCards{
 				(this.AMOUNT*2), true, AbstractGameAction.AttackEffect.NONE));
 		**/		
        AbstractDungeon.actionManager.addToBottom(new NegativeLevelAction(m, p, this.AMOUNT));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new NegativeLevelsPower(m, p, AMOUNT), AMOUNT));
+       AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new NegativeLevelsPower(m, p, AMOUNT), AMOUNT));
     }
 	
 	@Override

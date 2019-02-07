@@ -9,13 +9,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
-import com.megacrit.cardcrawl.rooms.*;
 
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
-
-import basemod.abstracts.CustomCard;
-
 
 public class Slay_Living extends AbstractNecromancerCards {
 	public static final String ID = "Slay_Living";
@@ -27,7 +23,8 @@ public class Slay_Living extends AbstractNecromancerCards {
 	public final int AMOUNT = 1;
 	
 	public static final String[] EXTENDED_DESCRIPTION = new String[] {
-			"The target is above 30% HP."
+			"The target is above 30% HP.",
+			"The target is above 40% HP."
 	};
 	
 	public static final String DESCRIPTION_ON_DEADLY = "Kills target instantly.";
@@ -50,19 +47,25 @@ public class Slay_Living extends AbstractNecromancerCards {
 	@Override
     public void use(AbstractPlayer p, AbstractMonster m) {
 		if(this.upgraded) {
-			this.HPThreshhold = ((int) ((m.maxHealth*0.4)-1));
+			this.HPThreshhold = ((int) ((m.maxHealth*0.4)));
 		}
 		else {
-			this.HPThreshhold = ((int) ((m.maxHealth*0.3)-1));
+			this.HPThreshhold = ((int) ((m.maxHealth*0.3)));
 		}
 			
 			
-			if(m.currentHealth <= HPThreshhold) {
+			if(m.currentHealth <= HPThreshhold+1) {
 				AbstractDungeon.actionManager.addToBottom(new DamageAction((AbstractCreature)m, new DamageInfo(p, 999, this.damageTypeForTurn), AbstractGameAction.AttackEffect.POISON));
 			}
 			else {
-				AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0f, Slay_Living.EXTENDED_DESCRIPTION[0], true));
-	            return;
+				if(!this.upgraded) {
+					AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0f, Slay_Living.EXTENDED_DESCRIPTION[0], true));
+					return;
+				}
+				else {
+					AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0f, Slay_Living.EXTENDED_DESCRIPTION[1], true));
+					return;
+				}
 			}
 			if(m.hb.hovered && (m.currentHealth <= HPThreshhold)) {
 				
@@ -114,14 +117,30 @@ public class Slay_Living extends AbstractNecromancerCards {
 	
 	@Override
 	public void calculateCardDamage(AbstractMonster mo) {
-		if(mo.hb.hovered && (mo.currentHealth <= (int) (mo.maxHealth*0.3))) {
-			this.rawDescription = Slay_Living.DESCRIPTION_ON_DEADLY;
-			this.initializeDescription();
+		
+		if(!this.upgraded) {
+			if(mo.hb.hovered && (mo.currentHealth <= (int) (mo.maxHealth*0.3)+1)) {
+				this.rawDescription = Slay_Living.DESCRIPTION_ON_DEADLY;
+				this.initializeDescription();
+			}
+			else {
+				this.rawDescription = Slay_Living.DESCRIPTION;
+				this.initializeDescription();
+			}
+			
 		}
+		
 		else {
-			this.rawDescription = Slay_Living.DESCRIPTION;
-			this.initializeDescription();
+			if(mo.hb.hovered && (mo.currentHealth <= (int) (mo.maxHealth*0.4)+1)) {
+				this.rawDescription = Slay_Living.DESCRIPTION_ON_DEADLY;
+				this.initializeDescription();
+			}
+			else {
+				this.rawDescription = Slay_Living.UPGRADE_DESCRIPTION2;
+				this.initializeDescription();
+			}	
 		}
+		
 		
 	}
 	
