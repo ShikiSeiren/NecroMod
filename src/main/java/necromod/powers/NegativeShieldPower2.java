@@ -38,8 +38,8 @@ public class NegativeShieldPower2 extends AbstractPower {
 	@Override
 	public void atEndOfTurn(boolean isPlayer) {
 		this.flash();
-        AbstractDungeon.actionManager.addToTop(new NegativeLevelAction(this.target, this.owner, 1));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.owner, new NegativeLevelsPower(this.target, this.owner, 1), 1));
+        AbstractDungeon.actionManager.addToBottom(new NegativeLevelAction(this.target, this.owner, this.amount));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.target, this.owner, new NegativeLevelsPower(this.target, this.owner, this.amount), this.amount));
 		AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.target, this.target, "NegativeShieldPower2"));
 	}
 

@@ -17,24 +17,24 @@ public abstract class AbstractNecromancerCards extends CustomCard{
 
 	private boolean isActive;
 	
-	private String savedDescription;
+	//private String savedDescription;
 	
 	public AbstractNecromancerCards(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target,
 			int cardPool) {
 		super(id, name, img, cost, rawDescription, type, color, rarity, target);
 		
 		this.isActive = false;
-		this.savedDescription = rawDescription;
+		//this.savedDescription = rawDescription;
 		this.BloodCost = this.cost*3;
 	}
-	
+	/**
 	@Override
 	public void displayUpgrades()
 	  {
 	    super.displayUpgrades();
 	    this.savedDescription = rawDescription;
 	  }
-
+	**/
 	@Override
 	public void update() {
 		super.update();
@@ -43,8 +43,8 @@ public abstract class AbstractNecromancerCards extends CustomCard{
 		if(AbstractDungeon.player.hasPower("BloodMagicPower")) {
 			if((this.cost > EnergyPanel.totalCount || this.costForTurn > EnergyPanel.totalCount) && this.isActive == false) {
 				this.costForTurn = 0;
-				this.rawDescription = rawDescription + " NL Lose " + this.BloodCost + " HP";
-				this.initializeDescription();
+				//this.rawDescription = rawDescription + " NL Lose " + this.BloodCost + " HP";
+				//this.initializeDescription();
 				this.isActive = true;
 				
 			}	
@@ -56,8 +56,8 @@ public abstract class AbstractNecromancerCards extends CustomCard{
 			if (this.cost <= EnergyPanel.totalCount) {
 				this.isActive = false;
 				this.costForTurn = this.cost;
-				this.rawDescription = this.savedDescription;
-				this.initializeDescription();
+				//this.rawDescription = this.savedDescription;
+				//this.initializeDescription();
 			}
 			
 		}
@@ -65,11 +65,12 @@ public abstract class AbstractNecromancerCards extends CustomCard{
 			else {
 				this.isActive = false;
 				this.costForTurn = this.cost;
-				this.rawDescription = this.savedDescription;
-				this.initializeDescription();
+				//this.rawDescription = this.savedDescription;
+				//this.initializeDescription();
 			}
 	}
 	}
+	
 	@Override
 	public void onPlayCard(AbstractCard c, AbstractMonster m) {
 		if(c == this) {

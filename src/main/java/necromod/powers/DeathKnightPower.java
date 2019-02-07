@@ -12,7 +12,7 @@ public class DeathKnightPower extends AbstractPower {
 	public static final String POWER_ID = "DeathKnightPower";
 	public static final String NAME = "Death Knight";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"A knight risen from the dead. Deals 5 damge at the end of the turn. Buffs the Necromancer with 5 Block at the end of the turn."
+			"A knight risen from the dead. Deals 5 damage at the end of the turn. Buffs the Necromancer with 5 Block at the end of the turn."
 	};
 	
 	public int DAMAGE_AMT;

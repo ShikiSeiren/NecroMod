@@ -1,0 +1,11 @@
+{
+  "modid": "NecroMod",
+  "name": "The Necromancer",
+  "author_list": ["ShikiSeiren"],
+  "description": "Adds The Necromancer as a new playable character.",
+  "version": "1.0.0",
+  "sts_version": "01-17-2019",
+  "mts_version": "3.6.3",
+  "dependencies": ["basemod", "stslib"],
+  "update_json": ""
+}

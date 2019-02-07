@@ -7,13 +7,13 @@ import com.megacrit.cardcrawl.monsters.*;
 import com.megacrit.cardcrawl.dungeons.*;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.core.*;
-import com.megacrit.cardcrawl.actions.unique.*;
 import com.megacrit.cardcrawl.vfx.*;
+
+import com.evacipated.cardcrawl.mod.stslib.actions.common.*;
 
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
 import necromod.powers.BonesPower;
-import necromod.powers.BonePrisonPower;
 
 public class Bone_Prison extends AbstractNecromancerCards {
 	public static final String ID = "Bone_Prison";
@@ -46,7 +46,8 @@ public class Bone_Prison extends AbstractNecromancerCards {
 				
 			}
 			else {
-				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new BonePrisonPower(m), 1));
+				//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new BonePrisonPower(m), 1));
+				AbstractDungeon.actionManager.addToBottom(new StunMonsterAction(m, p ,1));
 				AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BonesPower(p, 1), 1));
 			}
                     }

@@ -18,7 +18,6 @@ import necromod.powers.GraspHeartPower;
 import necromod.powers.HellFlamePower;
 import necromod.powers.NegativeLevelsPower;
 import necromod.powers.OfPain;
-import necromod.powers.Shackles;
 
 public class EpidemicAction extends AbstractGameAction{
 	
@@ -76,9 +75,9 @@ public class EpidemicAction extends AbstractGameAction{
 						break;
 				
 					case "Frail" :
-					amount = this.target.getPower("Frail").amount;
-					AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, this.source, new FrailPower(mo, amount, false),amount, true, AbstractGameAction.AttackEffect.NONE));
-					break;
+						amount = this.target.getPower("Frail").amount;
+						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, this.source, new FrailPower(mo, amount, false),amount, true, AbstractGameAction.AttackEffect.NONE));
+						break;
 				
 					case "Vulnerable" :
 						amount = this.target.getPower("Vulnerable").amount;
@@ -117,7 +116,7 @@ public class EpidemicAction extends AbstractGameAction{
 					case "OfPain" :
 						amount = this.target.getPower("OfPain").amount;
 						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, this.source, new OfPain(mo, amount), amount));
-						AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source, new Shackles(this.source, this.source, amount), amount));
+						//AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.source, this.source, new Shackles(this.source, this.source, amount), amount));
 						break;
 				
 					}

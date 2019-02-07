@@ -26,17 +26,17 @@
 	
 	"Thousand_Bone_Knives": {
 		"NAME" : "Thousand Bone Knives",
-		"DESCRIPTION" : "Deal !D! damage !M! times. NL If you have Bones : NL Hit 1 additional time. Remove 1 Bones."
+		"DESCRIPTION" : "Deal !D! damage !M! times. NL Shatter 1: Hit 1 additional time."
 	},
 	
 	"Shade_Step": {
 		"NAME" : "Shade Step",
-		"DESCRIPTION" : "Draw !M! cards. NL If that card(s) is a Skill : NL Gain 1 Energy."
+		"DESCRIPTION" : "Draw !M! card(s). NL If a Skill is drawn this way : NL Gain 1 Energy."
 		},
 		
 	"Bone_Armor": {
 		"NAME" : "Bone Armor",
-		"DESCRIPTION" : "Gain !B! Block. NL Gain 1 Bones. NL Gain 1 Artifact."
+		"DESCRIPTION" : "Gain !B! Block. NL Gain 2 Bones."
 		},
 		
 	"Bone_Armory": {
@@ -46,7 +46,7 @@
 		
 	"Bone_Spikes": {
 		"NAME" : "Bone Spikes",
-		"DESCRIPTION" : "Deal !D! Damage. NL If you have Bones : Deal 4 additional Damage. Remove 1 Bones."
+		"DESCRIPTION" : "Deal !D! Damage. NL Shatter 1 : Deal 4 additional Damage."
 		},
 		
 	"Negative_Energy_Bomb": {
@@ -71,7 +71,7 @@
 		
 	"Bone_Shift": {
 		"NAME" : "Bone Shift",
-		"DESCRIPTION" : "Draw !M! cards. Gain 2 Bones."
+		"DESCRIPTION" : "Draw !M! card(s). Gain 2 Bones."
 		},
 	
 	"Blood_for_Blood": {
@@ -101,7 +101,7 @@
 		
 	"Shackles_Of_Pain": {
 		"NAME" : "Shackles of Pain",
-		"DESCRIPTION" : "Apply !M! Shackles of Pain."
+		"DESCRIPTION" : "Apply Shackles of Pain for !M! turns."
 		},
 		
 	"Vampiric_Strike": {
@@ -131,7 +131,7 @@
 		
 	"Summon_Vampire_Lady": {
 		"NAME" : "Summon Lich",
-		"DESCRIPTION" : "Summon a Vampire that deals6 damage to a random enemy each turn and heals for 50% damage dealt."
+		"DESCRIPTION" : "Summon a Vampire that deals 6 damage to a random enemy each turn and heals for 50% damage dealt."
 		},			
 		
 	"Bone_Prison": {
@@ -146,7 +146,7 @@
 		
 	"Detonate_Bones": {
 		"NAME" : "Detonate Bones",
-		"DESCRIPTION" : "Remove all bones. Deal !D! damage times the amount of stacks removed."
+		"DESCRIPTION" : "Shatter all : Deal !D! damage X times where X is the amount of Bones shattered."
 		},
 		
 	"Negative_Energy_Mist": {
@@ -206,7 +206,27 @@
 		
 	"Skeleton_Dragon": {
 		"NAME" : "Summon Skeleton Dragon",
-		"DESCRIPTION" : "Summon a SkeletonDragon. Costs 1 Energy less for each stack of Bones, consuming them."
-		}		
+		"DESCRIPTION" : "Summon a SkeletonDragon. Shatter all : Costs 1 less Energy for each Bones shattered. NL It deals !D! damage to ALL enemies and applies Hellfire. Hellfire does not stack."
+		},
+		
+	"Bones_to_Steel": {
+		"NAME" : "Bones to Steel",
+		"DESCRIPTION" : "Shatter all: Gain PlatedArmor for each Bones shattered"
+		},
+		
+	"Deaths_Shadow": {
+		"NAME" : "Death's Shadow",
+		"DESCRIPTION" : "Deal !D! damage. After !M! turns the enemy heals !D! hp. Exhaust."
+		},
+	
+	"Death_Knell": {
+		"NAME" : "Death Knell",
+		"DESCRIPTION" : "Deal !D! damage. Deal 4 more damage if the target is below 50% hp. If the target dies : Gain !M! Temporary HP."
+		},
+		
+	"Chill_Blood": {
+		"NAME" : "Chill Blood",
+		"DESCRIPTION" : "Deal !D! damage. If the target has more than !M! Negative Levels : Stun it. Exhaust."
+		}
 		
 }	

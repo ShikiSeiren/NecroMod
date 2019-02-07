@@ -11,7 +11,7 @@ public class ZombiePower extends AbstractPower {
 	public static final String POWER_ID = "ZombiePower";
 	public static final String NAME = "Zombie";
 	public static final String[] DESCRIPTIONS = new String[] {
-			"A risen corpse. Deals 3 damge at the end of the turn."
+			"A risen corpse. Deals 3 damage at the end of the turn."
 	};
 	public AbstractMonster m;
 	

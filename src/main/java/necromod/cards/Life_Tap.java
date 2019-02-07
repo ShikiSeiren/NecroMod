@@ -28,7 +28,7 @@ public class Life_Tap extends AbstractNecromancerCards {
 				AbstractCardEnum.WHITE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
 		this.energyGain = ENERGY_AMT;
 		this.baseMagicNumber = this.magicNumber = 2;
-		this.exhaust = true;
+		//this.exhaust = true;
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {
@@ -45,7 +45,7 @@ public class Life_Tap extends AbstractNecromancerCards {
 	public void upgrade() {
 		if (!this.upgraded) {
 			this.upgradeName();
-			this.exhaust = false;
+			//this.exhaust = false;
 			this.baseMagicNumber = this.magicNumber -= 1;
 		}
 	}

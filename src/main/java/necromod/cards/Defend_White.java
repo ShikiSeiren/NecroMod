@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import basemod.helpers.BaseModCardTags;
 
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
@@ -25,6 +26,8 @@ public class Defend_White extends AbstractNecromancerCards {
 		super(ID, NAME, NecroMod.makePath(NecroMod.DEFEND_WHITE), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 				AbstractCardEnum.WHITE, AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.SELF, POOL);
 		this.baseBlock = BLOCK_AMT;
+		
+		this.tags.add(BaseModCardTags.BASIC_DEFEND);
 	}
 	
 	public void use(AbstractPlayer p, AbstractMonster m) {

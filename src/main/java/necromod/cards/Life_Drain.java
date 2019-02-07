@@ -40,9 +40,11 @@ public class Life_Drain extends AbstractNecromancerCards {
         //AbstractDungeon.actionManager.addToBottom(new VampireDamageAction((AbstractCreature)m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
         //AbstractDungeon.actionManager.addToBottom(new ModifyDamageAction(this, -this.magicNumber));
         //AbstractDungeon.actionManager.addToBottom(new ModifyValueAction(this, -this.magicNumber));
-		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+		AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
 		AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, this.heal));
-        this.baseHeal = this.heal -=2;
+		if(this.baseHeal != 0) {
+			this.baseHeal = this.heal -=2;
+		}
         this.rawDescription = "Deal !D! damage. Heal for " + this.heal + " HP. Heals !M! less HP this combat.";
         this.initializeDescription();
         	

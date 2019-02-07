@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import basemod.helpers.BaseModCardTags;
 
 import necromod.NecroMod;
 import necromod.patches.AbstractCardEnum;
@@ -24,6 +25,9 @@ public class Strike_White extends AbstractNecromancerCards{
 				AbstractCard.CardTarget.ENEMY, POOL);
 
 		this.baseDamage = ATTACK_DMG;
+		
+		this.tags.add(BaseModCardTags.BASIC_STRIKE);
+		this.tags.add(CardTags.STRIKE);
 	}
 
 	public void use(com.megacrit.cardcrawl.characters.AbstractPlayer p, AbstractMonster m) {

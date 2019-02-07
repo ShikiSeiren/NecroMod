@@ -38,7 +38,7 @@ public class Shackles extends AbstractPower {
 	
 	@Override
 	public int onAttacked(final DamageInfo info, int damageAmount) {
-		
+/**		
             if (	this.target.hasPower("OfPain") 
             		&& !this.target.isDying 
             		&& this.target.currentHealth > 0 
@@ -48,7 +48,21 @@ public class Shackles extends AbstractPower {
             	AbstractDungeon.actionManager.addToTop(new DamageAction(this.target, new DamageInfo(this.owner, damageAmount, DamageInfo.DamageType.THORNS), 0));
             	
             }        
+**/
 		
+		for (int temp = AbstractDungeon.getCurrRoom().monsters.monsters.size(), i = 0; i < temp; ++i) {
+			
+            if (    AbstractDungeon.getCurrRoom().monsters.monsters.get(i).hasPower("OfPain") 
+                    && !AbstractDungeon.getCurrRoom().monsters.monsters.get(i).isDying 
+                    && AbstractDungeon.getCurrRoom().monsters.monsters.get(i).currentHealth > 0 
+                    && !AbstractDungeon.getCurrRoom().monsters.monsters.get(i).isEscaping) {
+ 
+            	AbstractDungeon.actionManager.addToTop(new DamageAction(AbstractDungeon.getCurrRoom().monsters.monsters.get(i), new DamageInfo(this.owner, damageAmount, DamageInfo.DamageType.THORNS), 0));
+                
+            }
+		
+		
+		}
 		return damageAmount;
 	}
 	
@@ -75,9 +89,9 @@ public class Shackles extends AbstractPower {
         }
         else {
         	
-        	AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, "Shackles", 1));	
+        	AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, "Shackles", 1));
+        	
         	for (int temp = AbstractDungeon.getCurrRoom().monsters.monsters.size(), i = 0; i < temp; ++i) {
-				AbstractDungeon.actionManager.addToTop(new ReducePowerAction(this.owner, this.owner, "Shackles", 1));
                 if (    AbstractDungeon.getCurrRoom().monsters.monsters.get(i).hasPower("OfPain") 
                         && !AbstractDungeon.getCurrRoom().monsters.monsters.get(i).isDying 
                         && AbstractDungeon.getCurrRoom().monsters.monsters.get(i).currentHealth > 0 

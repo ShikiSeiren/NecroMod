@@ -27,7 +27,7 @@ public class Shade_Step extends AbstractNecromancerCards{
 			super(ID, NAME, NecroMod.makePath(NecroMod.SHADE_STEP), COST, DESCRIPTION, AbstractCard.CardType.SKILL,
 					AbstractCardEnum.WHITE, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardTarget.SELF, POOL);
 			this.energyGain = ENERGY_AMT;
-			this.baseMagicNumber = this.magicNumber = 1;
+			this.baseMagicNumber = this.magicNumber = 2;
 		}
 		
 		public void use(AbstractPlayer p, AbstractMonster m) {
